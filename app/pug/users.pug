@@ -1,0 +1,50 @@
+mixin messages(photo, person, location, orders, spent)
+            tr
+              td.mdl-data-table__cell--non-numeric
+                span.mdl-list__item-primary-content
+                  img.material-icons.mdl-list__item-avatar(src=photo)
+              td.mdl-data-table__cell--non-numeric #{person}
+              td.mdl-data-table__cell--non-numeric #{location}
+              td.mdl-data-table__cell--non-numeric #{orders}
+              td #{spent}
+
+
+- var page_title = 'Users'
+
+include templates/layout
+  .mdl-tabs.mdl-js-tabs.mdl-js-ripple-effect
+    .mdl-tabs__tab-bar
+      a.mdl-tabs__tab.is-active(href='#customers') Customers
+      a.mdl-tabs__tab(href='#uploaders') Uploaders
+      a.mdl-tabs__tab(href='#moderators') Moderators
+      a.mdl-tabs__tab(href='#admins') Admins
+    #customers.mdl-tabs__panel.is-active
+      .mdl-grid
+        .mdl-cell.pub-checkbox
+          label.mdl-radio.mdl-js-radio.mdl-js-ripple-effect(for='option-1')
+            input#option-1.mdl-radio__button(type='radio', name='options', value='1', checked='')
+            |  
+            span.mdl-radio__label Active
+          label.mdl-radio.mdl-js-radio.mdl-js-ripple-effect(for='option-2')
+            input#option-2.mdl-radio__button(type='radio', name='options', value='2')
+            |  
+            span.mdl-radio__label Blocked  
+        button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect(style='position: absolute; right: 26px; top: 72px')  New user     
+        .mdl-cell.mdl-cell--12-col
+          table#messages-table.mdl-data-table.mdl-js-data-table
+            thead
+              tr
+                th 
+                th Name
+                th Location
+                th Orders
+                th#date Total spent
+
+            tbody
+              +messages('images/photo.jpg', 'Faik Geci', 'Amsterdam', '37', '5768 EUR')
+              +messages('images/photo.jpg', 'Faik Geci', 'Amsterdam', '37', '5768 EUR')
+              +messages('images/photo.jpg', 'Faik Geci', 'Amsterdam', '37', '5768 EUR')
+              +messages('images/photo.jpg', 'Faik Geci', 'Amsterdam', '37', '5768 EUR')
+              +messages('images/photo.jpg', 'Faik Geci', 'Amsterdam', '37', '5768 EUR')
+              +messages('images/photo.jpg', 'Faik Geci', 'Amsterdam', '37', '5768 EUR')
+    

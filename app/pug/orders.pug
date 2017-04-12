@@ -1,0 +1,33 @@
+mixin orders(number, date, name, qty, spent)
+  tr
+    td.mdl-data-table__cell--non-numeric #{number}
+    td #{date}
+    td.mdl-cell--hide-phone #{name}
+    td.mdl-cell--hide-phone #{qty}
+    td #{spent}
+
+- var page_title = 'Orders'
+
+include templates/layout
+  .mdl-cell.mdl-cell--8-col
+    table.mdl-data-table.mdl-js-data-table.mdl-shadow--2dp(style='width: 100%;')
+      thead
+        tr
+          th.mdl-data-table__cell--non-numeric.mdl-data-table__header--sorted-descending Order
+          th.date-icon-table-heading
+            | Date 
+            button.mdl-button.mdl-js-button.mdl-button--icon
+              i.material-icons.mdl-icon-toggle date_range
+          th.mdl-cell--hide-phone Customer
+          th.mdl-cell--hide-phone items
+          th Total
+      tbody
+        +orders('#1001', '29/07/2017', 'Maria Mary', '1', '$50')
+        +orders('#1002', '25/07/2017', 'Peter Gabriel', '5', '$3456')
+        +orders('#1004', '25/07/2017', 'John Smith', '3', '$1546')
+        +orders('#1005', '22/07/2017', 'James hetfield', '1', '$345')
+        +orders('#1006', '22/07/2017', 'Clara Fear', '1', '$34')
+        +orders('#1007', '21/07/2017', 'Jucy Jecy', '2', '$176')
+        +orders('#1008', '13/07/2017', 'Norman Fiola', '4', '$1345')
+        +orders('#1009', '7/07/2017', 'Guy Kawasaki', '2', '$134')
+        +orders('#10010', '1/07/2017', 'Peter Gabriel', '5', '$1050')

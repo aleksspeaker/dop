@@ -1,0 +1,81 @@
+mixin overCard(cardName, row1, row2, row3)
+    .mdl-cell.mdl-cell--4-col.mdl-cell--3-col-desktop.cards-container.overview-card.mdl-card.mdl-shadow--2dp
+                .mdl-card__title
+                  h2.mdl-card__title-text #{cardName}
+                .mdl-card__supporting-text
+                  p #{row1}
+                  p #{row2}
+                  p #{row3}
+                .mdl-card__actions.mdl-card--border
+                  a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect details
+
+- var page_title = 'Overview'
+
+include templates/layout
+  .mdl-cell.mdl-cell--12-col.mdl-grid
+    #tasks.mdl-cell.mdl-cell--8-col.cards-container.overview-card.mdl-card.mdl-shadow--2dp
+      .mdl-card__title
+        h2.mdl-card__title-text Tasks
+      .mdl-card__supporting-text
+        table.tasks-table.mdl-data-table.mdl-js-data-table
+          thead.table-head
+            tr
+              th.mdl-data-table__cell--non-numeric Messages (3)
+              th From
+          tbody
+            tr
+              td.mdl-data-table__cell--non-numeric #1004
+              td John Smith
+            tr
+              td.mdl-data-table__cell--non-numeric #1005
+              td Ada Evans
+            tr
+              td.mdl-data-table__cell--non-numeric #1005
+              td Quincy Johnes
+        br
+        table.tasks-table.mdl-data-table.mdl-js-data-table
+          thead.table-head
+            tr
+              th.mdl-data-table__cell--non-numeric Moderation list (35)
+              th From
+          tbody
+            tr
+              td.mdl-data-table__cell--non-numeric #1004
+              td John Smith
+            tr
+              td.mdl-data-table__cell--non-numeric #1005
+              td Ada Evans
+            tr
+              td.mdl-data-table__cell--non-numeric #1005
+              td Quincy Johnes
+      .mdl-card__actions.mdl-card--border
+        a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect details
+    
+    .mdl-cell.mdl-cell--4-col.mdl-cell--8-col-tablet.mdl-grid.mdl-grid--no-spacing
+      .mdl-cell.mdl-cell--4-col.mdl-cell--4-col-tablet.mdl-cell--12-col-desktop.cards-container.overview-card.mdl-card.mdl-shadow--2dp
+        .mdl-card__title
+          h2.mdl-card__title-text Managers online (3/5)
+        .mdl-card__supporting-text
+          p Faik Geci
+          p Alex Glinskiy
+          p Roman Feditskiy
+        .mdl-card__actions.mdl-card--border
+          a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect details
+      .mdl-cell.mdl-cell--4-col.mdl-cell--4-col-tablet.mdl-cell--12-col-desktop.cards-container.overview-card.mdl-card.mdl-shadow--2dp
+        .mdl-card__title
+          h2.mdl-card__title-text Storage
+        .mdl-card__supporting-text
+          p Used: 98 TB
+          p Expenses: 2300 EUR
+          p Total items: 4568
+        .mdl-card__actions.mdl-card--border
+          a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect details
+  
+
+  .mdl-cell.mdl-cell--12-col.mdl-grid
+    +overCard('Finances', 'Income: 9645 EUR', 'Expenses: 6023 EUR', 'Revenue: 3622 EUR')
+    +overCard('Orders', 'Purchases: 112', 'Average bill: 68.25 EUR', 'Total: 7645 EUR')
+    +overCard('Videos', 'New uploads: 80', 'Moderate: 45', 'Videos moderated: 35')
+    +overCard('Visitors', 'Total: 763', 'Online: 198', 'Unique: 98')
+    
+              

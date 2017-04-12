@@ -1,0 +1,29 @@
+mixin modercard(id, person, name, date)
+  .grabbable.moderation-card.mdl-card.mdl-shadow--2dp(id=id draggable='true', ondragstart='drag(event)')
+    .mdl-card__title
+      p.mod-card-name #{person}
+      p Author: #{name}
+      p(style='float: right;') #{date}
+    .mdl-card__actions.mdl-card--border
+      a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect REVIEW ITEM
+      .mdl-layout-spacer
+
+
+- var page_title = 'Moderation'
+
+include templates/layout
+  #inbox.mdl-cell.mdl-cell--4-col(ondrop='drop(event)', ondragover='allowDrop(event)')
+    h5 Inbox
+    hr
+    +modercard('#drag1', 'Faik Geci', 'Sunset beach', '9/04/2017 7:00pm')
+    +modercard('#drag2', 'Faik Geci', 'Sunset beach', '9/04/2017 7:00pm')
+    +modercard('#drag3', 'Faik Geci', 'Sunset beach', '9/04/2017 7:00pm')
+    +modercard('#drag4', 'Faik Geci', 'Sunset beach', '9/04/2017 7:00pm')
+  #inprog.mdl-cell.mdl-cell--4-col(ondrop='drop(event)', ondragover='allowDrop(event)')
+    h5 In progress
+    hr
+    +modercard('#drag5', 'Faik Geci', 'Sunset beach', '9/04/2017 7:00pm')
+  #done.mdl-cell.mdl-cell--4-col(ondrop='drop(event)', ondragover='allowDrop(event)')
+    h5 Done
+    hr
+    +modercard('#drag6', 'Faik Geci', 'Sunset beach', '9/04/2017 7:00pm')

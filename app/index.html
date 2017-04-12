@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="js/script.js"></script>
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-indigo.min.css">
+    <title>Dopcine Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row"><span class="mdl-layout-title">Overview</span>
+          <div class="mdl-layout-spacer"></div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp"><i class="material-icons">search</i></label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" id="fixed-header-drawer-exp" type="text" name="sample">
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer"><span class="mdl-layout-title" style="border-bottom: 1px solid lightgrey;">Dopcine Admin</span>
+        <nav class="mdl-navigation"><a class="mdl-navigation__link mdl-navigation__link--current" href="./index.html">Overview</a><a class="mdl-navigation__link" href="./orders.html">Orders</a><a class="mdl-navigation__link" href="./content.html">Content</a><a class="mdl-navigation__link" href="./moderation.html">Moderation</a><a class="mdl-navigation__link" href="./messages.html">Messages</a><a class="mdl-navigation__link" href="./users.html">Users</a><a class="mdl-navigation__link" href="./report.html">Report</a><a class="mdl-navigation__link" href="./settings.html">Settings</a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col mdl-grid">
+              <div class="mdl-cell mdl-cell--8-col cards-container overview-card mdl-card mdl-shadow--2dp" id="tasks">
+                <div class="mdl-card__title">
+                  <h2 class="mdl-card__title-text">Tasks</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                  <table class="tasks-table mdl-data-table mdl-js-data-table">
+                    <thead class="table-head">
+                      <tr>
+                        <th class="mdl-data-table__cell--non-numeric">Messages (3)</th>
+                        <th>From</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="mdl-data-table__cell--non-numeric">#1004</td>
+                        <td>John Smith</td>
+                      </tr>
+                      <tr>
+                        <td class="mdl-data-table__cell--non-numeric">#1005</td>
+                        <td>Ada Evans</td>
+                      </tr>
+                      <tr>
+                        <td class="mdl-data-table__cell--non-numeric">#1005</td>
+                        <td>Quincy Johnes</td>
+                      </tr>
+                    </tbody>
+                  </table><br>
+                  <table class="tasks-table mdl-data-table mdl-js-data-table">
+                    <thead class="table-head">
+                      <tr>
+                        <th class="mdl-data-table__cell--non-numeric">Moderation list (35)</th>
+                        <th>From</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="mdl-data-table__cell--non-numeric">#1004</td>
+                        <td>John Smith</td>
+                      </tr>
+                      <tr>
+                        <td class="mdl-data-table__cell--non-numeric">#1005</td>
+                        <td>Ada Evans</td>
+                      </tr>
+                      <tr>
+                        <td class="mdl-data-table__cell--non-numeric">#1005</td>
+                        <td>Quincy Johnes</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="mdl-card__actions mdl-card--border"><a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">details</a></div>
+              </div>
+              <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop cards-container overview-card mdl-card mdl-shadow--2dp">
+                  <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">Managers online (3/5)</h2>
+                  </div>
+                  <div class="mdl-card__supporting-text">
+                    <p>Faik Geci</p>
+                    <p>Alex Glinskiy</p>
+                    <p>Roman Feditskiy</p>
+                  </div>
+                  <div class="mdl-card__actions mdl-card--border"><a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">details</a></div>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop cards-container overview-card mdl-card mdl-shadow--2dp">
+                  <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">Storage</h2>
+                  </div>
+                  <div class="mdl-card__supporting-text">
+                    <p>Used: 98 TB</p>
+                    <p>Expenses: 2300 EUR</p>
+                    <p>Total items: 4568</p>
+                  </div>
+                  <div class="mdl-card__actions mdl-card--border"><a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">details</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="mdl-cell mdl-cell--12-col mdl-grid">
+              <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop cards-container overview-card mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title">
+                  <h2 class="mdl-card__title-text">Finances</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                  <p>Income: 9645 EUR</p>
+                  <p>Expenses: 6023 EUR</p>
+                  <p>Revenue: 3622 EUR</p>
+                </div>
+                <div class="mdl-card__actions mdl-card--border"><a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">details</a></div>
+              </div>
+              <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop cards-container overview-card mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title">
+                  <h2 class="mdl-card__title-text">Orders</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                  <p>Purchases: 112</p>
+                  <p>Average bill: 68.25 EUR</p>
+                  <p>Total: 7645 EUR</p>
+                </div>
+                <div class="mdl-card__actions mdl-card--border"><a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">details</a></div>
+              </div>
+              <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop cards-container overview-card mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title">
+                  <h2 class="mdl-card__title-text">Videos</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                  <p>New uploads: 80</p>
+                  <p>Moderate: 45</p>
+                  <p>Videos moderated: 35</p>
+                </div>
+                <div class="mdl-card__actions mdl-card--border"><a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">details</a></div>
+              </div>
+              <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop cards-container overview-card mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title">
+                  <h2 class="mdl-card__title-text">Visitors</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                  <p>Total: 763</p>
+                  <p>Online: 198</p>
+                  <p>Unique: 98</p>
+                </div>
+                <div class="mdl-card__actions mdl-card--border"><a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">details</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

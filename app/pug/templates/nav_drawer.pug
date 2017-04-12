@@ -1,0 +1,17 @@
+mixin navLink(link, name)
+    a.mdl-navigation__link(
+        href=link
+        class={"mdl-navigation__link--current": name === page_title}
+    ) #{name}
+
+.mdl-layout__drawer
+    span.mdl-layout-title(style='border-bottom: 1px solid lightgrey;') Dopcine Admin
+    nav.mdl-navigation
+        +navLink('./index.html', 'Overview')
+        +navLink('./orders.html', 'Orders')
+        +navLink('./content.html', 'Content')
+        +navLink('./moderation.html', 'Moderation')
+        +navLink('./messages.html', 'Messages')
+        +navLink('./users.html', 'Users')
+        +navLink('./report.html', 'Report')
+        +navLink('./settings.html', 'Settings')

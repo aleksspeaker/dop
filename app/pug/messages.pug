@@ -1,0 +1,65 @@
+mixin messages(btnclass, icon, number, person, subject, message, date)
+            tr
+              td.mdl-data-table__cell--non-numeric
+                button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--icon(class=btnclass)
+                  i.material-icons.mdl-icon-toggle #{icon}
+              td.mdl-data-table__cell--non-numeric #{number}
+              td.mdl-data-table__cell--non-numeric #{person}
+              td.mdl-data-table__cell--non-numeric #{subject}
+              td.mdl-data-table__cell--non-numeric #{message}
+              td #{date}
+
+
+- var page_title = 'Messages'
+
+include templates/layout
+  .mdl-tabs.mdl-js-tabs.mdl-js-ripple-effect
+    .mdl-tabs__tab-bar
+      a.mdl-tabs__tab.is-active(href='#mess-opened') Opened
+      a.mdl-tabs__tab(href='#mess-resolved') Resolved
+    #mess-opened.mdl-tabs__panel.is-active
+      .mdl-grid       
+        .mdl-cell.mdl-cell--12-col
+          table#messages-table.mdl-data-table.mdl-js-data-table
+            thead
+              tr
+                th
+                th Ticket# 
+                th Name
+                th Subject
+                th Message
+                th#date Date
+
+            tbody
+              +messages('mdl-button--colored', 'email', '#1001', 'Maria Mary', 'How can I pay? Dont have Paypal', '- Hello Dopcine, yesterday I', '9/04/2017 7:00am')
+              +messages('mdl-button--colored', 'email', '#1001', 'Maria Mary', 'How can I pay? Dont have Paypal', '- Hello Dopcine, yesterday I', '9/04/2017 7:00am')
+              +messages('mdl-button--disabled', 'drafts', '#1001', 'Maria Mary', 'How can I pay? Dont have Paypal', '- Hello Dopcine, yesterday I', '9/04/2017 7:00am')
+              +messages('mdl-button--disabled', 'drafts', '#1001', 'Maria Mary', 'How can I pay? Dont have Paypal', '- Hello Dopcine, yesterday I', '9/04/2017 7:00am')
+              +messages('mdl-button--disabled', 'drafts', '#1001', 'Maria Mary', 'How can I pay? Dont have Paypal', '- Hello Dopcine, yesterday I', '9/04/2017 7:00am')
+              +messages('mdl-button--disabled', 'drafts', '#1001', 'Maria Mary', 'How can I pay? Dont have Paypal', '- Hello Dopcine, yesterday I', '9/04/2017 7:00am')
+    #mess-resolved.mdl-tabs__panel
+      .mdl-grid       
+        .mdl-cell.mdl-cell--12-col
+          table#messages-table.mdl-data-table.mdl-js-data-table
+            thead
+              tr
+                th
+                th Ticket# 
+                th Name
+                th Subject
+                th Message
+                th#date Date
+
+            tbody
+              +messages('mdl-button--disabled', 'drafts', '#1001', 'James Hetfield', 'How to download my video?', '- I purchased the video yesterday', '9/04/2017 7:00am')
+              +messages('mdl-button--disabled', 'drafts', '#1001', 'James Hetfield', 'How to download my video?', '- I purchased the video yesterday', '9/04/2017 7:00am')
+              +messages('mdl-button--disabled', 'drafts', '#1001', 'James Hetfield', 'How to download my video?', '- I purchased the video yesterday', '9/04/2017 7:00am')
+              +messages('mdl-button--disabled', 'drafts', '#1001', 'James Hetfield', 'How to download my video?', '- I purchased the video yesterday', '9/04/2017 7:00am')
+              +messages('mdl-button--disabled', 'drafts', '#1001', 'James Hetfield', 'How to download my video?', '- I purchased the video yesterday', '9/04/2017 7:00am')
+              +messages('mdl-button--disabled', 'drafts', '#1001', 'James Hetfield', 'How to download my video?', '- I purchased the video yesterday', '9/04/2017 7:00am')
+              +messages('mdl-button--disabled', 'drafts', '#1001', 'James Hetfield', 'How to download my video?', '- I purchased the video yesterday', '9/04/2017 7:00am')
+              +messages('mdl-button--disabled', 'drafts', '#1001', 'James Hetfield', 'How to download my video?', '- I purchased the video yesterday', '9/04/2017 7:00am')
+              +messages('mdl-button--disabled', 'drafts', '#1001', 'James Hetfield', 'How to download my video?', '- I purchased the video yesterday', '9/04/2017 7:00am')
+              +messages('mdl-button--disabled', 'drafts', '#1001', 'James Hetfield', 'How to download my video?', '- I purchased the video yesterday', '9/04/2017 7:00am')
+              +messages('mdl-button--disabled', 'drafts', '#1001', 'James Hetfield', 'How to download my video?', '- I purchased the video yesterday', '9/04/2017 7:00am')
+              +messages('mdl-button--disabled', 'drafts', '#1001', 'James Hetfield', 'How to download my video?', '- I purchased the video yesterday', '9/04/2017 7:00am')

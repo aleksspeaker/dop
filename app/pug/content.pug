@@ -1,0 +1,65 @@
+mixin videos(name, person, date, gigs, price)
+            tr
+              td.mdl-data-table__cell--non-numeric
+                button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--colored.mdl-button--icon
+                  i.material-icons.mdl-icon-toggle play_circle_filled
+              td #{name}
+              td.mdl-cell--hide-phone #{person}
+              td.mdl-cell--hide-phone.mdl-cell--hide-tablet #{date}
+              td.mdl-cell--hide-phone #{gigs}
+              td #{price}
+
+- var page_title = 'Content'
+
+include templates/layout
+  .mdl-tabs.mdl-js-tabs.mdl-js-ripple-effect
+    .mdl-tabs__tab-bar
+      a.mdl-tabs__tab.is-active(href='#videos-table') Videos
+      |  
+      a.mdl-tabs__tab(href='#categories-table') Categories
+    #videos-table.mdl-tabs__panel.is-active
+      .mdl-grid
+        .vid-sort-controls.mdl-cell.mdl-cell--12-col
+          form#category-form(action='#')
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.getmdl-select.getmdl-select__fullwidth
+              input#sample1.mdl-textfield__input(type='text', value='', readonly='', tabindex='-1', style='cursor: pointer;', size='25')
+              |  
+              label#selCatLabel.mdl-textfield__label(for='sample1') Category
+              ul.mdl-menu.mdl-menu--bottom-left.mdl-js-menu(for='sample1')
+                li.mdl-menu__item(onclick="document.getElementById('sample1').value=''; document.getElementById('selCatLabel').innerHTML='Select category'") All
+                li.mdl-menu__item(onclick="document.getElementById('sample1').value='Animals'; document.getElementById('selCatLabel').innerHTML=''") Animals
+                li.mdl-menu__item(onclick="document.getElementById('sample1').value='Cities'; document.getElementById('selCatLabel').innerHTML=''") Cities
+                li.mdl-menu__item(onclick="document.getElementById('sample1').value='Cars'; document.getElementById('selCatLabel').innerHTML=''") Cars
+                li.mdl-menu__item(onclick="document.getElementById('sample1').value='Pedestrians'; document.getElementById('selCatLabel').innerHTML=''") Pedestrians
+          | &nbsp
+          .mdl-cell.pub-checkbox
+            label.mdl-radio.mdl-js-radio.mdl-js-ripple-effect(for='option-1')
+              input#option-1.mdl-radio__button(type='radio', name='options', value='1', checked='')
+              |  
+              span.mdl-radio__label Published
+            |  &nbsp 
+            label.mdl-radio.mdl-js-radio.mdl-js-ripple-effect(for='option-2')
+              input#option-2.mdl-radio__button(type='radio', name='options', value='2')
+              |  
+              span.mdl-radio__label Unpublished
+        .mdl-cell.mdl-cell--12-col
+          table#content-table.mdl-data-table.mdl-js-data-table.mdl-shadow--2dp
+            thead
+              tr
+                th.mdl-data-table__cell--non-numeric Play
+                th.date-icon-table-heading Name
+                th.mdl-cell--hide-phone Uploader
+                th.mdl-cell--hide-phone.mdl-cell--hide-tablet Upload date
+                th.mdl-cell--hide-phone Size
+                th Price
+            tbody
+              +videos('Super cool video', 'Maria Mary', '9/04/2017 7:00am', '1 GB', '$50')
+              +videos('Birds', 'Peter Gabriel', '9/04/2017 7:00am', '1 GB', '$50')
+              +videos('Streets', 'James Hetfield', '9/04/2017 7:00am', '1 GB', '$50')
+              +videos('Planet', 'Peter Gio', '9/04/2017 7:00pm', '1 GB', '$50')
+              +videos('Sport', 'Laura Lenx', '9/04/2017 5:20pm', '1 GB', '$50')
+              +videos('Parade', 'Nick Cave', '9/04/2017 7:00am', '1 GB', '$50')
+              +videos('Shopping', 'Jimmie Hendrix', '12/04/2017 11:50am', '1 GB', '$50')
+              +videos('Casual', 'Karl Keyn', '12/04/2017 11:00am', '1 GB', '$50')
+              +videos('Transport', 'Nora Johnes', '9/04/2017 7:00am', '1 GB', '$50')
+    #lannisters-panel.mdl-tabs__panel

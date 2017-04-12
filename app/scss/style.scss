@@ -1,0 +1,177 @@
+.testing {
+  width: percentage(5/7);
+}
+
+th .mdl-icon-toggle {
+  height: 29px;
+}
+
+.date-icon-table-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.overview-card {
+  &.mdl-card {
+    /*width: 100%;*/
+    /*height: 365px;*/
+  }
+  > .mdl-card__title {
+    color: #fff;
+    background: url('') bottom right 15% no-repeat #1976D2;
+  }
+}
+
+#tasks .mdl-card__title {
+  background: #1565C0;
+}
+
+.mdl-card__title-text {
+  align-self: flex-start;
+}
+
+.tasks-table {
+  width: 100%;
+  /*margin: -17px;*/
+}
+
+#tasks {
+  padding: 0;
+  /*height: auto;*/
+}
+
+.cards-container {
+  /*margin-bottom: 16px;*/
+}
+
+.table-head {
+  /*background: #80ccff;*/
+}
+
+/*CONTENT PAGE================================*/
+
+#content-table {
+  width: 100%;
+}
+
+#category-form {
+  width: 150px;
+}
+
+.pub-checkbox {
+  padding-top: 14px;
+  width: 250px;
+}
+
+.vid-sort-controls {
+    display: inline-flex;
+    margin-bottom: -12px;
+  }
+
+
+/*MODERATION PAGE=============================*/
+
+#inbox, #inprog, #done {
+    height: 100vh;
+    padding: 10px;
+    border: 1px solid #f9f9f9;
+    background: #fafafa;
+    border-radius: 4px;
+}
+
+#inbox {
+
+ .moderation-card.mdl-card {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  background: white;
+  margin-bottom: 8px;
+}
+}
+
+#inprog {
+
+ .moderation-card.mdl-card {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  background: #FFF176;
+  margin-bottom: 8px;
+}
+}
+
+#done {
+
+ .moderation-card.mdl-card {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  background: #AED581;
+  margin-bottom: 8px;
+}
+}
+.moderation-card > .mdl-card__actions {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.moderation-card > .mdl-card__title {
+  display: block;
+
+}
+.moderation-card > .mdl-card__title > h4 {
+  margin-top: 0;
+}
+.moderation-card > .mdl-card__actions {
+  display: flex;
+  box-sizing:border-box;
+  align-items: center;
+}
+
+.mdl-card__actions.mdl-card--border {
+    border-top: 1px solid rgba(0,0,0,.2);
+}
+
+.moderation-card > .mdl-card__actions > .material-icons {
+  padding-right: 10px;
+}
+
+.moderation-card > .mdl-card__title,
+.moderation-card > .mdl-card__actions,
+.moderation-card > .mdl-card__actions > .mdl-button {
+  color: rgba(0,0,0,.87);
+}
+
+.mod-card-name {
+  font-size: 1.6rem;
+}
+mod-card-author {
+  font-size: 1.3rem;
+}
+
+/*THIS CURSOR MAKE ITEMS APPEAR GRABBABLE*/
+.grabbable {
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+ /* (Optional) Apply a "closed-hand" cursor during drag operation. */
+.grabbable:active { 
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
+
+table#messages-table{
+  width: 100%;
+  tr{
+    th {
+      text-align: left;
+    }
+    th#date {
+      text-align: end;
+    }
+  }
+}

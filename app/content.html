@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="js/script.js"></script>
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-indigo.min.css">
+    <title>Dopcine Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row"><span class="mdl-layout-title">Content</span>
+          <div class="mdl-layout-spacer"></div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp"><i class="material-icons">search</i></label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" id="fixed-header-drawer-exp" type="text" name="sample">
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer"><span class="mdl-layout-title" style="border-bottom: 1px solid lightgrey;">Dopcine Admin</span>
+        <nav class="mdl-navigation"><a class="mdl-navigation__link" href="./index.html">Overview</a><a class="mdl-navigation__link" href="./orders.html">Orders</a><a class="mdl-navigation__link mdl-navigation__link--current" href="./content.html">Content</a><a class="mdl-navigation__link" href="./moderation.html">Moderation</a><a class="mdl-navigation__link" href="./messages.html">Messages</a><a class="mdl-navigation__link" href="./users.html">Users</a><a class="mdl-navigation__link" href="./report.html">Report</a><a class="mdl-navigation__link" href="./settings.html">Settings</a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          <div class="mdl-grid">
+            <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+              <div class="mdl-tabs__tab-bar"><a class="mdl-tabs__tab is-active" href="#videos-table">Videos</a> <a class="mdl-tabs__tab" href="#categories-table">Categories</a></div>
+              <div class="mdl-tabs__panel is-active" id="videos-table">
+                <div class="mdl-grid">
+                  <div class="vid-sort-controls mdl-cell mdl-cell--12-col">
+                    <form id="category-form" action="#">
+                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fullwidth">
+                        <input class="mdl-textfield__input" id="sample1" type="text" value="" readonly="" tabindex="-1" style="cursor: pointer;" size="25"> 
+                        <label class="mdl-textfield__label" id="selCatLabel" for="sample1">Category</label>
+                        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu" for="sample1">
+                          <li class="mdl-menu__item" onclick="document.getElementById('sample1').value=''; document.getElementById('selCatLabel').innerHTML='Select category'">All</li>
+                          <li class="mdl-menu__item" onclick="document.getElementById('sample1').value='Animals'; document.getElementById('selCatLabel').innerHTML=''">Animals</li>
+                          <li class="mdl-menu__item" onclick="document.getElementById('sample1').value='Cities'; document.getElementById('selCatLabel').innerHTML=''">Cities</li>
+                          <li class="mdl-menu__item" onclick="document.getElementById('sample1').value='Cars'; document.getElementById('selCatLabel').innerHTML=''">Cars</li>
+                          <li class="mdl-menu__item" onclick="document.getElementById('sample1').value='Pedestrians'; document.getElementById('selCatLabel').innerHTML=''">Pedestrians</li>
+                        </ul>
+                      </div>
+                    </form>&nbsp
+                    <div class="mdl-cell pub-checkbox">
+                      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+                        <input class="mdl-radio__button" id="option-1" type="radio" name="options" value="1" checked=""> <span class="mdl-radio__label">Published</span>
+                      </label> &nbsp 
+                      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+                        <input class="mdl-radio__button" id="option-2" type="radio" name="options" value="2"> <span class="mdl-radio__label">Unpublished</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="mdl-cell mdl-cell--12-col">
+                    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" id="content-table">
+                      <thead>
+                        <tr>
+                          <th class="mdl-data-table__cell--non-numeric">Play</th>
+                          <th class="date-icon-table-heading">Name</th>
+                          <th class="mdl-cell--hide-phone">Uploader</th>
+                          <th class="mdl-cell--hide-phone mdl-cell--hide-tablet">Upload date</th>
+                          <th class="mdl-cell--hide-phone">Size</th>
+                          <th>Price</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored mdl-button--icon"><i class="material-icons mdl-icon-toggle">play_circle_filled</i></button>
+                          </td>
+                          <td>Super cool video</td>
+                          <td class="mdl-cell--hide-phone">Maria Mary</td>
+                          <td class="mdl-cell--hide-phone mdl-cell--hide-tablet">9/04/2017 7:00am</td>
+                          <td class="mdl-cell--hide-phone">1 GB</td>
+                          <td>$50</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored mdl-button--icon"><i class="material-icons mdl-icon-toggle">play_circle_filled</i></button>
+                          </td>
+                          <td>Birds</td>
+                          <td class="mdl-cell--hide-phone">Peter Gabriel</td>
+                          <td class="mdl-cell--hide-phone mdl-cell--hide-tablet">9/04/2017 7:00am</td>
+                          <td class="mdl-cell--hide-phone">1 GB</td>
+                          <td>$50</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored mdl-button--icon"><i class="material-icons mdl-icon-toggle">play_circle_filled</i></button>
+                          </td>
+                          <td>Streets</td>
+                          <td class="mdl-cell--hide-phone">James Hetfield</td>
+                          <td class="mdl-cell--hide-phone mdl-cell--hide-tablet">9/04/2017 7:00am</td>
+                          <td class="mdl-cell--hide-phone">1 GB</td>
+                          <td>$50</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored mdl-button--icon"><i class="material-icons mdl-icon-toggle">play_circle_filled</i></button>
+                          </td>
+                          <td>Planet</td>
+                          <td class="mdl-cell--hide-phone">Peter Gio</td>
+                          <td class="mdl-cell--hide-phone mdl-cell--hide-tablet">9/04/2017 7:00pm</td>
+                          <td class="mdl-cell--hide-phone">1 GB</td>
+                          <td>$50</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored mdl-button--icon"><i class="material-icons mdl-icon-toggle">play_circle_filled</i></button>
+                          </td>
+                          <td>Sport</td>
+                          <td class="mdl-cell--hide-phone">Laura Lenx</td>
+                          <td class="mdl-cell--hide-phone mdl-cell--hide-tablet">9/04/2017 5:20pm</td>
+                          <td class="mdl-cell--hide-phone">1 GB</td>
+                          <td>$50</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored mdl-button--icon"><i class="material-icons mdl-icon-toggle">play_circle_filled</i></button>
+                          </td>
+                          <td>Parade</td>
+                          <td class="mdl-cell--hide-phone">Nick Cave</td>
+                          <td class="mdl-cell--hide-phone mdl-cell--hide-tablet">9/04/2017 7:00am</td>
+                          <td class="mdl-cell--hide-phone">1 GB</td>
+                          <td>$50</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored mdl-button--icon"><i class="material-icons mdl-icon-toggle">play_circle_filled</i></button>
+                          </td>
+                          <td>Shopping</td>
+                          <td class="mdl-cell--hide-phone">Jimmie Hendrix</td>
+                          <td class="mdl-cell--hide-phone mdl-cell--hide-tablet">12/04/2017 11:50am</td>
+                          <td class="mdl-cell--hide-phone">1 GB</td>
+                          <td>$50</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored mdl-button--icon"><i class="material-icons mdl-icon-toggle">play_circle_filled</i></button>
+                          </td>
+                          <td>Casual</td>
+                          <td class="mdl-cell--hide-phone">Karl Keyn</td>
+                          <td class="mdl-cell--hide-phone mdl-cell--hide-tablet">12/04/2017 11:00am</td>
+                          <td class="mdl-cell--hide-phone">1 GB</td>
+                          <td>$50</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored mdl-button--icon"><i class="material-icons mdl-icon-toggle">play_circle_filled</i></button>
+                          </td>
+                          <td>Transport</td>
+                          <td class="mdl-cell--hide-phone">Nora Johnes</td>
+                          <td class="mdl-cell--hide-phone mdl-cell--hide-tablet">9/04/2017 7:00am</td>
+                          <td class="mdl-cell--hide-phone">1 GB</td>
+                          <td>$50</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="mdl-tabs__panel" id="lannisters-panel"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
