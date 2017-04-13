@@ -1,0 +1,16 @@
+- var page_title = 'Report'
+
+include templates/layout
+  .mdl-tabs.mdl-js-tabs.mdl-js-ripple-effect
+    .mdl-tabs__tab-bar
+      a.mdl-tabs__tab.is-active(href='#finances') Finances
+      a.mdl-tabs__tab(href='#orders') Orders
+      a.mdl-tabs__tab(href='#videos') Videos
+      a.mdl-tabs__tab(href='#visitors') Visitors
+      a.mdl-tabs__tab(href='#moderators') Moderators
+      a.mdl-tabs__tab(href='#storage') Storage
+    #finances.mdl-tabs__panel.is-active
+      .mdl-grid
+        .mdl-cell
+        button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect(style='position: absolute; right: 26px; top: 72px')  Download pdf 
+          

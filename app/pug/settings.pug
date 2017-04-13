@@ -1,0 +1,14 @@
+- var page_title = 'Settings'
+
+include templates/layout
+
+  .mdl-tabs.mdl-js-tabs.mdl-js-ripple-effect
+    .mdl-tabs__tab-bar
+      a.mdl-tabs__tab.is-active(href='#general') General
+      a.mdl-tabs__tab(href='#users') Users
+      a.mdl-tabs__tab(href='#moderators') Moderators
+      a.mdl-tabs__tab(href='#myAccount') My account
+    #finances.mdl-tabs__panel.is-active
+      .mdl-grid
+        .mdl-cell
+          
