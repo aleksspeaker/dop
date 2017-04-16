@@ -9,6 +9,14 @@ mixin videos(name, person, date, gigs, price)
               td.mdl-cell--hide-phone #{gigs}
               td #{price}
 
+mixin category(name, number)
+            tr
+              td.table-icons.mdl-data-table__cell--non-numeric
+                button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--colored.mdl-button--icon
+                  i.material-icons.mdl-icon-toggle folder
+              td.mdl-data-table__cell--non-numeric #{name}
+              td #{number}
+
 - var page_title = 'Content'
 
 include templates/layout
@@ -18,8 +26,8 @@ include templates/layout
       |  
       a.mdl-tabs__tab(href='#categories-table') Categories
     #videos-table.mdl-tabs__panel.is-active
-      .mdl-grid
-        .vid-sort-controls.mdl-cell.mdl-cell--12-col
+      .mdl-grid.content
+        .controls.mdl-cell.mdl-cell--12-col.mdl-grid
           form#category-form(action='#')
             .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.getmdl-select.getmdl-select__fullwidth
               input#sample1.mdl-textfield__input(type='text', value='', readonly='', tabindex='-1', style='cursor: pointer;', size='25')
@@ -32,7 +40,7 @@ include templates/layout
                 li.mdl-menu__item(onclick="document.getElementById('sample1').value='Cars'; document.getElementById('selCatLabel').innerHTML=''") Cars
                 li.mdl-menu__item(onclick="document.getElementById('sample1').value='Pedestrians'; document.getElementById('selCatLabel').innerHTML=''") Pedestrians
           | &nbsp
-          .mdl-cell.pub-checkbox
+          .mdl-cell
             label.mdl-radio.mdl-js-radio.mdl-js-ripple-effect(for='option-1')
               input#option-1.mdl-radio__button(type='radio', name='options', value='1', checked='')
               |  
@@ -62,4 +70,38 @@ include templates/layout
               +videos('Shopping', 'Jimmie Hendrix', '12/04/2017 11:50am', '1 GB', '$50')
               +videos('Casual', 'Karl Keyn', '12/04/2017 11:00am', '1 GB', '$50')
               +videos('Transport', 'Nora Johnes', '9/04/2017 7:00am', '1 GB', '$50')
-    #lannisters-panel.mdl-tabs__panel
+
+
+
+
+
+    #categories-table.mdl-tabs__panel
+      .mdl-grid.content
+        .controls.mdl-cell.mdl-cell--12-col.mdl-grid
+          .mdl-cell
+            label.mdl-radio.mdl-js-radio.mdl-js-ripple-effect(for='option-1')
+              input#option-1.mdl-radio__button(type='radio', name='options', value='1', checked='')
+              |  
+              span.mdl-radio__label Published
+            |  &nbsp 
+            label.mdl-radio.mdl-js-radio.mdl-js-ripple-effect(for='option-2')
+              input#option-2.mdl-radio__button(type='radio', name='options', value='2')
+              |  
+              span.mdl-radio__label Unpublished
+        .mdl-cell.mdl-cell--12-col
+          table#content-table.mdl-data-table.mdl-js-data-table.mdl-shadow--2dp
+            thead
+              tr
+                th.table-icons.mdl-data-table__cell--non-numeric 
+                th.mdl-data-table__cell--non-numeric Name
+                th Number of videos
+            tbody
+              +category('Animals', '237')
+              +category('Birds', '652')
+              +category('Streets', '762')
+              +category('Sky', '854')
+              +category('Sport', '163')
+              +category('Crowd', '274')
+              +category('Shopping', '234')
+              +category('Casual', '2345')
+              +category('Transport', '123')

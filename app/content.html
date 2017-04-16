@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="js/script.js"></script>
+    <script src="js/dialog-polyfill.js"></script>
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script defer="" src="https://cdn.rawgit.com/CreativeIT/getmdl-select/master/getmdl-select.min.js"></script>
+    <script src="js/script.js"></script>
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-indigo.min.css">
     <title>Dopcine Admin Panel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdn.rawgit.com/CreativeIT/getmdl-select/master/getmdl-select.min.css">
+    <link rel="stylesheet" type="text/css" href="css/dialog-polyfill.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
@@ -34,8 +36,8 @@
             <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
               <div class="mdl-tabs__tab-bar"><a class="mdl-tabs__tab is-active" href="#videos-table">Videos</a> <a class="mdl-tabs__tab" href="#categories-table">Categories</a></div>
               <div class="mdl-tabs__panel is-active" id="videos-table">
-                <div class="mdl-grid">
-                  <div class="vid-sort-controls mdl-cell mdl-cell--12-col">
+                <div class="mdl-grid content">
+                  <div class="controls mdl-cell mdl-cell--12-col mdl-grid">
                     <form id="category-form" action="#">
                       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fullwidth">
                         <input class="mdl-textfield__input" id="sample1" type="text" value="" readonly="" tabindex="-1" style="cursor: pointer;" size="25"> 
@@ -49,7 +51,7 @@
                         </ul>
                       </div>
                     </form>&nbsp
-                    <div class="mdl-cell pub-checkbox">
+                    <div class="mdl-cell">
                       <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
                         <input class="mdl-radio__button" id="option-1" type="radio" name="options" value="1" checked=""> <span class="mdl-radio__label">Published</span>
                       </label> &nbsp 
@@ -166,7 +168,96 @@
                   </div>
                 </div>
               </div>
-              <div class="mdl-tabs__panel" id="lannisters-panel"></div>
+              <div class="mdl-tabs__panel" id="categories-table">
+                <div class="mdl-grid content">
+                  <div class="controls mdl-cell mdl-cell--12-col mdl-grid">
+                    <div class="mdl-cell">
+                      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+                        <input class="mdl-radio__button" id="option-1" type="radio" name="options" value="1" checked=""> <span class="mdl-radio__label">Published</span>
+                      </label> &nbsp 
+                      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+                        <input class="mdl-radio__button" id="option-2" type="radio" name="options" value="2"> <span class="mdl-radio__label">Unpublished</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="mdl-cell mdl-cell--12-col">
+                    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" id="content-table">
+                      <thead>
+                        <tr>
+                          <th class="table-icons mdl-data-table__cell--non-numeric"> </th>
+                          <th class="mdl-data-table__cell--non-numeric">Name</th>
+                          <th>Number of videos</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="table-icons mdl-data-table__cell--non-numeric">
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored mdl-button--icon"><i class="material-icons mdl-icon-toggle">folder</i></button>
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric">Animals</td>
+                          <td>237</td>
+                        </tr>
+                        <tr>
+                          <td class="table-icons mdl-data-table__cell--non-numeric">
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored mdl-button--icon"><i class="material-icons mdl-icon-toggle">folder</i></button>
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric">Birds</td>
+                          <td>652</td>
+                        </tr>
+                        <tr>
+                          <td class="table-icons mdl-data-table__cell--non-numeric">
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored mdl-button--icon"><i class="material-icons mdl-icon-toggle">folder</i></button>
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric">Streets</td>
+                          <td>762</td>
+                        </tr>
+                        <tr>
+                          <td class="table-icons mdl-data-table__cell--non-numeric">
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored mdl-button--icon"><i class="material-icons mdl-icon-toggle">folder</i></button>
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric">Sky</td>
+                          <td>854</td>
+                        </tr>
+                        <tr>
+                          <td class="table-icons mdl-data-table__cell--non-numeric">
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored mdl-button--icon"><i class="material-icons mdl-icon-toggle">folder</i></button>
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric">Sport</td>
+                          <td>163</td>
+                        </tr>
+                        <tr>
+                          <td class="table-icons mdl-data-table__cell--non-numeric">
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored mdl-button--icon"><i class="material-icons mdl-icon-toggle">folder</i></button>
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric">Crowd</td>
+                          <td>274</td>
+                        </tr>
+                        <tr>
+                          <td class="table-icons mdl-data-table__cell--non-numeric">
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored mdl-button--icon"><i class="material-icons mdl-icon-toggle">folder</i></button>
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric">Shopping</td>
+                          <td>234</td>
+                        </tr>
+                        <tr>
+                          <td class="table-icons mdl-data-table__cell--non-numeric">
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored mdl-button--icon"><i class="material-icons mdl-icon-toggle">folder</i></button>
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric">Casual</td>
+                          <td>2345</td>
+                        </tr>
+                        <tr>
+                          <td class="table-icons mdl-data-table__cell--non-numeric">
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored mdl-button--icon"><i class="material-icons mdl-icon-toggle">folder</i></button>
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric">Transport</td>
+                          <td>123</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

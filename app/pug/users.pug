@@ -1,6 +1,6 @@
 mixin messages(photo, person, location, orders, spent)
             tr
-              td.mdl-data-table__cell--non-numeric
+              td.table-icons.mdl-data-table__cell--non-numeric
                 span.mdl-list__item-primary-content
                   img.material-icons.mdl-list__item-avatar(src=photo)
               td.mdl-data-table__cell--non-numeric #{person}
@@ -8,6 +8,11 @@ mixin messages(photo, person, location, orders, spent)
               td.mdl-data-table__cell--non-numeric #{orders}
               td #{spent}
 
+mixin fields(fieldName, value, id)
+            form(action='#')
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input.mdl-textfield__input(id=id type='text' value=value)
+              label.mdl-textfield__label(for=id) #{fieldName}
 
 - var page_title = 'Users'
 
@@ -20,21 +25,24 @@ include templates/layout
       a.mdl-tabs__tab(href='#admins') Admins
     #customers.mdl-tabs__panel.is-active
       .mdl-grid
-        .mdl-cell.pub-checkbox
-          label.mdl-radio.mdl-js-radio.mdl-js-ripple-effect(for='option-1')
-            input#option-1.mdl-radio__button(type='radio', name='options', value='1', checked='')
-            |  
-            span.mdl-radio__label Active
-          label.mdl-radio.mdl-js-radio.mdl-js-ripple-effect(for='option-2')
-            input#option-2.mdl-radio__button(type='radio', name='options', value='2')
-            |  
-            span.mdl-radio__label Blocked  
-        button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect(style='position: absolute; right: 26px; top: 72px')  New user     
+        .controls.mdl-cell.mdl-cell--12-col.mdl-grid
+          .mdl-cell
+            label.mdl-radio.mdl-js-radio.mdl-js-ripple-effect(for='option-1')
+              input#option-1.mdl-radio__button(type='radio', name='options', value='1', checked='')
+              |  
+              span.mdl-radio__label Active
+            label.mdl-radio.mdl-js-radio.mdl-js-ripple-effect(for='option-2')
+              input#option-2.mdl-radio__button(type='radio', name='options', value='2')
+              |  
+              span.mdl-radio__label Blocked  
+          
+          button.mdl-button.show-modal.dialog-buttonmdl-js-button.mdl-button--raised.mdl-js-ripple-effect  New user     
         .mdl-cell.mdl-cell--12-col
+
           table#messages-table.mdl-data-table.mdl-js-data-table
             thead
               tr
-                th 
+                th.table-icons 
                 th Name
                 th Location
                 th Orders
@@ -47,4 +55,78 @@ include templates/layout
               +messages('images/photo.jpg', 'Faik Geci', 'Amsterdam', '37', '5768 EUR')
               +messages('images/photo.jpg', 'Faik Geci', 'Amsterdam', '37', '5768 EUR')
               +messages('images/photo.jpg', 'Faik Geci', 'Amsterdam', '37', '5768 EUR')
-    
+      
+      
+          // ADD NEW USER DIALOG
+    dialog.mdl-dialog
+      .mdl-dialog__content.mdl-grid
+        h4.mdl-cell.mdl-cell--12-col Create new user
+        .mdl-cell.mdl-cell--6-col
+          +fields('User name', 'John Smith', 'input1')
+          +fields('Email', 'johnsmith@gmail.com','input2')
+          +fields('Company', 'Multicora','input3')
+          +fields('Country', 'Ukraine','input4')
+          +fields('City', 'Lviv','input5')
+        .mdl-cell.mdl-cell--6-col
+          // AVATAR
+          .userphoto
+            .mdl-list__item-avatar
+              span.mdl-list__item-primary-content
+                i.material-icons.mdl-list__item-avatar account_circle
+            button.mdl-button.mdl-js-button.mdl-js-ripple-effect Upload Photo
+          // END OF AVATAR
+
+          // ZIPCODE
+          form(action='#')
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input#sample4.mdl-textfield__input(type='text', pattern='-?[0-9]*(\.[0-9]+)?')
+              label.mdl-textfield__label(for='sample4') Zip Code
+              span.mdl-textfield__error Input is not a number!
+          // END OF ZIPCODE
+
+          +fields('Address', '','input6')
+          +fields('Address2', '','input7')
+          
+          // SEND INVITE CHECKBOX
+          label.send-email-checkbox.mdl-checkbox.mdl-js-checkbox.mdl-js-ripple-effect(for='checkbox-1')
+            input#checkbox-1.mdl-checkbox__input(type='checkbox', checked)
+            span.mdl-checkbox__label Send invitational email
+          // END OF SEND INVITE CHECKBOX
+
+
+      .mdl-dialog__actions
+        button#demo-show-toast.mdl-button.mdl-js-button.mdl-button--colored(type='button') Create
+        #demo-toast-example.mdl-js-snackbar.mdl-snackbar
+          .mdl-snackbar__text
+          button.mdl-snackbar__action(type='button')
+        //- button.mdl-button.mdl-button--colored(type='button') Create
+        button.mdl-button.close(type='button') Cancel
+    br
+// END OF CHANGE PASSWORD
+// DIALOG SCRIPT
+script.
+  var dialog = document.querySelector('dialog');
+  var showModalButton = document.querySelector('.show-modal');
+  if (! dialog.showModal) {
+  dialogPolyfill.registerDialog(dialog);
+  }
+  showModalButton.addEventListener('click', function() {
+  dialog.showModal();
+  });
+  dialog.querySelector('.close').addEventListener('click', function() {
+  dialog.close();
+  });
+// 'USER CREATED' MESSAGE SCRIPT
+script.
+  (function() {
+  'use strict';
+  window['counter'] = 0;
+  var snackbarContainer = document.querySelector('#demo-toast-example');
+  var showToastButton = document.querySelector('#demo-show-toast');
+  showToastButton.addEventListener('click', function() {
+  'use strict';
+  var data = {message: 'User created successfully!'};
+  snackbarContainer.MaterialSnackbar.showSnackbar(data);
+  });
+  }());        
+
