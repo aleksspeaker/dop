@@ -32,8 +32,8 @@ html
           a.mdl-navigation__link(href='') Link
           a.mdl-navigation__link(href='') Link
       main.mdl-layout__content
-      video.fullscreen(preload autoplay loop muted id="video")
-        source(src="../videos/street.mp4")
+      video.fullscreen(preload autoplay loop muted volume="0" id="video")
+        source(src="./videos/street.mp4")
     script.
       setTimeout(function(){
         document.getElementById('video').play();
