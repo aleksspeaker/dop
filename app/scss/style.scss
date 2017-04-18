@@ -243,3 +243,33 @@ table#messages-table{
 .send-email-checkbox {
   margin-top: 16px;
 }
+
+
+
+
+/*FRONT PAGE*/
+
+.demo-layout-transparent {
+  background: center / cover rgba(0,0,0,0);
+}
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
+  /* This background is dark, so we set text to white. Use 87% black instead if
+     your background is light. */
+  color: white;
+}
+
+video.fullscreen { 
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translate(-50%, -50%);
+}
+
+
+/*END OF FRONT PAGE*/
