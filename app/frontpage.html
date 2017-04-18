@@ -4,6 +4,7 @@
     <!-- Material Design Lite-->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <!-- Material Design icon font-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -14,7 +15,7 @@
     <div class="demo-layout-transparent mdl-layout mdl-js-layout">
       <header class="mdl-layout__header mdl-layout__header--transparent">
         <div class="mdl-layout__header-row">
-          <!-- Title--><span class="mdl-layout-title">Title</span>
+          <!-- Title--><span class="mdl-layout-title">DopCine</span>
           <!-- Add spacer, to align navigation to the right-->
           <div class="mdl-layout-spacer"></div>
           <!-- Navigation-->
@@ -24,7 +25,19 @@
       <div class="mdl-layout__drawer"><span class="mdl-layout-title">Title</span>
         <nav class="mdl-navigation"><a class="mdl-navigation__link" href="">Link</a><a class="mdl-navigation__link" href="">Link</a><a class="mdl-navigation__link" href="">Link</a><a class="mdl-navigation__link" href="">Link</a></nav>
       </div>
-      <main class="mdl-layout__content"></main>
+      <main class="mdl-layout__content">
+        <!-- SEARCH-->
+        <div class="mdl-grid title-container">
+          <div class="mdl-cell mdl-cell--12-col bigtitle"> 4k and FullHD stock videos</div>
+        </div>
+        <div class="mdl-grid searchbar">
+          <div class="mdh-expandable-search"><i class="material-icons">search</i>
+            <form action="#">
+              <input type="text" placeholder="Search" size="1">
+            </form>
+          </div>
+        </div>
+      </main>
       <video class="fullscreen" preload autoplay loop muted volume="0" id="video">
         <source src="./videos/street.mp4">
       </video>
