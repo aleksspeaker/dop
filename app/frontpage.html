@@ -13,12 +13,20 @@
   <body>
     <!-- Uses a transparent header that draws on top of the layout's background-->
     <div class="demo-layout-transparent mdl-layout mdl-js-layout">
-      <header class="mdl-layout__header mdl-layout__header--transparent">
+      <header class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--waterfall">
         <div class="mdl-layout__header-row">
-          <!-- Title--><span class="mdl-layout-title">DopCine</span>
+          <!-- Title--><img class="mdl-layout-title" src="./images/dopcine_logo_white.svg" width="100px">
           <!-- Add spacer, to align navigation to the right-->
           <div class="mdl-layout-spacer"></div>
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="sell-button"><i class="material-icons">file_upload</i> Sell video</button>
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="signin-button">sign in</button>
+          <div class="mdl-badge mdl-badge--overlap" data-badge="1">
+            <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="cart-button"><i class="material-icons">shopping_cart</i></button>
+          </div>
           <!-- Navigation-->
+        </div>
+        <div class="mdl-layout__header-row">
+          <div class="mdl-layout-spacer"></div>
           <nav class="mdl-navigation"><a class="mdl-navigation__link" href="">Link</a><a class="mdl-navigation__link" href="">Link</a><a class="mdl-navigation__link" href="">Link</a><a class="mdl-navigation__link" href="">Link</a></nav>
         </div>
       </header>
@@ -37,15 +45,11 @@
             </form>
           </div>
         </div>
+        <div style="height: 1000px;"></div>
       </main>
-      <video class="fullscreen" preload autoplay loop muted volume="0" id="video">
-        <source src="./videos/street.mp4">
-      </video>
     </div>
-    <script>
-      setTimeout(function(){
-        document.getElementById('video').play();
-      },2000);
-    </script>
+    <video class="fullscreen" preload autoplay loop muted volume="0" id="video">
+      <source src="./videos/street.mp4">
+    </video>
   </body>
 </html>

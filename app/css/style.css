@@ -203,6 +203,20 @@ table#messages-table {
   margin-top: 16px; }
 
 /*FRONT PAGE*/
+#sell-button {
+  color: white; }
+
+#signin-button {
+  color: white; }
+
+#cart-button {
+  color: white; }
+  #cart-button .mdl-badge, #cart-button .mdl-badge--overlap {
+    z-index: 2000; }
+
+.demo-layout-waterfall .mdl-layout__header-row .mdl-navigation__link:last-of-type {
+  padding-right: 0; }
+
 .demo-layout-transparent {
   background: rgba(0, 0, 0, 0.41); }
 
