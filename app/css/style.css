@@ -261,7 +261,7 @@ video.fullscreen {
     margin-left: -32px; }
     #often-searches-list ul li {
       display: inline-flex;
-      margin-right: 8px;
+      margin-right: 16px;
       font-size: 18px; }
       #often-searches-list ul li a {
         text-decoration: none;
