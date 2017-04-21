@@ -40,18 +40,32 @@ html
           a.mdl-navigation__link(href='') Link
           a.mdl-navigation__link(href='') Link
       main.mdl-layout__content
-        // SEARCH
-
+        
+        // TITLE
         .mdl-grid.title-container
           .mdl-cell.mdl-cell--12-col.bigtitle!= '4k and FullHD' + ' stock' + '&nbsp' + 'videos'
+        // SEARCH
         .mdl-grid.searchbar
           .mdh-expandable-search
                   i.material-icons search
                   form(action='#')
                     input(type='text', placeholder='Search', size='1')
+        // OFTEN SEARCHES
+        .often-searches-container.mdl-grid
+          span#often-searches-title.mdl-cell.mdl-cell--12-col  Popular searches:
+          span#often-searches-list.mdl-cell.mdl-cell--12-col
+            ul
+              li
+                a(href="#") birds
+              li
+                a(href="#") animals
+              li
+                a(href="#") cars
+
+        // DUMMY DIV    
         div(style="height: 1000px; background: rgba(255,255,250,1); margin-top: 50vh;")
 
-    video#video.fullscreen(preload autoplay muted volume="0")
+    video#video.fullscreen(preload muted volume="0") //autoplay temporary disabled
       source(src="./videos/river.mp4")
       
 

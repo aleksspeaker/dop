@@ -308,7 +308,42 @@ video.fullscreen {
 }
 
 
+.often-searches-container {
+  padding-left: 0;
+  color: white;
+  width: 100vw;
+  
+}
 
+#often-searches-title {
+  font-size: 24px;
+  text-align: center;
+  font-weight: 100;
+  margin-bottom: 0;
+}
+
+#often-searches-list {
+  margin-top: 0;
+  
+  text-align: center;
+  ul {
+    list-style-type: none;
+    margin-left: -32px;
+    li {
+      display: inline-flex;
+      margin-right: 8px;
+      font-size: 18px;
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      a:hover {
+        text-decoration: underline;
+        color: default;
+      }
+    }
+  }
+}
 
 .bigtitle {
   margin-top: 15vh;

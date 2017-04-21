@@ -35,10 +35,11 @@
         <nav class="mdl-navigation"><a class="mdl-navigation__link" href="">Link</a><a class="mdl-navigation__link" href="">Link</a><a class="mdl-navigation__link" href="">Link</a><a class="mdl-navigation__link" href="">Link</a></nav>
       </div>
       <main class="mdl-layout__content">
-        <!-- SEARCH-->
+        <!-- TITLE-->
         <div class="mdl-grid title-container">
           <div class="mdl-cell mdl-cell--12-col bigtitle">4k and FullHD stock&nbspvideos</div>
         </div>
+        <!-- SEARCH-->
         <div class="mdl-grid searchbar">
           <div class="mdh-expandable-search"><i class="material-icons">search</i>
             <form action="#">
@@ -46,10 +47,18 @@
             </form>
           </div>
         </div>
+        <!-- OFTEN SEARCHES-->
+        <div class="often-searches-container mdl-grid"><span class="mdl-cell mdl-cell--12-col" id="often-searches-title"> Popular searches:</span><span class="mdl-cell mdl-cell--12-col" id="often-searches-list">
+            <ul>
+              <li><a href="#">birds</a></li>
+              <li><a href="#">animals</a></li>
+              <li><a href="#">cars</a></li>
+            </ul></span></div>
+        <!-- DUMMY DIV    -->
         <div style="height: 1000px; background: rgba(255,255,250,1); margin-top: 50vh;"></div>
       </main>
     </div>
-    <video class="fullscreen" id="video" preload autoplay muted volume="0">
+    <video class="fullscreen" id="video" preload muted volume="0">//autoplay temporary disabled
       <source src="./videos/river.mp4">
     </video>
     <script>
