@@ -307,9 +307,8 @@ video.fullscreen {
 
 }
 
-@media screen {
-  
-}
+
+
 
 .bigtitle {
   margin-top: 15vh;
@@ -318,10 +317,26 @@ video.fullscreen {
   font-size: 80px;
   font-weight: 100;
   text-align: center;
-
+  line-height: 3rem;
 }
 
-
+@media only screen and (max-width: 1024px) {
+    .bigtitle {
+        font-size: 60px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .bigtitle {
+        font-size: 50px;
+        line-height: 3rem;
+    }
+}
+@media only screen and (max-width: 425px) {
+    .bigtitle {
+        font-size: 40px;
+        line-height: 3rem;
+    }
+}
 /*SEARCH BAR*/
 
 /* TODO: Hover and Focus state.
