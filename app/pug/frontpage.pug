@@ -31,9 +31,8 @@ include templates/website-layout
     div(style="height: 1000px; background: rgba(255,255,250,1); margin-top: 50vh;")
       .medium-title Latest footage
 
-video#video.fullscreen(preload  muted volume="0") //autoplay
+video#video.fullscreen(preload autoplay muted volume="0") //autoplay
   source(src="./videos/river.mp4")
-  
 
 script.
   var myvid = document.getElementById('video');
