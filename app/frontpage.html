@@ -11,76 +11,78 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
-  <body>
-    <!-- Uses a transparent header that draws on top of the layout's background-->
-    <div class="demo-layout-transparent mdl-layout mdl-js-layout">
-      <header class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--waterfall">
-        <div class="mdl-layout__header-row">
-          <!-- Title--><img class="mdl-layout-title" src="./images/dopcine_logo_white.svg" width="100px">
-          <!-- Add spacer, to align navigation to the right-->
-          <div class="mdl-layout-spacer"></div>
-          <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="sell-button"><i class="material-icons">file_upload</i> Sell video</button>
-          <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="signin-button">sign in</button>
-          <div class="mdl-badge mdl-badge--overlap" data-badge="1">
-            <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="cart-button"><i class="material-icons">shopping_cart</i></button>
-          </div>
-          <!-- Navigation-->
+</html>
+<body>
+  <!-- Uses a transparent header that draws on top of the layout's background-->
+  <div class="demo-layout-transparent mdl-layout mdl-js-layout">
+    <header class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--waterfall">
+      <div class="mdl-layout__header-row">
+        <!-- Title--><img class="mdl-layout-title" src="./images/dopcine_logo_white.svg" width="100px">
+        <!-- Add spacer, to align navigation to the right-->
+        <div class="mdl-layout-spacer"></div>
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="sell-button"><i class="material-icons">file_upload</i> Sell video</button>
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="signin-button">sign in</button>
+        <div class="mdl-badge mdl-badge--overlap" data-badge="1">
+          <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="cart-button"><i class="material-icons">shopping_cart</i></button>
         </div>
-        <div class="mdl-layout__header-row">
-          <div class="mdl-layout-spacer"></div>
-          <nav class="mdl-navigation"><a class="mdl-navigation__link" href="">Latest footage</a><a class="mdl-navigation__link" href="">Categories</a></nav>
-        </div>
-      </header>
-      <div class="mdl-layout__drawer"><span class="mdl-layout-title">Meny</span>
+        <!-- Navigation-->
+      </div>
+      <div class="mdl-layout__header-row">
+        <div class="mdl-layout-spacer"></div>
         <nav class="mdl-navigation"><a class="mdl-navigation__link" href="">Latest footage</a><a class="mdl-navigation__link" href="">Categories</a></nav>
       </div>
-      <main class="mdl-layout__content">
-        <!-- TITLE-->
-        <div class="mdl-grid title-container">
-          <div class="mdl-cell mdl-cell--12-col bigtitle">4k and FullHD stock&nbspvideos</div>
-        </div>
-        <!-- SEARCH-->
-        <div class="mdl-grid searchbar">
-          <div class="mdh-expandable-search"><i class="material-icons">search</i>
-            <form action="#">
-              <input type="text" placeholder="Search" size="1">
-            </form>
-          </div>
-        </div>
-        <!-- OFTEN SEARCHES-->
-        <div class="often-searches-container mdl-grid"><span class="mdl-cell mdl-cell--12-col" id="often-searches-title"> Popular searches:</span><span class="mdl-cell mdl-cell--12-col" id="often-searches-list">
-            <ul>
-              <li><a href="#">street</a></li>
-              <li><a href="#">sky</a></li>
-              <li><a href="#">animals</a></li>
-              <li><a href="#">cars</a></li>
-              <li><a href="#">New York</a></li>
-            </ul></span></div>
-        <!-- DUMMY DIV    -->
-        <div style="height: 1000px; background: rgba(255,255,250,1); margin-top: 50vh;"></div>
-      </main>
+    </header>
+    <div class="mdl-layout__drawer"><span class="mdl-layout-title">Meny</span>
+      <nav class="mdl-navigation"><a class="mdl-navigation__link" href="">Latest footage</a><a class="mdl-navigation__link" href="">Categories</a></nav>
     </div>
-    <video class="fullscreen" id="video" preload autoplay muted volume="0">
-      <source src="./videos/river.mp4">
-    </video>
-    <script>
-      var myvid = document.getElementById('video');
-      var myvids = [
-        "./videos/river.mp4", 
-        "./videos/plant.mp4",
-        "./videos/bubble.mp4",
-        "./videos/street.mp4"
-        ];
-      var activeVideo = 0;
-      
-      myvid.addEventListener('ended', function(e) {
-        // update the new active video index
-        activeVideo = (++activeVideo) % myvids.length;
-      
-        // update the video source and play
-        myvid.src = myvids[activeVideo];
-        myvid.play();
-      });
-    </script>
-  </body>
-</html>
+    <main class="mdl-layout__content">
+      <!-- TITLE-->
+      <div class="mdl-grid title-container">
+        <div class="mdl-cell mdl-cell--12-col bigtitle">4k and FullHD stock&nbspvideos</div>
+      </div>
+      <!-- SEARCH-->
+      <div class="mdl-grid searchbar">
+        <div class="mdh-expandable-search"><i class="material-icons">search</i>
+          <form action="#">
+            <input type="text" placeholder="Search" size="1">
+          </form>
+        </div>
+      </div>
+      <!-- OFTEN SEARCHES-->
+      <div class="often-searches-container mdl-grid"><span class="mdl-cell mdl-cell--12-col" id="often-searches-title"> Popular searches:</span><span class="mdl-cell mdl-cell--12-col" id="often-searches-list">
+          <ul>
+            <li><a href="#">street</a></li>
+            <li><a href="#">sky</a></li>
+            <li><a href="#">animals</a></li>
+            <li><a href="#">cars</a></li>
+            <li><a href="#">New York</a></li>
+          </ul></span></div>
+      <!-- CATEGORIES-->
+      <div style="height: 1000px; background: rgba(255,255,250,1); margin-top: 50vh;">
+        <div class="medium-title">Latest footage</div>
+      </div>
+    </main>
+  </div>
+</body>
+<video class="fullscreen" id="video" preload muted volume="0">//autoplay
+  <source src="./videos/river.mp4">
+</video>
+<script>
+  var myvid = document.getElementById('video');
+  var myvids = [
+    "./videos/river.mp4", 
+    "./videos/plant.mp4",
+    "./videos/bubble.mp4",
+    "./videos/street.mp4"
+    ];
+  var activeVideo = 0;
+  
+  myvid.addEventListener('ended', function(e) {
+    // update the new active video index
+    activeVideo = (++activeVideo) % myvids.length;
+  
+    // update the video source and play
+    myvid.src = myvids[activeVideo];
+    myvid.play();
+  });
+</script>
