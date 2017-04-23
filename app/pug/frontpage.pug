@@ -26,12 +26,35 @@ include templates/website-layout
             a(href="#") cars
           li
             a(href="#") New York
+    
+
+    dialog.mdl-dialog
+      h4.mdl-dialog__title Shopping cart
+      .mdl-dialog__content
+        p
+          | Your shopping cart is empty.
+      .mdl-dialog__actions
+        button.mdl-button(type='button' disabled) proceed
+        button.mdl-button.close(type='button') continue shopping
+    script.
+      var dialog = document.querySelector('dialog');
+      var showDialogButton = document.querySelector('#show-dialog');
+      if (! dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+      }
+      showDialogButton.addEventListener('click', function() {
+      dialog.showModal();
+      });
+      dialog.querySelector('.close').addEventListener('click', function() {
+      dialog.close();
+      });
+
 
     // CATEGORIES
     div(style="height: 1000px; background: rgba(255,255,250,1); margin-top: 50vh;")
       .medium-title Latest footage
 
-video#video.fullscreen(preload autoplay muted volume="0") //autoplay
+video#video.fullscreen(preload muted volume="0") //autoplay off
   source(src="./videos/river.mp4")
 
 script.

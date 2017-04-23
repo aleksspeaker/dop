@@ -22,8 +22,8 @@
         <div class="mdl-layout-spacer"></div>
         <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="sell-button"><i class="material-icons">file_upload</i> Sell video</button>
         <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="signin-button">sign in</button>
-        <div class="mdl-badge mdl-badge--overlap" data-badge="1">
-          <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="cart-button"><i class="material-icons">shopping_cart</i></button>
+        <div class="mdl-badge mdl-badge--overlap" data-badge="4">
+          <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="show-dialog"><i class="material-icons">shopping_cart</i></button>
         </div>
         <!-- Navigation-->
       </div>
@@ -57,6 +57,31 @@
             <li><a href="#">cars</a></li>
             <li><a href="#">New York</a></li>
           </ul></span></div>
+      <dialog class="mdl-dialog">
+        <h4 class="mdl-dialog__title">Shopping cart</h4>
+        <div class="mdl-dialog__content">
+          <p>Your shopping cart is empty.</p>
+        </div>
+        <div class="mdl-dialog__actions">
+          <button class="mdl-button" type="button" disabled>proceed</button>
+          <button class="mdl-button close" type="button">continue shopping</button>
+        </div>
+      </dialog>
+      <script>
+        var dialog = document.querySelector('dialog');
+        var showDialogButton = document.querySelector('#show-dialog');
+        if (! dialog.showModal) {
+        dialogPolyfill.registerDialog(dialog);
+        }
+        showDialogButton.addEventListener('click', function() {
+        dialog.showModal();
+        });
+        dialog.querySelector('.close').addEventListener('click', function() {
+        dialog.close();
+        });
+        
+        
+      </script>
       <!-- CATEGORIES-->
       <div style="height: 1000px; background: rgba(255,255,250,1); margin-top: 50vh;">
         <div class="medium-title">Latest footage</div>
@@ -64,7 +89,7 @@
     </main>
   </div>
 </body>
-<video class="fullscreen" id="video" preload autoplay muted volume="0">//autoplay
+<video class="fullscreen" id="video" preload muted volume="0">//autoplay off
   <source src="./videos/river.mp4">
 </video>
 <script>
