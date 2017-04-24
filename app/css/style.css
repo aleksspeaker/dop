@@ -385,3 +385,6 @@ video.fullscreen {
   color: rgba(0, 0, 0, 0.87);
   text-align: center;
   line-height: 5rem; }
+
+.cart {
+  max-width: 600px; }

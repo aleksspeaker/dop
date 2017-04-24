@@ -15,14 +15,14 @@
 <body>
   <!-- Uses a transparent header that draws on top of the layout's background-->
   <div class="demo-layout-transparent mdl-layout mdl-js-layout">
-    <header class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--waterfall">
+    <header class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--waterfall" onscroll="document.getElementsByTagName('header').style.background = 'black'">
       <div class="mdl-layout__header-row">
         <!-- Title--><img class="mdl-layout-title" src="./images/dopcine_logo_white.svg" width="100px">
         <!-- Add spacer, to align navigation to the right-->
         <div class="mdl-layout-spacer"></div>
         <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="sell-button"><i class="material-icons">file_upload</i> Sell video</button>
         <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="signin-button">sign in</button>
-        <div class="mdl-badge mdl-badge--overlap" data-badge="4">
+        <div class="mdl-badge mdl-badge--overlap" data-badge="0">
           <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="show-dialog"><i class="material-icons">shopping_cart</i></button>
         </div>
         <!-- Navigation-->
@@ -57,13 +57,13 @@
             <li><a href="#">cars</a></li>
             <li><a href="#">New York</a></li>
           </ul></span></div>
-      <dialog class="mdl-dialog">
+      <dialog class="mdl-dialog cart">
         <h4 class="mdl-dialog__title">Shopping cart</h4>
         <div class="mdl-dialog__content">
           <p>Your shopping cart is empty.</p>
         </div>
         <div class="mdl-dialog__actions">
-          <button class="mdl-button" type="button" disabled>proceed</button>
+          <button class="mdl-button" type="button" disabled>checkout</button>
           <button class="mdl-button close" type="button">continue shopping</button>
         </div>
       </dialog>
@@ -83,8 +83,14 @@
         
       </script>
       <!-- CATEGORIES-->
-      <div style="height: 1000px; background: rgba(255,255,250,1); margin-top: 50vh;">
-        <div class="medium-title">Latest footage</div>
+      <div class="mdl-grid" style="background: rgba(255,255,250,1); margin-top: 50vh;">
+        <div class="medium-title mdl-cell mdl-cell--12-col">Latest footage
+          <!-- Image card-->
+        </div>
+        <div class="demo-card-image mdl-card mdl-shadow--2dp mdl-cell">
+          <div class="mdl-card__title mdl-card--expand"></div>
+          <div class="mdl-card__actions"><span class="demo-card-image__filename">Image.jpg</span></div>
+        </div>
       </div>
     </main>
   </div>
