@@ -226,7 +226,7 @@ table#messages-table {
      your background is light. */
   color: white; }
 
-video.fullscreen {
+video#video.fullscreen {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -388,3 +388,9 @@ video.fullscreen {
 
 .cart {
   max-width: 600px; }
+
+.latest-container {
+  margin-top: 50vh;
+  background: #fffffa; }
+  .latest-container .video-card {
+    width: 100%; }
