@@ -1,3 +1,15 @@
+mixin video (filename)
+  .mdl-cell.mdl-cell--4-col
+        .video-card.mdl-card.mdl-shadow--8dp
+          .mdl-card__media
+            video(preload="none" poster="./images/" + filename + ".png")
+              source(
+                src="./videos/" + filename + ".mp4")
+
+mixin searchword (href, word)
+    li
+      a(href=href) #{word}
+
 include templates/website-layout
   block main
     // TITLE
@@ -16,16 +28,11 @@ include templates/website-layout
       span#often-searches-title.mdl-cell.mdl-cell--12-col  Popular searches:
       span#often-searches-list.mdl-cell.mdl-cell--12-col
         ul
-          li
-            a(href="#") street
-          li
-            a(href="#") sky
-          li
-            a(href="#") animals
-          li
-            a(href="#") cars
-          li
-            a(href="#") New York
+          +searchword('#','street')
+          +searchword('#','sky')
+          +searchword('#','animals')
+          +searchword('#','cars')
+          +searchword('#','New York')
     
 
     dialog.mdl-dialog.cart
@@ -53,22 +60,12 @@ include templates/website-layout
     // CATEGORIES
     .latest-container.mdl-grid
       .medium-title.mdl-cell.mdl-cell--12-col Latest footage
-
-      .mdl-cell.mdl-cell--4-col
-        .video-card.mdl-card.mdl-shadow--8dp
-          .mdl-card__media
-            video
-              source(src="./videos/river.mp4")
-      .mdl-cell.mdl-cell--4-col
-        .video-card.mdl-card.mdl-shadow--8dp
-          .mdl-card__media
-            video
-              source(src="./videos/street.mp4")
-      .mdl-cell.mdl-cell--4-col
-        .video-card.mdl-card.mdl-shadow--8dp
-          .mdl-card__media
-            video
-              source(src="./videos/plant.mp4")
+      +video('plant')
+      +video('street')
+      +video('river')
+      +video('plant')
+      +video('street')
+      +video('river')
 
   script.
     var figure = $(".mdl-card__media").hover( hoverVideo, hideVideo );
@@ -80,7 +77,7 @@ include templates/website-layout
     }
 
 
-video#video.fullscreen( muted volume="0") //autoplay off
+video#video.fullscreen(autoplay muted volume="0") //autoplay off
   source(src="./videos/river.mp4")
 
 script.
