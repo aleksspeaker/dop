@@ -393,4 +393,9 @@ video#video.fullscreen {
   margin-top: 50vh;
   background: #fffffa; }
   .latest-container .video-card {
-    width: 100%; }
+    width: 100%;
+    transition: .1s; }
+  .latest-container .video-card:hover {
+    margin-left: -8px;
+    margin-top: -8px;
+    width: 103%; }

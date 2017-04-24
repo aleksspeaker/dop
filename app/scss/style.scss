@@ -481,5 +481,11 @@ video#video.fullscreen {
   background: rgba(255,255,250,1);
   .video-card {
     width: 100%;
+    transition: .1s;
+  }
+  .video-card:hover {
+    margin-left: -8px;
+    margin-top: -8px;
+    width: 103%;
   }
 }
