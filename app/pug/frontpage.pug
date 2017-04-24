@@ -57,17 +57,17 @@ include templates/website-layout
       .mdl-cell.mdl-cell--4-col
         .video-card.mdl-card.mdl-shadow--8dp
           .mdl-card__media
-            video(style="width: 100%")
+            video
               source(src="./videos/river.mp4")
       .mdl-cell.mdl-cell--4-col
         .video-card.mdl-card.mdl-shadow--8dp
           .mdl-card__media
-            video(style="width: 100%")
+            video
               source(src="./videos/street.mp4")
       .mdl-cell.mdl-cell--4-col
         .video-card.mdl-card.mdl-shadow--8dp
           .mdl-card__media
-            video(style="width: 100%")
+            video
               source(src="./videos/plant.mp4")
 
   script.
@@ -80,7 +80,7 @@ include templates/website-layout
     }
 
 
-video#video.fullscreen(autoplay muted volume="0") //autoplay off
+video#video.fullscreen( muted volume="0") //autoplay off
   source(src="./videos/river.mp4")
 
 script.
