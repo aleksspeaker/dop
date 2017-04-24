@@ -70,9 +70,17 @@ include templates/website-layout
             video(style="width: 100%")
               source(src="./videos/plant.mp4")
 
+  script.
+    var figure = $(".mdl-card__media").hover( hoverVideo, hideVideo );
+    function hoverVideo(e) {  
+        $('video', this).get(0).play(); 
+    }
+    function hideVideo(e) {
+        $('video', this).get(0).pause(); 
+    }
 
 
-video#video.fullscreen(preload autoplay muted volume="0") //autoplay off
+video#video.fullscreen(muted volume="0") //autoplay off
   source(src="./videos/river.mp4")
 
 script.
