@@ -1,10 +1,16 @@
-mixin video (filename)
+mixin video (filename, price)
   .mdl-cell.mdl-cell--4-col
         .video-card.mdl-card.mdl-shadow--8dp
           .mdl-card__media
             video(preload="none" poster="./images/" + filename + ".png")
               source(
                 src="./videos/" + filename + ".mp4")
+          .mdl-card__actions.mdl-card--border
+            span.price 27 EUR
+            .mdl-layout-spacer
+            button.mdl-button.mdl-js-button.mdl-button--icon
+              i.material-icons shopping_cart
+
 
 mixin searchword (href, word)
     li
