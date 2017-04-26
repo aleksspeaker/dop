@@ -24,6 +24,19 @@ mixin searchword (href, word)
     li
       a(href=href) #{word}
 
+mixin cart_item (filename, name, price, btn_id)
+  .cart-item.mdl-grid.mdl-cell.mdl-cell--12-col
+    .cart-item-thumb.mdl-cell.mdl-cell--3-col
+      img(src="./images/" + filename + ".png")
+    .cart-item-info.mdl-cell.mdl-cell--6-col 
+      .cart-item-name #{name}
+      .cart-item-price #{price} EUR
+    .cart-item-controls.mdl-cell.mdl-cell--3-col
+      button.mdl-button.mdl-js-button.mdl-button--icon(id=btn_id)
+        i.material-icons delete
+      .mdl-tooltip.mdl-tooltip--top(data-mdl-for=btn_id) Remove item
+  hr
+
 include templates/website-layout
   block main
     // TITLE
@@ -36,6 +49,7 @@ include templates/website-layout
               i.material-icons search
               form(action='#')
                 input(type='text', placeholder='Search', size='1')
+    // END OF SEARCH
 
     // OFTEN SEARCHES
     .often-searches-container.mdl-grid
@@ -47,15 +61,23 @@ include templates/website-layout
           +searchword('#','animals')
           +searchword('#','cars')
           +searchword('#','New York')
+    // END OF OFTEN SEARCHES
     
     // SHOPPING CART
     dialog.mdl-dialog.cart
-      h4.mdl-dialog__title Shopping cart
-      .mdl-dialog__content
-        p
-          | Your shopping cart is empty.
+      .mdl-dialog__title Shopping cart
+      .mdl-dialog__content.mdl-grid
+        //- p Your shopping cart is empty.
+        .mdl-cell.mdl-cell--12-col Recently added items
+          hr
+          +cart_item('plant', 'Watering beautiful flowers', '234', 'rem_btn1')
+          +cart_item('street', 'Street traffic', '335', 'rem_btn1')
+          +cart_item('river', 'Sunset at the river speedup', '378', 'rem_btn2')
+          .total-price.mdl-cell.mdl-cell--12-col Total price: 947 EUR
+          
+
       .mdl-dialog__actions
-        button.mdl-button(type='button' disabled) checkout
+        button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--raised.mdl-button--colored(type='button') checkout
         button.mdl-button.close(type='button') continue shopping
     script.
       var dialog = document.querySelector('dialog');
@@ -73,7 +95,8 @@ include templates/website-layout
 
       
     .container.mdl-grid
-      // LATEST UPDATES
+
+      // LATEST UPDATES SECTION
       .medium-title.mdl-cell.mdl-cell--12-col Latest footage
       +video('plant', 130)
       +video('street', 210)
@@ -83,10 +106,11 @@ include templates/website-layout
       +video('river', 10)
       .mdl-layout-spacer
       hr(style="bacground: black;")
-      // END OF LATEST UPDATES
+      // END OF LATEST UPDATES SECTION
     
-      // CATEGORIES
+      // CATEGORIES SECTION
       .medium-title.mdl-cell.mdl-cell--12-col Categories
+      // CATEGORIES CONTROLS
       .cat-controls.mdl-cell.mdl-cell--12-col
 
         button#btn1.mdl-button.mdl-js-button.mdl-button--icon
@@ -97,6 +121,7 @@ include templates/website-layout
           i.material-icons list-view
         .mdl-tooltip.mdl-tooltip--top(data-mdl-for='btn2') List view
         hr
+      // END OF CATEGORIES CONTROLS
 
       +category('STREETS', 'street', 130)
       +category('NATURE', 'plant', 1203)
@@ -106,7 +131,7 @@ include templates/website-layout
       +category('NATURE', 'plant', 30)
       +category('ART', 'river', 3450)
       +category('STREETS', 'plant', 5430)
-    // END OF CATEGORIES
+    // END OF CATEGORIES SECTION
 
   script.
     var figure = $(".video-card").hover( hoverVideo, hideVideo );

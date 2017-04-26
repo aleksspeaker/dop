@@ -410,6 +410,29 @@ video#video.fullscreen {
 
 .cart {
   max-width: 600px; }
+  .cart .total-price {
+    text-align: right;
+    font-size: 1.5rem;
+    font-weight: 500; }
+  .cart .mdl-dialog__title {
+    font-size: 2rem;
+    font-weight: 300; }
+  .cart .cart-item {
+    align-items: center; }
+    .cart .cart-item .cart-item-thumb img {
+      width: 100%; }
+    .cart .cart-item .cart-item-info .cart-item-name {
+      width: 100%;
+      height: 2.5rem;
+      overflow-y: hidden;
+      font-size: 1.3rem;
+      line-height: 2.5rem; }
+    .cart .cart-item .cart-item-info .cart-item-price {
+      font-size: 1.4rem;
+      line-height: 2.5rem; }
+    .cart .cart-item .cart-item-controls {
+      display: flex;
+      justify-content: flex-end; }
 
 .container {
   margin-top: 42vh;

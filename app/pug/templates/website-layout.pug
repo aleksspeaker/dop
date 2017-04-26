@@ -22,7 +22,7 @@ body
         .mdl-layout-spacer
         button#sell-button.mdl-button.mdl-js-button.mdl-js-ripple-effect <i class="material-icons">file_upload</i> Sell video
         button#signin-button.mdl-button.mdl-js-button.mdl-js-ripple-effect sign in
-        .mdl-badge.mdl-badge--overlap(data-badge='0')
+        .mdl-badge.mdl-badge--overlap(data-badge='3')
           button#show-dialog.mdl-button.mdl-js-button.mdl-button--icon.mdl-js-ripple-effect <i class="material-icons">shopping_cart</i>
         // Navigation
       .mdl-layout__header-row
@@ -41,13 +41,3 @@ body
         //- a.mdl-navigation__link(href='') Link
     main.mdl-layout__content
       block main
-
-script.
-  $(window).scroll(function () {
-    var sc = $(window).scrollTop()
-    if (sc > 100) {
-        $("header").addClass("faded")
-    } else {
-        $("header").removeClass("faded")
-    }
-  });

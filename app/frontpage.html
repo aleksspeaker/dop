@@ -23,7 +23,7 @@
         <div class="mdl-layout-spacer"></div>
         <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="sell-button"><i class="material-icons">file_upload</i> Sell video</button>
         <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="signin-button">sign in</button>
-        <div class="mdl-badge mdl-badge--overlap" data-badge="0">
+        <div class="mdl-badge mdl-badge--overlap" data-badge="3">
           <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="show-dialog"><i class="material-icons">shopping_cart</i></button>
         </div>
         <!-- Navigation-->
@@ -49,6 +49,7 @@
           </form>
         </div>
       </div>
+      <!-- END OF SEARCH-->
       <!-- OFTEN SEARCHES-->
       <div class="often-searches-container mdl-grid"><span class="mdl-cell mdl-cell--12-col" id="often-searches-title"> Popular searches:</span><span class="mdl-cell mdl-cell--12-col" id="often-searches-list">
           <ul>
@@ -58,14 +59,54 @@
             <li><a href="#">cars</a></li>
             <li><a href="#">New York</a></li>
           </ul></span></div>
+      <!-- END OF OFTEN SEARCHES-->
       <!-- SHOPPING CART-->
       <dialog class="mdl-dialog cart">
-        <h4 class="mdl-dialog__title">Shopping cart</h4>
-        <div class="mdl-dialog__content">
-          <p>Your shopping cart is empty.</p>
+        <div class="mdl-dialog__title">Shopping cart</div>
+        <div class="mdl-dialog__content mdl-grid">
+          <div class="mdl-cell mdl-cell--12-col">Recently added items
+            <hr>
+            <div class="cart-item mdl-grid mdl-cell mdl-cell--12-col">
+              <div class="cart-item-thumb mdl-cell mdl-cell--3-col"><img src="./images/plant.png"/></div>
+              <div class="cart-item-info mdl-cell mdl-cell--6-col"> 
+                <div class="cart-item-name">Watering beautiful flowers</div>
+                <div class="cart-item-price">234 EUR</div>
+              </div>
+              <div class="cart-item-controls mdl-cell mdl-cell--3-col">
+                <button class="mdl-button mdl-js-button mdl-button--icon" id="rem_btn1"><i class="material-icons">delete</i></button>
+                <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="rem_btn1">Remove item</div>
+              </div>
+            </div>
+            <hr/>
+            <div class="cart-item mdl-grid mdl-cell mdl-cell--12-col">
+              <div class="cart-item-thumb mdl-cell mdl-cell--3-col"><img src="./images/street.png"/></div>
+              <div class="cart-item-info mdl-cell mdl-cell--6-col"> 
+                <div class="cart-item-name">Street traffic</div>
+                <div class="cart-item-price">335 EUR</div>
+              </div>
+              <div class="cart-item-controls mdl-cell mdl-cell--3-col">
+                <button class="mdl-button mdl-js-button mdl-button--icon" id="rem_btn1"><i class="material-icons">delete</i></button>
+                <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="rem_btn1">Remove item</div>
+              </div>
+            </div>
+            <hr/>
+            <div class="cart-item mdl-grid mdl-cell mdl-cell--12-col">
+              <div class="cart-item-thumb mdl-cell mdl-cell--3-col"><img src="./images/river.png"/></div>
+              <div class="cart-item-info mdl-cell mdl-cell--6-col"> 
+                <div class="cart-item-name">Sunset at the river speedup</div>
+                <div class="cart-item-price">378 EUR</div>
+              </div>
+              <div class="cart-item-controls mdl-cell mdl-cell--3-col">
+                <button class="mdl-button mdl-js-button mdl-button--icon" id="rem_btn2"><i class="material-icons">delete</i></button>
+                <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="rem_btn2">Remove item</div>
+              </div>
+            </div>
+            <hr/>
+            <div class="total-price mdl-cell mdl-cell--12-col">Total price: 947 EUR</div>
+          </div>
         </div>
         <div class="mdl-dialog__actions">
-          <button class="mdl-button" type="button" disabled>checkout</button>
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored" type="button">checkout</button>
           <button class="mdl-button close" type="button">continue shopping</button>
         </div>
       </dialog>
@@ -84,7 +125,7 @@
       </script>
       <!-- END OF SHOPPING CART-->
       <div class="container mdl-grid">
-        <!-- LATEST UPDATES-->
+        <!-- LATEST UPDATES SECTION-->
         <div class="medium-title mdl-cell mdl-cell--12-col">Latest footage</div>
         <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--12-col-phone">
           <div class="video-card mdl-card mdl-shadow--8dp">
@@ -166,9 +207,10 @@
         </div>
         <div class="mdl-layout-spacer"></div>
         <hr style="bacground: black;">
-        <!-- END OF LATEST UPDATES-->
-        <!-- CATEGORIES-->
+        <!-- END OF LATEST UPDATES SECTION-->
+        <!-- CATEGORIES SECTION-->
         <div class="medium-title mdl-cell mdl-cell--12-col">Categories</div>
+        <!-- CATEGORIES CONTROLS-->
         <div class="cat-controls mdl-cell mdl-cell--12-col">
           <button class="mdl-button mdl-js-button mdl-button--icon" id="btn1"><i class="material-icons">sort</i></button>
           <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="btn1">Sort categories</div>
@@ -176,6 +218,7 @@
           <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="btn2">List view</div>
           <hr>
         </div>
+        <!-- END OF CATEGORIES CONTROLS-->
         <div class="mdl-cell mdl-cell--3-col">
           <div class="category-card mdl-card mdl-shadow--8dp">
             <div class="mdl-card__media"><img src="./images/street.png"/></div>
@@ -241,7 +284,7 @@
           </div>
         </div>
       </div>
-      <!-- END OF CATEGORIES-->
+      <!-- END OF CATEGORIES SECTION-->
       <script>
         var figure = $(".video-card").hover( hoverVideo, hideVideo );
         function hoverVideo(e) {  
@@ -256,16 +299,6 @@
     </main>
   </div>
 </body>
-<script>
-  $(window).scroll(function () {
-    var sc = $(window).scrollTop()
-    if (sc > 100) {
-        $("header").addClass("faded")
-    } else {
-        $("header").removeClass("faded")
-    }
-  });
-</script>
 <video class="fullscreen" id="video" autoplay muted volume="0">//autoplay off
   <source src="./videos/river.mp4">
 </video>
