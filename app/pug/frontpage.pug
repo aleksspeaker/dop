@@ -1,16 +1,24 @@
 mixin video (filename, price)
-  .mdl-cell.mdl-cell--4-col
+  .mdl-cell.mdl-cell--4-col.mdl-cell--6-col-tablet.mdl-cell--12-col-phone
         .video-card.mdl-card.mdl-shadow--8dp
           .mdl-card__media
             video(preload="none" poster="./images/" + filename + ".png")
-              source(
-                src="./videos/" + filename + ".mp4")
+              source(src="./videos/" + filename + ".mp4")
           .mdl-card__actions.mdl-card--border
-            span.price 27 EUR
+            span.price #{price} EUR
             .mdl-layout-spacer
             button.mdl-button.mdl-js-button.mdl-button--icon
-              i.material-icons shopping_cart
+              i.material-icons add_shopping_cart
 
+mixin category (catName, filename, amount)
+  .mdl-cell.mdl-cell--3-col
+        .category-card.mdl-card.mdl-shadow--8dp
+          .mdl-card__media
+            img(src="./images/" + filename + ".png")
+          .mdl-card__actions.mdl-card--border
+            span.catname #{catName}
+            .mdl-layout-spacer
+            span.vids-amount #{amount} videos
 
 mixin searchword (href, word)
     li
@@ -40,7 +48,7 @@ include templates/website-layout
           +searchword('#','cars')
           +searchword('#','New York')
     
-
+    // SHOPPING CART
     dialog.mdl-dialog.cart
       h4.mdl-dialog__title Shopping cart
       .mdl-dialog__content
@@ -61,20 +69,47 @@ include templates/website-layout
       dialog.querySelector('.close').addEventListener('click', function() {
       dialog.close();
       });
+    // END OF SHOPPING CART
 
-
-    // CATEGORIES
-    .latest-container.mdl-grid
+      
+    .container.mdl-grid
+      // LATEST UPDATES
       .medium-title.mdl-cell.mdl-cell--12-col Latest footage
-      +video('plant')
-      +video('street')
-      +video('river')
-      +video('plant')
-      +video('street')
-      +video('river')
+      +video('plant', 130)
+      +video('street', 210)
+      +video('river', 119)
+      +video('plant', 86)
+      +video('street' ,92)
+      +video('river', 10)
+      .mdl-layout-spacer
+      hr(style="bacground: black;")
+      // END OF LATEST UPDATES
+    
+      // CATEGORIES
+      .medium-title.mdl-cell.mdl-cell--12-col Categories
+      .cat-controls.mdl-cell.mdl-cell--12-col
+
+        button#btn1.mdl-button.mdl-js-button.mdl-button--icon
+          i.material-icons sort
+        .mdl-tooltip.mdl-tooltip--top(data-mdl-for='btn1') Sort categories
+
+        button#btn2.mdl-button.mdl-js-button.mdl-button--icon
+          i.material-icons list-view
+        .mdl-tooltip.mdl-tooltip--top(data-mdl-for='btn2') List view
+        hr
+
+      +category('STREETS', 'street', 130)
+      +category('NATURE', 'plant', 1203)
+      +category('ART', 'river', 1303)
+      +category('STREETS', 'plant', 1110)
+      +category('STREETS', 'street', 2130)
+      +category('NATURE', 'plant', 30)
+      +category('ART', 'river', 3450)
+      +category('STREETS', 'plant', 5430)
+    // END OF CATEGORIES
 
   script.
-    var figure = $(".mdl-card__media").hover( hoverVideo, hideVideo );
+    var figure = $(".video-card").hover( hoverVideo, hideVideo );
     function hoverVideo(e) {  
         $('video', this).get(0).play(); 
     }
@@ -83,7 +118,7 @@ include templates/website-layout
     }
 
 
-video#video.fullscreen(autoplay muted volume="0") //autoplay off
+video#video.fullscreen( muted volume="0") //autoplay off
   source(src="./videos/river.mp4")
 
 script.

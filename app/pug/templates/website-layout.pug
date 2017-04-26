@@ -41,3 +41,13 @@ body
         //- a.mdl-navigation__link(href='') Link
     main.mdl-layout__content
       block main
+
+script.
+  $(window).scroll(function () {
+    var sc = $(window).scrollTop()
+    if (sc > 100) {
+        $("header").addClass("faded")
+    } else {
+        $("header").removeClass("faded")
+    }
+  });

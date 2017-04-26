@@ -1,6 +1,19 @@
 body {
   font-family: 'Roboto', sans-serif; }
 
+::-webkit-scrollbar {
+  width: 8px;
+  /* for vertical scrollbars */
+  height: 8px;
+  /* for horizontal scrollbars */ }
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1); }
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 4px; }
+
 .testing {
   width: 71.42857%; }
 
@@ -62,7 +75,9 @@ th .mdl-icon-toggle {
   justify-content: flex-start; }
 
 /*MODERATION PAGE=============================*/
-#inbox, #inprog, #done {
+#inbox,
+#inprog,
+#done {
   height: 100vh;
   padding: 10px;
   border: 1px solid #f9f9f9;
@@ -211,11 +226,13 @@ table#messages-table {
 
 #cart-button {
   color: white; }
-  #cart-button .mdl-badge, #cart-button .mdl-badge--overlap {
+  #cart-button .mdl-badge,
+  #cart-button .mdl-badge--overlap {
     z-index: 2000; }
 
 .demo-layout-waterfall .mdl-layout__header-row .mdl-navigation__link:last-of-type {
-  padding-right: 0; }
+  padding-right: 0;
+  background: rgba(0, 0, 0, 0.5); }
 
 .demo-layout-transparent {
   background: rgba(0, 0, 0, 0.41); }
@@ -224,7 +241,12 @@ table#messages-table {
 .demo-layout-transparent .mdl-layout__drawer-button {
   /* This background is dark, so we set text to white. Use 87% black instead if
      your background is light. */
-  color: white; }
+  color: white;
+  background: transparent;
+  transition: .3s; }
+
+.is-casting-shadow.is-compact {
+  background: rgba(0, 0, 0, 0.7); }
 
 video#video.fullscreen {
   position: fixed;
@@ -389,40 +411,80 @@ video#video.fullscreen {
 .cart {
   max-width: 600px; }
 
-.latest-container {
+.container {
   margin-top: 42vh;
   background: #fffffa; }
-  .latest-container .video-card {
+  .container .video-card {
     min-height: 0px;
     width: 100%;
     transition: .1s; }
-    .latest-container .video-card .mdl-card__media {
+    .container .video-card .mdl-card__actions {
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      box-sizing: border-box;
+      align-items: center;
+      opacity: 0.3;
+      transition: .1s;
+      padding-left: 16px;
+      padding-right: 16px;
+      justify-content: flex-end; }
+      .container .video-card .mdl-card__actions a {
+        color: white; }
+    .container .video-card .mdl-card__media {
       background: grey; }
-      .latest-container .video-card .mdl-card__media video {
+      .container .video-card .mdl-card__media video {
         width: 100%; }
-  .latest-container .video-card:hover {
-    margin-left: -8px;
+  .container .video-card:hover {
+    cursor: pointer;
+    margin-left: -26px;
     margin-top: -8px;
-    width: 103%;
-    box-shadow: 0px 0px 30px black; }
-    .latest-container .video-card:hover .mdl-card__actions {
-      opacity: 1; }
-
-.mdl-card__actions {
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  box-sizing: border-box;
-  align-items: center;
-  opacity: 0.3;
-  transition: .1s;
-  padding-left: 16px;
-  padding-right: 16px;
-  justify-content: flex-end; }
-  .mdl-card__actions a {
-    color: white; }
-
-.mdl-card__actions > .material-icons {
-  padding-right: 10px; }
+    margin-bottom: -10%;
+    width: 116%;
+    box-shadow: 0px 0px 30px black;
+    z-index: 20; }
+    .container .video-card:hover .mdl-card__actions {
+      opacity: 1;
+      transform: translate(-50% -50%); }
+    .container .video-card:hover .mdl-card__actions > .material-icons {
+      padding-right: 10px; }
+  .container .category-card {
+    min-height: 0px;
+    width: 100%;
+    transition: .1s; }
+    .container .category-card .mdl-card__actions {
+      background: black;
+      color: white;
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      box-sizing: border-box;
+      align-items: center;
+      opacity: 1;
+      transition: .1s;
+      padding-left: 16px;
+      padding-right: 16px;
+      justify-content: flex-end; }
+      .container .category-card .mdl-card__actions a {
+        color: white; }
+    .container .category-card .mdl-card__media {
+      background: grey; }
+      .container .category-card .mdl-card__media img {
+        width: 100%; }
+  .container .category-card:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 30px black;
+    z-index: 20; }
+    .container .category-card:hover .mdl-card__actions {
+      opacity: 1;
+      transform: translate(-50% -50%); }
+    .container .category-card:hover .mdl-card__actions > .material-icons {
+      padding-right: 10px; }
+  .container .cat-controls {
+    margin-top: -32px;
+    margin-bottom: -6px; }
+    .container .cat-controls hr {
+      margin-top: 0px;
+      margin-bottom: 0; }
