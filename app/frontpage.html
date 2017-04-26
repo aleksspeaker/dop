@@ -36,7 +36,7 @@
     <div class="mdl-layout__drawer"><span class="mdl-layout-title">Menu</span>
       <nav class="mdl-navigation"><a class="mdl-navigation__link" href="">Latest footage</a><a class="mdl-navigation__link" href="">Categories</a></nav>
     </div>
-    <main class="mdl-layout__content">
+    <main class="mdl-layout__content" id="main">
       <!-- TITLE-->
       <div class="mdl-grid title-container">
         <div class="mdl-cell mdl-cell--12-col bigtitle">4k and FullHD stock&nbspvideos</div>
@@ -315,9 +315,24 @@
   myvid.addEventListener('ended', function(e) {
     // update the new active video index
     activeVideo = (++activeVideo) % myvids.length;
-  
     // update the video source and play
     myvid.src = myvids[activeVideo];
     myvid.play();
+    console.log('next video');
   });
+  
+</script>
+<script>
+  var main = document.getElementById('main');
+  main.onscroll = function pauseOnScroll(){
+    var myvid = document.getElementById('video');
+    if (main.scrollTop > 150) {
+        myvid.pause()
+        console.log('pause')
+    }
+    else {
+        myvid.play()
+        console.log('play')
+    }
+  };
 </script>
