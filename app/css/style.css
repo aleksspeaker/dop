@@ -477,6 +477,19 @@ video#video.fullscreen {
     min-height: 0px;
     width: 100%;
     transition: .1s; }
+    .container .category-card .mdl-card__media {
+      position: relative; }
+      .container .category-card .mdl-card__media:before {
+        display: block;
+        content: " ";
+        width: 100%;
+        padding-top: 56.25%; }
+      .container .category-card .mdl-card__media > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0; }
     .container .category-card .mdl-card__actions {
       background: black;
       color: white;
