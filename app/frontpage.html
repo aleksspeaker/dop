@@ -421,54 +421,21 @@
         </div>
       </div>
       <!-- END OF CATEGORIES SECTION-->
-      <script>
-        var figure = $(".video-card").hover( hoverVideo, hideVideo );
-        function hoverVideo(e) {  
-            $('video', this).get(0).play(); 
-        }
-        function hideVideo(e) {
-            $('video', this).get(0).pause(); 
-        }
-        
-        
-      </script>
+      <footer class="mdl-mini-footer">
+        <div class="mdl-mini-footer__left-section">
+          <div class="mdl-logo">Title</div>
+          <ul class="mdl-mini-footer__link-list">
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Privacy & Terms</a></li>
+          </ul>
+          <p id="about"></p>Dopcine is a global royalty free video stock platfrom that is focused on delivering high quality footage to the customers.<br>We love to talk about our passion and we are excited to see where our passion and innovation touches you, Only the best is good enough.
+        </div>
+      </footer>
+      <video class="fullscreen" id="video" autoplay muted volume="0">//autoplay off
+        <source src="./videos/river.mp4">
+      </video>
+      <!-- Script that works with all videos-->
+      <script src="js/video.js"></script>
     </main>
   </div>
 </body>
-<video class="fullscreen" id="video" autoplay muted volume="0">//autoplay off
-  <source src="./videos/river.mp4">
-</video>
-<script>
-  var myvid = document.getElementById('video');
-  var myvids = [
-    "./videos/river.mp4", 
-    "./videos/plant.mp4",
-    "./videos/bubble.mp4",
-    "./videos/street.mp4"
-    ];
-  var activeVideo = 0;
-  
-  myvid.addEventListener('ended', function(e) {
-    // update the new active video index
-    activeVideo = (++activeVideo) % myvids.length;
-    // update the video source and play
-    myvid.src = myvids[activeVideo];
-    myvid.play();
-    console.log('next video');
-  });
-  
-</script>
-<script>
-  var main = document.getElementById('main');
-  main.onscroll = function pauseOnScroll(){
-    var myvid = document.getElementById('video');
-    if (main.scrollTop > 150) {
-        myvid.pause()
-        console.log('pause')
-    }
-    else {
-        myvid.play()
-        console.log('play')
-    }
-  };
-</script>

@@ -524,3 +524,6 @@ video#video.fullscreen {
     .container .cat-controls hr {
       margin-top: 0px;
       margin-bottom: 0; }
+
+p#about {
+  font-size: 12px; }
