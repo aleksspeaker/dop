@@ -1,0 +1,693 @@
+body 
+  font-family: 'Roboto', sans-serif
+
+
+::-webkit-scrollbar 
+  width: 8px
+  /* for vertical scrollbars */
+  height: 8px
+  /* for horizontal scrollbars */
+
+
+::-webkit-scrollbar-track 
+  background: rgba(255, 255, 255, 0.1)
+
+
+::-webkit-scrollbar-thumb 
+  background: rgba(255, 255, 255, 0.5)
+  border-radius: 4px
+
+.testing 
+  width: percentage(5/7)
+
+
+th .mdl-icon-toggle 
+  height: 29px
+
+
+.date-icon-table-heading 
+  display: flex
+  align-items: flex-end
+  justify-content: flex-end
+
+
+.overview-card 
+  &.mdl-card 
+    /*width: 100%*/
+    /*height: 365px*/
+  
+  > .mdl-card__title 
+    color: #fff
+      background: url('') bottom right 15% no-repeat #1976D2
+
+#tasks .mdl-card__title 
+  background: #1565C0
+
+
+.mdl-card__title-text 
+  align-self: flex-start
+
+
+.tasks-table 
+  width: 100%
+
+
+
+#tasks 
+  padding: 0
+
+
+
+.vertical-cards-container 
+  margin: 0
+  padding: 0
+
+
+.table-head 
+
+
+
+/*CONTENT PAGE================================*/
+
+.table-icons 
+  width: 20px
+
+
+#content-table 
+  width: 100%
+
+
+#category-form 
+  width: 150px
+  display: inline-flex
+  align-self: flex-end
+  padding-left: 8px
+
+
+.vid-sort-controls 
+  display: inline-flex
+  margin-bottom: -12px
+
+
+.content 
+  .controls 
+    justify-content: flex-start
+
+
+
+/*MODERATION PAGE=============================*/
+
+#inbox,
+#inprog,
+#done 
+  height: 100vh
+  padding: 10px
+  border: 1px solid #f9f9f9
+  background: #fafafa
+  border-radius: 4px
+
+
+#inbox 
+  .moderation-card.mdl-card 
+    width: 100%
+    max-width: 350px
+    height: auto
+    background: white
+    margin-bottom: 8px
+    
+
+
+#inprog 
+  .moderation-card.mdl-card 
+    width: 100%
+    max-width: 350px
+    height: auto
+    background: #FFF176
+    margin-bottom: 8px
+    
+
+
+#done 
+  .moderation-card.mdl-card 
+    width: 100%
+    max-width: 350px
+    height: auto
+    background: #AED581
+    margin-bottom: 8px
+
+.moderation-card > .mdl-card__actions 
+  border-color: rgba(255, 255, 255, 0.2)
+
+
+.moderation-card > .mdl-card__title 
+  display: block
+
+
+.moderation-card > .mdl-card__title > h4 
+  margin-top: 0
+
+
+.moderation-card > .mdl-card__actions 
+  display: flex
+  box-sizing: border-box
+  align-items: center
+
+
+.mdl-card__actions.mdl-card--border 
+  border-top: 1px solid rgba(0, 0, 0, .2)
+
+
+.moderation-card > .mdl-card__actions > .material-icons 
+  padding-right: 10px
+
+
+.moderation-card > .mdl-card__title,
+.moderation-card > .mdl-card__actions,
+.moderation-card > .mdl-card__actions > .mdl-button 
+  color: rgba(0, 0, 0, .87)
+
+
+.mod-card-name 
+  font-size: 1.6rem
+
+mod-card-author 
+  font-size: 1.3rem
+
+
+
+/*THIS CURSOR MAKE ITEMS APPEAR GRABBABLE*/
+
+.grabbable 
+  cursor: move
+  /* fallback if grab cursor is unsupported */
+  cursor: grab
+  cursor: -moz-grab
+  cursor: -webkit-grab
+
+
+
+/* (Optional) Apply a "closed-hand" cursor during drag operation. */
+
+.grabbable:active 
+  cursor: grabbing
+  cursor: -moz-grabbing
+  cursor: -webkit-grabbing
+
+
+table#messages-table 
+  width: 100%
+  tr 
+    th 
+      text-align: left
+    
+    th#date 
+      text-align: end
+
+.controls 
+  border: 1px solid #F9F9F9
+  padding: 0
+  align-items: center
+  justify-content: space-between
+  /*align-content: flex-end*/
+
+
+
+/* ====== New user dialogue ====== */
+
+.mdl-dialog 
+  border: none
+  box-shadow: 0 9px 46px 8px rgba(0, 0, 0, 0.14), 0 11px 15px -7px rgba(0, 0, 0, 0.12), 0 24px 38px 3px rgba(0, 0, 0, 0.2)
+  width: 80%
+
+
+.mdl-dialog__title 
+  padding: 24px 24px 0
+  margin: 0
+  font-size: 2.5rem
+
+
+.mdl-dialog__actions 
+  padding: 8px 8px 8px 24px
+  display: -webkit-flex
+  display: -ms-flexbox
+  display: flex
+  -webkit-flex-direction: row-reverse
+  -ms-flex-direction: row-reverse
+  flex-direction: row-reverse
+  -webkit-flex-wrap: wrap
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+
+.mdl-dialog__actions > * 
+  margin-right: 8px
+  height: 36px
+
+
+.mdl-dialog__actions > *:first-child 
+  margin-right: 0
+
+
+.mdl-dialog__actions--full-width 
+  padding: 0 0 8px 0
+
+
+.mdl-dialog__actions--full-width > * 
+  height: 48px
+  -webkit-flex: 0 0 100%
+  -ms-flex: 0 0 100%
+  flex: 0 0 100%
+  padding-right: 16px
+  margin-right: 0
+  text-align: right
+
+
+.mdl-dialog__content 
+  padding: 20px 24px 24px 24px
+  color: rgba(0, 0, 0, 0.54)
+
+/* ====== End of new user dialogue ====== */
+
+.userphoto 
+  display: flex
+
+
+.send-email-checkbox 
+  margin-top: 16px
+
+
+
+/*FRONT PAGE*/
+
+#sell-button 
+  color: white
+
+
+#signin-button 
+  color: white
+  // background: rgba(244, 67, 54, .74)
+
+
+#cart-button 
+  color: white
+  // background: blue
+  .mdl-badge,
+  .mdl-badge--overlap 
+    z-index: 2000
+    
+
+header#mini-header.mdl-layout__header.mdl-layout__header--transparent.mdl-layout__header--waterfall
+  background: rgba(0, 0, 0, .80)
+
+.demo-layout-waterfall .mdl-layout__header-row .mdl-navigation__link:last-of-type 
+  padding-right: 0
+  background: rgba(0, 0, 0, .50)
+
+
+.demo-layout-transparent 
+  // background: rgba(0, 0, 0, .41)
+
+
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button 
+  /* This background is dark, so we set text to white. Use 87% black instead if
+   your background is light. */
+  color: white
+  background: rgba(0, 0, 0, 0)
+  transition: .3s
+
+
+.is-casting-shadow.is-compact 
+  background: rgba(0, 0, 0, .7)
+  display: flex
+
+
+video#video.fullscreen 
+  position: fixed
+  top: 50%
+  left: 50%
+  min-width: 100%
+  min-height: 100%
+  width: auto
+  height: auto
+  z-index: -100
+  transform: translate(-50%, -50%)
+
+
+/*END OF FRONT PAGE*/
+
+.title-container 
+  width: 100vw
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, .43)
+
+
+.often-searches-container 
+  padding-left: 0
+  color: white
+  width: 100vw
+  margin-bottom: 23vw
+
+
+#often-searches-title 
+  font-size: 24px
+  text-align: center
+  font-weight: 100
+  margin-bottom: 0
+
+#often-searches-list 
+  margin-top: 0
+  text-align: center
+  ul 
+    list-style-type: none
+    margin-left: -32px
+    li 
+      display: inline-flex
+      margin-right: 16px
+      font-size: 18px
+      a 
+        text-decoration: none
+        color: white
+      
+      a:hover 
+        text-decoration: underline
+        color: default
+
+.bigtitle 
+  margin-top: 15vh
+  margin-bottom: 10vh
+  color: white
+  font-size: 80px
+  font-weight: 100
+  text-align: center
+  line-height: 3rem
+
+
+@media only screen and (max-width: 1024px) 
+  .bigtitle 
+    font-size: 60px
+    
+
+
+@media only screen and (max-width: 768px) 
+  .bigtitle 
+    font-size: 50px
+    line-height: 3rem
+    
+
+
+@media only screen and (max-width: 425px) 
+  .bigtitle 
+    font-size: 40px
+    line-height: 3rem
+
+/*SEARCH BAR*/
+
+
+/* TODO: Hover and Focus state.
+ *       Fix position of mobile search button.
+ */
+
+.mdh-expandable-search 
+  margin: 0 50px
+  align-items: center
+  justify-content: center
+
+
+.mdh-expandable-search form 
+  max-width: 600px
+
+
+.mdh-expandable-search,
+.mdh-expandable-search form,
+.mdh-expandable-search input 
+  /* Cross browser flex-grow */
+  -webkit-box-flex: 1
+  -webkit-flex-grow: 1
+  -ms-flex-positive: 1
+  flex-grow: 1
+
+
+.mdh-expandable-search,
+.mdh-expandable-search form 
+  /* Cross browser inline-flex */
+  display: -webkit-inline-box
+  display: -webkit-inline-flex
+  display: -moz-inline-box
+  display: -ms-inline-flexbox
+  display: inline-flex
+
+/* Position search icon */
+
+.mdh-expandable-search .material-icons 
+  position: relative
+  right: -40px
+  margin-left: -24px
+  /* Remove the blank space left behind by the icon being relatively positioned */
+
+
+.mdh-expandable-search input 
+  outline: none
+  border: none
+  font-size: 16px
+  color: rgba(0, 0, 0, .87)
+  background-color: rgba(255, 255, 255, .9)
+  padding: 0px 35px 0px 70px
+  height: 40px
+  line-height: 40px
+  /* TODO: This was recommended for cross browser compatability of input height, check if its actually needed in modern browsers */
+  border-radius: 5px 5px 5px 5px
+  -moz-border-radius: 5px 5px 5px 5px
+  -webkit-border-radius: 5px 5px 5px 5px
+
+
+.mdh-expandable-search input::-webkit-input-placeholder 
+  /* WebKit browsers */
+  color: rgba(0, 0, 0, .87)
+
+
+.mdh-expandable-search input:-moz-placeholder 
+  /* Mozilla Firefox 4 to 18 */
+  color: rgba(0, 0, 0, .87)
+  opacity: 1
+  /* Firefox gives the placeholder a reduced opacity so we have to increase it */
+
+.mdh-expandable-search input::-moz-placeholder 
+  /* Mozilla Firefox 19+ */
+  color: rgba(0, 0, 0, .87)
+  opacity: 1
+  /* Firefox gives the placeholder a reduced opacity so we have to increase it */
+
+
+.mdh-expandable-search input:-ms-input-placeholder 
+  /* Internet Explorer 10+ */
+  color: rgba(0, 0, 0, .87)
+
+
+
+/* Bug fix: https://github.com/google/material-design-lite/issues/1078
+ * To much padding on the left of header when the menu button is hidden */
+
+@media screen and (min-width: 851px) 
+  .mdl-layout__header-row 
+    /*padding: 0 40px 0 40px*/
+    
+
+
+
+/* Bug fix for badges being in the wrong location */
+
+.mdl-badge[data-badge]:after 
+  right: -7px
+  top: -8px
+
+
+.searchbar 
+  /*padding-top: 40vh*/
+
+/*END OF SEARCH BAR*/
+
+.medium-title 
+  font-size: 2rem
+  font-weight: 300
+  color: rgba(0, 0, 0, .87)
+  text-align: center
+  line-height: 5rem
+
+
+.cart 
+  max-width: 600px
+  .total-price 
+    text-align: right
+    font-size: 1.5rem
+    font-weight: 500
+  
+  .mdl-dialog__title 
+    font-size: 2rem
+    font-weight: 300
+
+  .cart-item 
+    align-items: center
+    .cart-item-thumb 
+      img 
+        width: 100%
+      
+    
+    .cart-item-info 
+      .cart-item-name 
+        width: 100%
+        height: 2.5rem
+        overflow-y: hidden
+        font-size: 1.3rem
+        line-height: 2.5rem
+      
+        .cart-item-price 
+          font-size: 1.4rem
+          line-height: 2.5rem
+      
+    
+    .cart-item-controls 
+      display: flex
+      justify-content: flex-end
+
+.container 
+  // margin-top: 42vh
+  background: rgba(255, 255, 250, 1)
+
+.video-card 
+  .mdl-card__actions 
+    a 
+      color: white
+    background: rgba(0,0,0,.7)
+    color: white
+    position: absolute
+    bottom: 0
+    display: flex
+    box-sizing:border-box
+    align-items: center
+    opacity: 0.3
+    transition: .1s
+    padding-left: 16px
+    padding-right: 16px
+    justify-content: flex-end
+  
+  min-height: 0px
+  width: 100%
+  transition: .1s
+  .mdl-card__media 
+    background: grey
+    video 
+      width: 100%
+
+.video-card:hover 
+  cursor: pointer
+  margin-left: -26px
+  margin-top: -8px
+  margin-bottom: -10%
+  width: 116%
+  box-shadow: 0px 0px 30px black
+  z-index: 20
+  .mdl-card__actions 
+    opacity: 1
+    transform: translate(-50% -50%)
+  
+  .mdl-card__actions > .material-icons 
+    padding-right: 10px
+
+.category-card 
+  min-height: 0px
+  width: 100%
+  transition: .1s
+  =aspect-ratio($width, $height) 
+    position: relative
+    &:before 
+      display: block
+      content: " "
+      width: 100%
+      padding-top: ($height / $width) * 100%
+    
+    > img 
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+
+  .mdl-card__media 
+    +aspect-ratio(16,9)
+
+  .mdl-card__actions
+    a 
+      color: white
+    background: rgba(0,0,0,1)
+    color: white
+    position: absolute
+    bottom: 0
+    display: flex
+    box-sizing:border-box
+    align-items: center
+    opacity: 1
+    transition: .1s
+    padding-left: 16px
+    padding-right: 16px
+    justify-content: flex-end
+
+  .mdl-card__media 
+    background: grey
+    img 
+      width: 100%
+
+.category-card:hover 
+  cursor: pointer
+  box-shadow: 0px 0px 30px black
+  z-index: 20
+  .mdl-card__actions 
+    opacity: 1
+    transform: translate(-50% -50%)
+  
+  .mdl-card__actions > .material-icons 
+    padding-right: 10px
+  
+.cat-controls
+
+  display: inline-flex
+  align-items: center
+  margin-top: -32px
+  margin-bottom: -6px
+  form
+    display: inline-flex
+  hr 
+    margin-top: 0px
+    margin-bottom: 0
+  span
+    margin: 0 8px 
+
+
+
+      
+p#about 
+  font-size: 12px
+
+
+
+// Single video page
+
+.video-watch-box
+  video
+    box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.1)
+    border-radius: 4px
+    width: 100%
+    margin-bottom: 16px
+  // display: flex
+.width100
+  width: 100%
+.watermark
+  position: relative
+  img
+    position: absolute
+    z-index: 1000
+    top: 110px
+    left: 35%
+#formats
+.buying-details
+  display: flex
+  flex-wrap: wrap
+  flex-direction: column

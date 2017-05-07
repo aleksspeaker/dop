@@ -13,6 +13,7 @@
 
     var myvid = document.getElementById('video');
     var myvids = [
+      "./videos/lviv.mp4",
       "./videos/river.mp4", 
       "./videos/plant.mp4",
       "./videos/bubble.mp4",

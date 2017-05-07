@@ -294,7 +294,6 @@ table#messages-table {
 
 #sell-button {
     color: white;
-    // background: orange;
 }
 
 #signin-button {
@@ -331,6 +330,7 @@ table#messages-table {
 
 .is-casting-shadow.is-compact {
   background: rgba(0,0,0,.7);
+  display: flex;
 }
 
 video#video.fullscreen {
@@ -674,10 +674,6 @@ video#video.fullscreen {
     }
     .category-card:hover {
         cursor: pointer;
-        // margin-left: -26px;
-        // margin-top: -8px;
-        // margin-bottom: -10%;
-        // width: 116%;
         box-shadow: 0px 0px 30px black;
         z-index: 20;
         .mdl-card__actions {

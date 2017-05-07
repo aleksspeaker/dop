@@ -14,30 +14,10 @@ html
 body
   // Uses a transparent header that draws on top of the layout's background
   .demo-layout-transparent.mdl-layout.mdl-js-layout
-    header.mdl-layout__header.mdl-layout__header--transparent.mdl-layout__header--waterfall(onscroll="document.getElementsByTagName('header').style.background = 'black'")
-      .mdl-layout__header-row
-        // Title
-        img.mdl-layout-title(src="./images/dopcine_logo_white.svg" width="100px")
-        // Add spacer, to align navigation to the right
-        .mdl-layout-spacer
-        button#sell-button.mdl-button.mdl-js-button.mdl-js-ripple-effect <i class="material-icons">file_upload</i> Sell video
-        button#signin-button.mdl-button.mdl-js-button.mdl-js-ripple-effect sign in
-        .mdl-badge.mdl-badge--overlap(data-badge='3')
-          button#show-dialog.mdl-button.mdl-js-button.mdl-button--icon.mdl-js-ripple-effect <i class="material-icons">shopping_cart</i>
-        // Navigation
-      .mdl-layout__header-row
-        .mdl-layout-spacer
-        nav.mdl-navigation
-          a.mdl-navigation__link(href='') Latest footage
-          a.mdl-navigation__link(href='') Categories
-          //- a.mdl-navigation__link(href='') Link
-          //- a.mdl-navigation__link(href='') Link
-    .mdl-layout__drawer
-      span.mdl-layout-title Menu
-      nav.mdl-navigation
-        a.mdl-navigation__link(href='') Latest footage
-        a.mdl-navigation__link(href='') Categories
-        //- a.mdl-navigation__link(href='') Link
-        //- a.mdl-navigation__link(href='') Link
+    block header
+      include header_2_rows
     main#main.mdl-layout__content
       block main
+      include cart
+      block footer
+      include footer

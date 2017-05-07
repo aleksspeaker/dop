@@ -1,0 +1,43 @@
+// SHOPPING CART
+
+mixin cart_item (filename, name, price, btn_id)
+  .cart-item.mdl-grid.mdl-cell.mdl-cell--12-col
+    .cart-item-thumb.mdl-cell.mdl-cell--3-col
+      img(src="./images/" + filename + ".png")
+    .cart-item-info.mdl-cell.mdl-cell--6-col 
+      .cart-item-name #{name}
+      .cart-item-price #{price} EUR
+    .cart-item-controls.mdl-cell.mdl-cell--3-col
+      button.mdl-button.mdl-js-button.mdl-button--icon(id=btn_id)
+        i.material-icons delete
+      .mdl-tooltip.mdl-tooltip--top(data-mdl-for=btn_id) Remove item
+  hr
+
+dialog.mdl-dialog.cart
+  .mdl-dialog__title Shopping cart
+  .mdl-dialog__content.mdl-grid
+    //- p Your shopping cart is empty.
+    .mdl-cell.mdl-cell--12-col Recently added items
+      hr
+      +cart_item('plant', 'Watering beautiful flowers', '234', 'rem_btn1')
+      +cart_item('street', 'Street traffic', '335', 'rem_btn1')
+      +cart_item('river', 'Sunset at the river speedup', '378', 'rem_btn2')
+      .total-price.mdl-cell.mdl-cell--12-col Total price: 947 EUR
+      
+
+  .mdl-dialog__actions
+    button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--raised.mdl-button--colored(type='button') checkout
+    button.mdl-button.close(type='button') continue shopping
+script.
+  var dialog = document.querySelector('dialog');
+  var showDialogButton = document.querySelector('#show-dialog');
+  if (! dialog.showModal) {
+  dialogPolyfill.registerDialog(dialog);
+  }
+  showDialogButton.addEventListener('click', function() {
+  dialog.showModal();
+  });
+  dialog.querySelector('.close').addEventListener('click', function() {
+  dialog.close();
+  });
+// END OF SHOPPING CART

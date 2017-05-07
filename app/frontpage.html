@@ -16,21 +16,17 @@
 <body>
   <!-- Uses a transparent header that draws on top of the layout's background-->
   <div class="demo-layout-transparent mdl-layout mdl-js-layout">
-    <header class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--waterfall" onscroll="document.getElementsByTagName('header').style.background = 'black'">
+    <!-- Uses a transparent header that draws on top of the layout's background-->
+    <header class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--waterfall">
       <div class="mdl-layout__header-row">
-        <!-- Title--><img class="mdl-layout-title" src="./images/dopcine_logo_white.svg" width="100px">
+        <!-- Title--><a href="frontpage.html"><img class="mdl-layout-title mdl-layout--large-screen-only" src="./images/dopcine_logo_white.svg" width="100px"></a>
         <!-- Add spacer, to align navigation to the right-->
         <div class="mdl-layout-spacer"></div>
-        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="sell-button"><i class="material-icons">file_upload</i> Sell video</button>
-        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="signin-button">sign in</button>
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="sell-button"><i class="material-icons">file_upload</i><span class="mdl-layout--large-screen-only">Sell footage</span></button>
+        <label class="mdl-button mdl-js-button mdl-js-ripple-effect" id="signin-button">sign in</label>
         <div class="mdl-badge mdl-badge--overlap" data-badge="3">
-          <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="show-dialog"><i class="material-icons">shopping_cart</i></button>
+          <label class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="show-dialog"><i class="material-icons">shopping_cart</i></label>
         </div>
-        <!-- Navigation-->
-      </div>
-      <div class="mdl-layout__header-row">
-        <div class="mdl-layout-spacer"></div>
-        <nav class="mdl-navigation"><a class="mdl-navigation__link" href="">Latest footage</a><a class="mdl-navigation__link" href="">Categories</a></nav>
       </div>
     </header>
     <div class="mdl-layout__drawer"><span class="mdl-layout-title">Menu</span>
@@ -51,7 +47,7 @@
       </div>
       <!-- END OF SEARCH-->
       <!-- OFTEN SEARCHES-->
-      <div class="often-searches-container mdl-grid"><span class="mdl-cell mdl-cell--12-col" id="often-searches-title"> Popular searches:</span><span class="mdl-cell mdl-cell--12-col" id="often-searches-list">
+      <div class="often-searches-container mdl-grid"><span class="mdl-cell mdl-cell--12-col" id="often-searches-title">Popular searches:</span><span class="mdl-cell mdl-cell--12-col" id="often-searches-list">
           <ul>
             <li><a href="#">street</a></li>
             <li><a href="#">sky</a></li>
@@ -60,70 +56,6 @@
             <li><a href="#">New York</a></li>
           </ul></span></div>
       <!-- END OF OFTEN SEARCHES-->
-      <!-- SHOPPING CART-->
-      <dialog class="mdl-dialog cart">
-        <div class="mdl-dialog__title">Shopping cart</div>
-        <div class="mdl-dialog__content mdl-grid">
-          <div class="mdl-cell mdl-cell--12-col">Recently added items
-            <hr>
-            <div class="cart-item mdl-grid mdl-cell mdl-cell--12-col">
-              <div class="cart-item-thumb mdl-cell mdl-cell--3-col"><img src="./images/plant.png"/></div>
-              <div class="cart-item-info mdl-cell mdl-cell--6-col"> 
-                <div class="cart-item-name">Watering beautiful flowers</div>
-                <div class="cart-item-price">234 EUR</div>
-              </div>
-              <div class="cart-item-controls mdl-cell mdl-cell--3-col">
-                <button class="mdl-button mdl-js-button mdl-button--icon" id="rem_btn1"><i class="material-icons">delete</i></button>
-                <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="rem_btn1">Remove item</div>
-              </div>
-            </div>
-            <hr/>
-            <div class="cart-item mdl-grid mdl-cell mdl-cell--12-col">
-              <div class="cart-item-thumb mdl-cell mdl-cell--3-col"><img src="./images/street.png"/></div>
-              <div class="cart-item-info mdl-cell mdl-cell--6-col"> 
-                <div class="cart-item-name">Street traffic</div>
-                <div class="cart-item-price">335 EUR</div>
-              </div>
-              <div class="cart-item-controls mdl-cell mdl-cell--3-col">
-                <button class="mdl-button mdl-js-button mdl-button--icon" id="rem_btn1"><i class="material-icons">delete</i></button>
-                <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="rem_btn1">Remove item</div>
-              </div>
-            </div>
-            <hr/>
-            <div class="cart-item mdl-grid mdl-cell mdl-cell--12-col">
-              <div class="cart-item-thumb mdl-cell mdl-cell--3-col"><img src="./images/river.png"/></div>
-              <div class="cart-item-info mdl-cell mdl-cell--6-col"> 
-                <div class="cart-item-name">Sunset at the river speedup</div>
-                <div class="cart-item-price">378 EUR</div>
-              </div>
-              <div class="cart-item-controls mdl-cell mdl-cell--3-col">
-                <button class="mdl-button mdl-js-button mdl-button--icon" id="rem_btn2"><i class="material-icons">delete</i></button>
-                <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="rem_btn2">Remove item</div>
-              </div>
-            </div>
-            <hr/>
-            <div class="total-price mdl-cell mdl-cell--12-col">Total price: 947 EUR</div>
-          </div>
-        </div>
-        <div class="mdl-dialog__actions">
-          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored" type="button">checkout</button>
-          <button class="mdl-button close" type="button">continue shopping</button>
-        </div>
-      </dialog>
-      <script>
-        var dialog = document.querySelector('dialog');
-        var showDialogButton = document.querySelector('#show-dialog');
-        if (! dialog.showModal) {
-        dialogPolyfill.registerDialog(dialog);
-        }
-        showDialogButton.addEventListener('click', function() {
-        dialog.showModal();
-        });
-        dialog.querySelector('.close').addEventListener('click', function() {
-        dialog.close();
-        });
-      </script>
-      <!-- END OF SHOPPING CART-->
       <div class="container mdl-grid">
         <!-- LATEST UPDATES SECTION-->
         <div class="medium-title mdl-cell mdl-cell--12-col">Latest footage</div>
@@ -205,215 +137,205 @@
             </div>
           </div>
         </div>
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--12-col-phone">
+          <div class="video-card mdl-card mdl-shadow--8dp">
+            <div class="mdl-card__media">
+              <video preload="none" poster="./images/lviv.png">
+                <source src="./videos/lviv.mp4"/>
+              </video>
+            </div>
+            <div class="mdl-card__actions mdl-card--border"><span class="price">17 EUR</span>
+              <div class="mdl-layout-spacer"></div>
+              <button class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">add_shopping_cart</i></button>
+            </div>
+          </div>
+        </div>
         <div class="mdl-layout-spacer"></div>
-        <hr style="bacground: black;">
+        <hr>
         <!-- END OF LATEST UPDATES SECTION-->
         <!-- CATEGORIES SECTION-->
         <div class="medium-title mdl-cell mdl-cell--12-col">Categories</div>
         <!-- CATEGORIES CONTROLS-->
         <div class="cat-controls mdl-cell mdl-cell--12-col">
-          <button class="mdl-button mdl-js-button mdl-button--icon" id="btn1"><i class="material-icons">sort</i></button>
-          <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="btn1">Sort categories</div>
-          <button class="mdl-button mdl-js-button mdl-button--icon" id="btn2"><i class="material-icons">list-view</i></button>
-          <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="btn2">List view</div>
+          <div class="btns">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1"><i class="material-icons">sort</i></button>
+            <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="btn1">Sort categories</div>
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn2"><i class="material-icons">list</i></button>
+            <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="btn2">List view</div>
+          </div>
           <hr>
         </div>
         <!-- END OF CATEGORIES CONTROLS-->
         <div class="mdl-cell mdl-cell--3-col">
-          <div class="category-card mdl-card mdl-shadow--8dp">
-            <div class="mdl-card__media"><img src="./images/people.png"/></div>
+          <div class="category-card mdl-card mdl-shadow--8dp"><a class="mdl-card__media"><img src="./images/people.png"/></a>
             <div class="mdl-card__actions mdl-card--border"><span class="catname">PEOPLE</span>
               <div class="mdl-layout-spacer"></div><span class="vids-amount">130 videos</span>
             </div>
           </div>
         </div>
         <div class="mdl-cell mdl-cell--3-col">
-          <div class="category-card mdl-card mdl-shadow--8dp">
-            <div class="mdl-card__media"><img src="./images/nature.png"/></div>
+          <div class="category-card mdl-card mdl-shadow--8dp"><a class="mdl-card__media" href="category.html"><img src="./images/nature.png"/></a>
             <div class="mdl-card__actions mdl-card--border"><span class="catname">NATURE</span>
               <div class="mdl-layout-spacer"></div><span class="vids-amount">1203 videos</span>
             </div>
           </div>
         </div>
         <div class="mdl-cell mdl-cell--3-col">
-          <div class="category-card mdl-card mdl-shadow--8dp">
-            <div class="mdl-card__media"><img src="./images/animals.png"/></div>
+          <div class="category-card mdl-card mdl-shadow--8dp"><a class="mdl-card__media"><img src="./images/animals.png"/></a>
             <div class="mdl-card__actions mdl-card--border"><span class="catname">ANIMALS</span>
               <div class="mdl-layout-spacer"></div><span class="vids-amount">1303 videos</span>
             </div>
           </div>
         </div>
         <div class="mdl-cell mdl-cell--3-col">
-          <div class="category-card mdl-card mdl-shadow--8dp">
-            <div class="mdl-card__media"><img src="./images/streets.png"/></div>
+          <div class="category-card mdl-card mdl-shadow--8dp"><a class="mdl-card__media"><img src="./images/streets.png"/></a>
             <div class="mdl-card__actions mdl-card--border"><span class="catname">STREETS</span>
               <div class="mdl-layout-spacer"></div><span class="vids-amount">1110 videos</span>
             </div>
           </div>
         </div>
         <div class="mdl-cell mdl-cell--3-col">
-          <div class="category-card mdl-card mdl-shadow--8dp">
-            <div class="mdl-card__media"><img src="./images/cars.png"/></div>
+          <div class="category-card mdl-card mdl-shadow--8dp"><a class="mdl-card__media"><img src="./images/cars.png"/></a>
             <div class="mdl-card__actions mdl-card--border"><span class="catname">CARS</span>
               <div class="mdl-layout-spacer"></div><span class="vids-amount">2130 videos</span>
             </div>
           </div>
         </div>
         <div class="mdl-cell mdl-cell--3-col">
-          <div class="category-card mdl-card mdl-shadow--8dp">
-            <div class="mdl-card__media"><img src="./images/greenscreen.png"/></div>
+          <div class="category-card mdl-card mdl-shadow--8dp"><a class="mdl-card__media"><img src="./images/greenscreen.png"/></a>
             <div class="mdl-card__actions mdl-card--border"><span class="catname">GREEN SCREEN</span>
               <div class="mdl-layout-spacer"></div><span class="vids-amount">30 videos</span>
             </div>
           </div>
         </div>
         <div class="mdl-cell mdl-cell--3-col">
-          <div class="category-card mdl-card mdl-shadow--8dp">
-            <div class="mdl-card__media"><img src="./images/art.png"/></div>
+          <div class="category-card mdl-card mdl-shadow--8dp"><a class="mdl-card__media"><img src="./images/art.png"/></a>
             <div class="mdl-card__actions mdl-card--border"><span class="catname">ART</span>
               <div class="mdl-layout-spacer"></div><span class="vids-amount">3450 videos</span>
             </div>
           </div>
         </div>
         <div class="mdl-cell mdl-cell--3-col">
-          <div class="category-card mdl-card mdl-shadow--8dp">
-            <div class="mdl-card__media"><img src="./images/abstract.png"/></div>
+          <div class="category-card mdl-card mdl-shadow--8dp"><a class="mdl-card__media"><img src="./images/abstract.png"/></a>
             <div class="mdl-card__actions mdl-card--border"><span class="catname">ABSTRACT</span>
               <div class="mdl-layout-spacer"></div><span class="vids-amount">5430 videos</span>
             </div>
           </div>
         </div>
         <div class="mdl-cell mdl-cell--3-col">
-          <div class="category-card mdl-card mdl-shadow--8dp">
-            <div class="mdl-card__media"><img src="./images/sports.png"/></div>
+          <div class="category-card mdl-card mdl-shadow--8dp"><a class="mdl-card__media"><img src="./images/sports.png"/></a>
             <div class="mdl-card__actions mdl-card--border"><span class="catname">SPORTS</span>
               <div class="mdl-layout-spacer"></div><span class="vids-amount">5733 videos</span>
             </div>
           </div>
         </div>
         <div class="mdl-cell mdl-cell--3-col">
-          <div class="category-card mdl-card mdl-shadow--8dp">
-            <div class="mdl-card__media"><img src="./images/news.png"/></div>
+          <div class="category-card mdl-card mdl-shadow--8dp"><a class="mdl-card__media"><img src="./images/news.png"/></a>
             <div class="mdl-card__actions mdl-card--border"><span class="catname">NEWS</span>
               <div class="mdl-layout-spacer"></div><span class="vids-amount">735 videos</span>
             </div>
           </div>
         </div>
         <div class="mdl-cell mdl-cell--3-col">
-          <div class="category-card mdl-card mdl-shadow--8dp">
-            <div class="mdl-card__media"><img src="./images/food.png"/></div>
+          <div class="category-card mdl-card mdl-shadow--8dp"><a class="mdl-card__media"><img src="./images/food.png"/></a>
             <div class="mdl-card__actions mdl-card--border"><span class="catname">FOOD</span>
               <div class="mdl-layout-spacer"></div><span class="vids-amount">4357 videos</span>
             </div>
           </div>
         </div>
         <div class="mdl-cell mdl-cell--3-col">
-          <div class="category-card mdl-card mdl-shadow--8dp">
-            <div class="mdl-card__media"><img src="./images/business.png"/></div>
+          <div class="category-card mdl-card mdl-shadow--8dp"><a class="mdl-card__media"><img src="./images/business.png"/></a>
             <div class="mdl-card__actions mdl-card--border"><span class="catname">BUSINESS</span>
               <div class="mdl-layout-spacer"></div><span class="vids-amount">2598 videos</span>
             </div>
           </div>
         </div>
         <div class="mdl-cell mdl-cell--3-col">
-          <div class="category-card mdl-card mdl-shadow--8dp">
-            <div class="mdl-card__media"><img src="./images/family.png"/></div>
+          <div class="category-card mdl-card mdl-shadow--8dp"><a class="mdl-card__media"><img src="./images/family.png"/></a>
             <div class="mdl-card__actions mdl-card--border"><span class="catname">FAMILY</span>
               <div class="mdl-layout-spacer"></div><span class="vids-amount">2707 videos</span>
             </div>
           </div>
         </div>
         <div class="mdl-cell mdl-cell--3-col">
-          <div class="category-card mdl-card mdl-shadow--8dp">
-            <div class="mdl-card__media"><img src="./images/events.png"/></div>
+          <div class="category-card mdl-card mdl-shadow--8dp"><a class="mdl-card__media"><img src="./images/events.png"/></a>
             <div class="mdl-card__actions mdl-card--border"><span class="catname">EVENTS</span>
               <div class="mdl-layout-spacer"></div><span class="vids-amount">5393 videos</span>
             </div>
           </div>
         </div>
         <div class="mdl-cell mdl-cell--3-col">
-          <div class="category-card mdl-card mdl-shadow--8dp">
-            <div class="mdl-card__media"><img src="./images/fashion.png"/></div>
+          <div class="category-card mdl-card mdl-shadow--8dp"><a class="mdl-card__media"><img src="./images/fashion.png"/></a>
             <div class="mdl-card__actions mdl-card--border"><span class="catname">FASHION</span>
               <div class="mdl-layout-spacer"></div><span class="vids-amount">2650 videos</span>
             </div>
           </div>
         </div>
         <div class="mdl-cell mdl-cell--3-col">
-          <div class="category-card mdl-card mdl-shadow--8dp">
-            <div class="mdl-card__media"><img src="./images/entertainment.png"/></div>
+          <div class="category-card mdl-card mdl-shadow--8dp"><a class="mdl-card__media"><img src="./images/entertainment.png"/></a>
             <div class="mdl-card__actions mdl-card--border"><span class="catname">ENTERTAINMENT</span>
               <div class="mdl-layout-spacer"></div><span class="vids-amount">6925 videos</span>
             </div>
           </div>
         </div>
         <div class="mdl-cell mdl-cell--3-col">
-          <div class="category-card mdl-card mdl-shadow--8dp">
-            <div class="mdl-card__media"><img src="./images/travel.png"/></div>
+          <div class="category-card mdl-card mdl-shadow--8dp"><a class="mdl-card__media"><img src="./images/travel.png"/></a>
             <div class="mdl-card__actions mdl-card--border"><span class="catname">TRAVEL</span>
               <div class="mdl-layout-spacer"></div><span class="vids-amount">2654 videos</span>
             </div>
           </div>
         </div>
         <div class="mdl-cell mdl-cell--3-col">
-          <div class="category-card mdl-card mdl-shadow--8dp">
-            <div class="mdl-card__media"><img src="./images/bikes.png"/></div>
+          <div class="category-card mdl-card mdl-shadow--8dp"><a class="mdl-card__media"><img src="./images/bikes.png"/></a>
             <div class="mdl-card__actions mdl-card--border"><span class="catname">BIKES</span>
               <div class="mdl-layout-spacer"></div><span class="vids-amount">4967 videos</span>
             </div>
           </div>
         </div>
         <div class="mdl-cell mdl-cell--3-col">
-          <div class="category-card mdl-card mdl-shadow--8dp">
-            <div class="mdl-card__media"><img src="./images/education.png"/></div>
+          <div class="category-card mdl-card mdl-shadow--8dp"><a class="mdl-card__media"><img src="./images/education.png"/></a>
             <div class="mdl-card__actions mdl-card--border"><span class="catname">EDUCATION</span>
               <div class="mdl-layout-spacer"></div><span class="vids-amount">935 videos</span>
             </div>
           </div>
         </div>
         <div class="mdl-cell mdl-cell--3-col">
-          <div class="category-card mdl-card mdl-shadow--8dp">
-            <div class="mdl-card__media"><img src="./images/technology.png"/></div>
+          <div class="category-card mdl-card mdl-shadow--8dp"><a class="mdl-card__media"><img src="./images/technology.png"/></a>
             <div class="mdl-card__actions mdl-card--border"><span class="catname">TECHNOLOGY</span>
               <div class="mdl-layout-spacer"></div><span class="vids-amount">2957 videos</span>
             </div>
           </div>
         </div>
         <div class="mdl-cell mdl-cell--3-col">
-          <div class="category-card mdl-card mdl-shadow--8dp">
-            <div class="mdl-card__media"><img src="./images/urban.png"/></div>
+          <div class="category-card mdl-card mdl-shadow--8dp"><a class="mdl-card__media"><img src="./images/urban.png"/></a>
             <div class="mdl-card__actions mdl-card--border"><span class="catname">URBAN</span>
               <div class="mdl-layout-spacer"></div><span class="vids-amount">2932 videos</span>
             </div>
           </div>
         </div>
         <div class="mdl-cell mdl-cell--3-col">
-          <div class="category-card mdl-card mdl-shadow--8dp">
-            <div class="mdl-card__media"><img src="./images/aerial.png"/></div>
+          <div class="category-card mdl-card mdl-shadow--8dp"><a class="mdl-card__media"><img src="./images/aerial.png"/></a>
             <div class="mdl-card__actions mdl-card--border"><span class="catname">AERIAL</span>
               <div class="mdl-layout-spacer"></div><span class="vids-amount">5289 videos</span>
             </div>
           </div>
         </div>
         <div class="mdl-cell mdl-cell--3-col">
-          <div class="category-card mdl-card mdl-shadow--8dp">
-            <div class="mdl-card__media"><img src="./images/timelapse.png"/></div>
+          <div class="category-card mdl-card mdl-shadow--8dp"><a class="mdl-card__media"><img src="./images/timelapse.png"/></a>
             <div class="mdl-card__actions mdl-card--border"><span class="catname">TIME LAPSE</span>
               <div class="mdl-layout-spacer"></div><span class="vids-amount">2489 videos</span>
             </div>
           </div>
         </div>
         <div class="mdl-cell mdl-cell--3-col">
-          <div class="category-card mdl-card mdl-shadow--8dp">
-            <div class="mdl-card__media"><img src="./images/slowmotion.png"/></div>
+          <div class="category-card mdl-card mdl-shadow--8dp"><a class="mdl-card__media"><img src="./images/slowmotion.png"/></a>
             <div class="mdl-card__actions mdl-card--border"><span class="catname">SLOW MOTION</span>
               <div class="mdl-layout-spacer"></div><span class="vids-amount">2489 videos</span>
             </div>
           </div>
         </div>
         <div class="mdl-cell mdl-cell--3-col">
-          <div class="category-card mdl-card mdl-shadow--8dp">
-            <div class="mdl-card__media"><img src="./images/others.png"/></div>
+          <div class="category-card mdl-card mdl-shadow--8dp"><a class="mdl-card__media"><img src="./images/others.png"/></a>
             <div class="mdl-card__actions mdl-card--border"><span class="catname">OTHERS</span>
               <div class="mdl-layout-spacer"></div><span class="vids-amount">2489 videos</span>
             </div>
@@ -421,6 +343,75 @@
         </div>
       </div>
       <!-- END OF CATEGORIES SECTION-->
+      <video class="fullscreen" id="video" muted volume="0">//autoplay off
+        <source src="./videos/river.mp4">
+      </video>
+      <!-- Script that works with all videos-->
+      <script src="js/video.js"></script>
+      <!-- SHOPPING CART-->
+      <dialog class="mdl-dialog cart">
+        <div class="mdl-dialog__title">Shopping cart</div>
+        <div class="mdl-dialog__content mdl-grid">
+          <div class="mdl-cell mdl-cell--12-col">Recently added items
+            <hr>
+                  <div class="cart-item mdl-grid mdl-cell mdl-cell--12-col">
+                    <div class="cart-item-thumb mdl-cell mdl-cell--3-col"><img src="./images/plant.png"></div>
+                    <div class="cart-item-info mdl-cell mdl-cell--6-col"> 
+                      <div class="cart-item-name">Watering beautiful flowers</div>
+                      <div class="cart-item-price">234 EUR</div>
+                    </div>
+                    <div class="cart-item-controls mdl-cell mdl-cell--3-col">
+                      <button class="mdl-button mdl-js-button mdl-button--icon" id="rem_btn1"><i class="material-icons">delete</i></button>
+                      <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="rem_btn1">Remove item</div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="cart-item mdl-grid mdl-cell mdl-cell--12-col">
+                    <div class="cart-item-thumb mdl-cell mdl-cell--3-col"><img src="./images/street.png"></div>
+                    <div class="cart-item-info mdl-cell mdl-cell--6-col"> 
+                      <div class="cart-item-name">Street traffic</div>
+                      <div class="cart-item-price">335 EUR</div>
+                    </div>
+                    <div class="cart-item-controls mdl-cell mdl-cell--3-col">
+                      <button class="mdl-button mdl-js-button mdl-button--icon" id="rem_btn1"><i class="material-icons">delete</i></button>
+                      <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="rem_btn1">Remove item</div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="cart-item mdl-grid mdl-cell mdl-cell--12-col">
+                    <div class="cart-item-thumb mdl-cell mdl-cell--3-col"><img src="./images/river.png"></div>
+                    <div class="cart-item-info mdl-cell mdl-cell--6-col"> 
+                      <div class="cart-item-name">Sunset at the river speedup</div>
+                      <div class="cart-item-price">378 EUR</div>
+                    </div>
+                    <div class="cart-item-controls mdl-cell mdl-cell--3-col">
+                      <button class="mdl-button mdl-js-button mdl-button--icon" id="rem_btn2"><i class="material-icons">delete</i></button>
+                      <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="rem_btn2">Remove item</div>
+                    </div>
+                  </div>
+                  <hr>
+            <div class="total-price mdl-cell mdl-cell--12-col">Total price: 947 EUR</div>
+          </div>
+        </div>
+        <div class="mdl-dialog__actions">
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored" type="button">checkout</button>
+          <button class="mdl-button close" type="button">continue shopping</button>
+        </div>
+      </dialog>
+      <script>
+        var dialog = document.querySelector('dialog');
+        var showDialogButton = document.querySelector('#show-dialog');
+        if (! dialog.showModal) {
+        dialogPolyfill.registerDialog(dialog);
+        }
+        showDialogButton.addEventListener('click', function() {
+        dialog.showModal();
+        });
+        dialog.querySelector('.close').addEventListener('click', function() {
+        dialog.close();
+        });
+      </script>
+      <!-- END OF SHOPPING CART-->
       <footer class="mdl-mini-footer">
         <div class="mdl-mini-footer__left-section">
           <div class="mdl-logo">Title</div>
@@ -431,11 +422,6 @@
           <p id="about"></p>Dopcine is a global royalty free video stock platfrom that is focused on delivering high quality footage to the customers.<br>We love to talk about our passion and we are excited to see where our passion and innovation touches you, Only the best is good enough.
         </div>
       </footer>
-      <video class="fullscreen" id="video" autoplay muted volume="0">//autoplay off
-        <source src="./videos/river.mp4">
-      </video>
-      <!-- Script that works with all videos-->
-      <script src="js/video.js"></script>
     </main>
   </div>
 </body>

@@ -1,3 +1,99 @@
+extends templates/website-layout
+block main
+  // TITLE
+  .mdl-grid.title-container
+    .mdl-cell.mdl-cell--12-col.bigtitle!= '4k and FullHD' + ' stock' + '&nbsp' + 'videos'
+
+  // SEARCH
+  .mdl-grid.searchbar
+    .mdh-expandable-search
+            i.material-icons search
+            form(action='#')
+              input(type='text', placeholder='Search', size='1')
+  // END OF SEARCH
+
+  // OFTEN SEARCHES
+  .often-searches-container.mdl-grid
+    span#often-searches-title.mdl-cell.mdl-cell--12-col Popular searches:
+    span#often-searches-list.mdl-cell.mdl-cell--12-col
+      ul
+        +searchword('#','street')
+        +searchword('#','sky')
+        +searchword('#','animals')
+        +searchword('#','cars')
+        +searchword('#','New York')
+  // END OF OFTEN SEARCHES
+    
+  .container.mdl-grid
+
+    // LATEST UPDATES SECTION
+    .medium-title.mdl-cell.mdl-cell--12-col Latest footage
+    +video('plant', 130)
+    +video('street', 210)
+    +video('river', 119)
+    +video('plant', 86)
+    +video('street' ,92)
+    +video('river', 10)
+    +video('lviv', 17)
+    .mdl-layout-spacer
+    hr
+    // END OF LATEST UPDATES SECTION
+  
+    // CATEGORIES SECTION
+    .medium-title.mdl-cell.mdl-cell--12-col Categories
+    // CATEGORIES CONTROLS
+    .cat-controls.mdl-cell.mdl-cell--12-col
+      .btns
+        button#btn1.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--icon
+          i.material-icons sort
+        .mdl-tooltip.mdl-tooltip--top(data-mdl-for='btn1') Sort categories
+
+        button#btn2.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--icon
+          i.material-icons list
+        .mdl-tooltip.mdl-tooltip--top(data-mdl-for='btn2') List view
+
+      hr
+    // END OF CATEGORIES CONTROLS
+
+    +category('PEOPLE', 'people', 130)
+    +category('NATURE', 'nature', 1203, 'category.html')
+    +category('ANIMALS', 'animals', 1303)
+    +category('STREETS', 'streets', 1110)
+    +category('CARS', 'cars', 2130)
+    +category('GREEN SCREEN', 'greenscreen', 30)
+    +category('ART', 'art', 3450)
+    +category('ABSTRACT', 'abstract', 5430)
+    +category('SPORTS', 'sports', 5733)
+    +category('NEWS', 'news', 735)
+    +category('FOOD', 'food', 4357)
+    +category('BUSINESS', 'business', 2598)
+    +category('FAMILY', 'family', 2707)
+    +category('EVENTS', 'events', 5393)
+    +category('FASHION', 'fashion', 2650)
+    +category('ENTERTAINMENT', 'entertainment', 6925)
+    +category('TRAVEL', 'travel', 2654)
+    +category('BIKES', 'bikes', 4967)
+    +category('EDUCATION', 'education', 935)
+    +category('TECHNOLOGY', 'technology', 2957)
+    +category('URBAN', 'urban', 2932)
+    +category('AERIAL', 'aerial', 5289)
+    +category('TIME LAPSE', 'timelapse', 2489)
+    +category('SLOW MOTION', 'slowmotion', 2489)
+    +category('OTHERS', 'others', 2489)
+    
+  // END OF CATEGORIES SECTION
+
+  //- block footer  
+  //- include templates/footer
+
+  
+  
+  video#video.fullscreen( muted volume="0") //autoplay off
+    source(src="./videos/river.mp4")
+
+  // Script that works with all videos
+  script(src='js/video.js')
+
 mixin video (filename, price)
   .mdl-cell.mdl-cell--4-col.mdl-cell--6-col-tablet.mdl-cell--12-col-phone
         .video-card.mdl-card.mdl-shadow--8dp
@@ -9,153 +105,15 @@ mixin video (filename, price)
             .mdl-layout-spacer
             button.mdl-button.mdl-js-button.mdl-button--icon
               i.material-icons add_shopping_cart
-
-mixin category (catName, filename, amount)
+mixin category (catName, filename, amount, href)
   .mdl-cell.mdl-cell--3-col
         .category-card.mdl-card.mdl-shadow--8dp
-          .mdl-card__media
+          a.mdl-card__media(href=href)
             img(src="./images/" + filename + ".png")
           .mdl-card__actions.mdl-card--border
             span.catname #{catName}
             .mdl-layout-spacer
             span.vids-amount #{amount} videos
-
 mixin searchword (href, word)
     li
       a(href=href) #{word}
-
-mixin cart_item (filename, name, price, btn_id)
-  .cart-item.mdl-grid.mdl-cell.mdl-cell--12-col
-    .cart-item-thumb.mdl-cell.mdl-cell--3-col
-      img(src="./images/" + filename + ".png")
-    .cart-item-info.mdl-cell.mdl-cell--6-col 
-      .cart-item-name #{name}
-      .cart-item-price #{price} EUR
-    .cart-item-controls.mdl-cell.mdl-cell--3-col
-      button.mdl-button.mdl-js-button.mdl-button--icon(id=btn_id)
-        i.material-icons delete
-      .mdl-tooltip.mdl-tooltip--top(data-mdl-for=btn_id) Remove item
-  hr
-
-include templates/website-layout
-  block main
-    // TITLE
-    .mdl-grid.title-container
-      .mdl-cell.mdl-cell--12-col.bigtitle!= '4k and FullHD' + ' stock' + '&nbsp' + 'videos'
-
-    // SEARCH
-    .mdl-grid.searchbar
-      .mdh-expandable-search
-              i.material-icons search
-              form(action='#')
-                input(type='text', placeholder='Search', size='1')
-    // END OF SEARCH
-
-    // OFTEN SEARCHES
-    .often-searches-container.mdl-grid
-      span#often-searches-title.mdl-cell.mdl-cell--12-col  Popular searches:
-      span#often-searches-list.mdl-cell.mdl-cell--12-col
-        ul
-          +searchword('#','street')
-          +searchword('#','sky')
-          +searchword('#','animals')
-          +searchword('#','cars')
-          +searchword('#','New York')
-    // END OF OFTEN SEARCHES
-    
-    // SHOPPING CART
-    dialog.mdl-dialog.cart
-      .mdl-dialog__title Shopping cart
-      .mdl-dialog__content.mdl-grid
-        //- p Your shopping cart is empty.
-        .mdl-cell.mdl-cell--12-col Recently added items
-          hr
-          +cart_item('plant', 'Watering beautiful flowers', '234', 'rem_btn1')
-          +cart_item('street', 'Street traffic', '335', 'rem_btn1')
-          +cart_item('river', 'Sunset at the river speedup', '378', 'rem_btn2')
-          .total-price.mdl-cell.mdl-cell--12-col Total price: 947 EUR
-          
-
-      .mdl-dialog__actions
-        button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--raised.mdl-button--colored(type='button') checkout
-        button.mdl-button.close(type='button') continue shopping
-    script.
-      var dialog = document.querySelector('dialog');
-      var showDialogButton = document.querySelector('#show-dialog');
-      if (! dialog.showModal) {
-      dialogPolyfill.registerDialog(dialog);
-      }
-      showDialogButton.addEventListener('click', function() {
-      dialog.showModal();
-      });
-      dialog.querySelector('.close').addEventListener('click', function() {
-      dialog.close();
-      });
-    // END OF SHOPPING CART
-
-      
-    .container.mdl-grid
-
-      // LATEST UPDATES SECTION
-      .medium-title.mdl-cell.mdl-cell--12-col Latest footage
-      +video('plant', 130)
-      +video('street', 210)
-      +video('river', 119)
-      +video('plant', 86)
-      +video('street' ,92)
-      +video('river', 10)
-      .mdl-layout-spacer
-      hr(style="bacground: black;")
-      // END OF LATEST UPDATES SECTION
-    
-      // CATEGORIES SECTION
-      .medium-title.mdl-cell.mdl-cell--12-col Categories
-      // CATEGORIES CONTROLS
-      .cat-controls.mdl-cell.mdl-cell--12-col
-
-        button#btn1.mdl-button.mdl-js-button.mdl-button--icon
-          i.material-icons sort
-        .mdl-tooltip.mdl-tooltip--top(data-mdl-for='btn1') Sort categories
-
-        button#btn2.mdl-button.mdl-js-button.mdl-button--icon
-          i.material-icons list-view
-        .mdl-tooltip.mdl-tooltip--top(data-mdl-for='btn2') List view
-        hr
-      // END OF CATEGORIES CONTROLS
-
-      +category('PEOPLE', 'people', 130)
-      +category('NATURE', 'nature', 1203)
-      +category('ANIMALS', 'animals', 1303)
-      +category('STREETS', 'streets', 1110)
-      +category('CARS', 'cars', 2130)
-      +category('GREEN SCREEN', 'greenscreen', 30)
-      +category('ART', 'art', 3450)
-      +category('ABSTRACT', 'abstract', 5430)
-      +category('SPORTS', 'sports', 5733)
-      +category('NEWS', 'news', 735)
-      +category('FOOD', 'food', 4357)
-      +category('BUSINESS', 'business', 2598)
-      +category('FAMILY', 'family', 2707)
-      +category('EVENTS', 'events', 5393)
-      +category('FASHION', 'fashion', 2650)
-      +category('ENTERTAINMENT', 'entertainment', 6925)
-      +category('TRAVEL', 'travel', 2654)
-      +category('BIKES', 'bikes', 4967)
-      +category('EDUCATION', 'education', 935)
-      +category('TECHNOLOGY', 'technology', 2957)
-      +category('URBAN', 'urban', 2932)
-      +category('AERIAL', 'aerial', 5289)
-      +category('TIME LAPSE', 'timelapse', 2489)
-      +category('SLOW MOTION', 'slowmotion', 2489)
-      +category('OTHERS', 'others', 2489)
-      
-    // END OF CATEGORIES SECTION
-  include templates/footer
-
-  
-  
-  video#video.fullscreen(autoplay muted volume="0") //autoplay off
-    source(src="./videos/river.mp4")
-
-  // Script that works with all videos
-  script(src='js/video.js')
