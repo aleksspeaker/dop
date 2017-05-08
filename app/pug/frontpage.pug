@@ -1,28 +1,29 @@
 extends templates/website-layout
 block main
   // TITLE
-  .mdl-grid.title-container
-    .mdl-cell.mdl-cell--12-col.bigtitle!= '4k and FullHD' + ' stock' + '&nbsp' + 'videos'
+  .front-screen
+    .mdl-grid.title-container
+      .mdl-cell.mdl-cell--12-col.bigtitle!= '4k and FullHD' + ' stock' + '&nbsp' + 'videos'
 
-  // SEARCH
-  .mdl-grid.searchbar
-    .mdh-expandable-search
-            i.material-icons search
-            form(action='#')
-              input(type='text', placeholder='Search', size='1')
-  // END OF SEARCH
+    // SEARCH
+    .mdl-grid.searchbar
+      .mdh-expandable-search
+              i.material-icons search
+              form(action='#')
+                input(type='text', placeholder='Search', size='1')
+    // END OF SEARCH
 
-  // OFTEN SEARCHES
-  .often-searches-container.mdl-grid
-    span#often-searches-title.mdl-cell.mdl-cell--12-col Popular searches:
-    span#often-searches-list.mdl-cell.mdl-cell--12-col
-      ul
-        +searchword('#','street')
-        +searchword('#','sky')
-        +searchword('#','animals')
-        +searchword('#','cars')
-        +searchword('#','New York')
-  // END OF OFTEN SEARCHES
+    // OFTEN SEARCHES
+    .often-searches-container.mdl-grid
+      span#often-searches-title.mdl-cell.mdl-cell--12-col Popular searches:
+      span#often-searches-list.mdl-cell.mdl-cell--12-col
+        ul
+          +searchword('#','street')
+          +searchword('#','sky')
+          +searchword('#','animals')
+          +searchword('#','cars')
+          +searchword('#','New York')
+    // END OF OFTEN SEARCHES
     
   .container.mdl-grid
 
@@ -33,7 +34,6 @@ block main
     +video('river', 119)
     +video('plant', 86)
     +video('street' ,92)
-    +video('river', 10)
     +video('lviv', 17)
     .mdl-layout-spacer
     hr

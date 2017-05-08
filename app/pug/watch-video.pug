@@ -2,40 +2,44 @@ extends templates/website-layout
 block header
   include templates/header-mini
 block main
-  .mdl-grid
+  .wrapper
+    .wrapper2.mdl-grid
+      // Left section with Author's infi/bio
+      .author-box.mdl-cell.mdl-cell--3-col.mdl-grid
+        .mdl-cell.mdl-cell--12-col
+          .author-box-title Author
+          .author-box-avatar.mdl-list
+            .mdl-list__item.mdl-list__item--two-line
+              span.mdl-list__item-primary-content
+                img.mdl-list__item-avatar(src="images/photo.jpg")
+                span Faik Geci
+                a(href="")
+                  span.mdl-list__item-sub-title 62 Videos
+          .bio Faik Geci, Dutch cinematographer. Passionate about good cinema.
+          button#follow-btn.mdl-button.mdl-js-button.mdl-button--colored.mdl-button--raised.mdl-js-ripple-effect Follow
+          button#hire-btn.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect Hire Faik
+          
 
-    // Left section with Author's infi/bio
-    .mdl-cell.mdl-cell--3-col.mdl-grid
-      .mdl-cell.mdl-cell--12-col
-        div Author
-        ul.mdl-list
-          li.mdl-list__item.mdl-list__item--two-line
-            span.mdl-list__item-primary-content
-              img.mdl-list__item-avatar(src="images/photo.jpg")
-              span Faik Geci
-              a(href="")
-                span.mdl-list__item-sub-title 62 Videos
-        button.mdl-button.mdl-js-button.mdl-button--colored.mdl-button--raised.mdl-js-ripple-effect Follow
-        button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect Hire Faik
-        .bio
-        |Faik Geci, Dutch cinematographer. Passionate about good cinema.
-
-    // Video section with video details
-    .video-watch-box.mdl-cell.mdl-cell--6-col
-      .small-title.mdl-cell.mdl-cell--12-col Lviv arial footage
-      .watermark
-        img(src="./images/dopcine_logo_white.svg" width="200px")  
-      video(src="videos/lviv.mp4" controls)
-      #vid-info
-        #categories
-          p Categories:
-            a(href="")=" Streets "
-            a(href="")=" Birds "
-            a(href="")=" City "
-            a(href="")=" Arial "
-        #description Description: Gorgeous airal views of Lviv. Historical part of the city. Drone footage.
-    // Section with buying details
-    .buying-details.mdl-cell.mdl-cell--3-col.mdl-grid
-      p Available formats: 4k, FullHD
-      p Price: 100 EUR
-      button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent Add to cart
+      // Video section with video details
+      .video-watch-box.mdl-cell.mdl-cell--6-col
+        .small-title.mdl-cell.mdl-cell--12-col Lviv arial footage
+        .watermark
+          img(src="./images/dopcine_logo_white.svg" width="200px")  
+        video(src="videos/lviv.mp4" controls)
+        #vid-info
+          #categories
+            p Categories:
+              a(href="")=" Streets "
+              a(href="")=" Birds "
+              a(href="")=" City "
+              a(href="")=" Arial "
+          #description Description: Gorgeous airal views of Lviv. Historical part of the city. Drone footage.
+      // Section with buying details
+      .buying-details.mdl-cell.mdl-cell--3-col.mdl-grid
+        #formats.mdl-cell.mdl-cell--12-col
+          i.material-icons movie
+          span Available formats: 4k, FullHD
+        #video-price.mdl-cell.mdl-cell--12-col
+          i.material-icons shop
+          span Price: 100 EUR
+        button#add-to-cart-btn.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent Add to cart

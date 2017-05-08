@@ -1,6 +1,8 @@
+$color-text-regular: rgba(0,0,0,.87)
+$color-text-additional: rgba(0,0,0,.54)
+
 body 
   font-family: 'Roboto', sans-serif
-
 
 ::-webkit-scrollbar 
   width: 8px
@@ -8,10 +10,8 @@ body
   height: 8px
   /* for horizontal scrollbars */
 
-
 ::-webkit-scrollbar-track 
   background: rgba(255, 255, 255, 0.1)
-
 
 ::-webkit-scrollbar-thumb 
   background: rgba(255, 255, 255, 0.5)
@@ -20,22 +20,16 @@ body
 .testing 
   width: percentage(5/7)
 
-
 th .mdl-icon-toggle 
   height: 29px
-
 
 .date-icon-table-heading 
   display: flex
   align-items: flex-end
   justify-content: flex-end
 
-
 .overview-card 
   &.mdl-card 
-    /*width: 100%*/
-    /*height: 365px*/
-  
   > .mdl-card__title 
     color: #fff
       background: url('') bottom right 15% no-repeat #1976D2
@@ -43,39 +37,28 @@ th .mdl-icon-toggle
 #tasks .mdl-card__title 
   background: #1565C0
 
-
 .mdl-card__title-text 
   align-self: flex-start
-
 
 .tasks-table 
   width: 100%
 
-
-
 #tasks 
   padding: 0
-
-
 
 .vertical-cards-container 
   margin: 0
   padding: 0
 
-
 .table-head 
-
-
 
 /*CONTENT PAGE================================*/
 
 .table-icons 
   width: 20px
 
-
 #content-table 
   width: 100%
-
 
 #category-form 
   width: 150px
@@ -83,17 +66,13 @@ th .mdl-icon-toggle
   align-self: flex-end
   padding-left: 8px
 
-
 .vid-sort-controls 
   display: inline-flex
   margin-bottom: -12px
 
-
 .content 
   .controls 
     justify-content: flex-start
-
-
 
 /*MODERATION PAGE=============================*/
 
@@ -106,7 +85,6 @@ th .mdl-icon-toggle
   background: #fafafa
   border-radius: 4px
 
-
 #inbox 
   .moderation-card.mdl-card 
     width: 100%
@@ -115,8 +93,6 @@ th .mdl-icon-toggle
     background: white
     margin-bottom: 8px
     
-
-
 #inprog 
   .moderation-card.mdl-card 
     width: 100%
@@ -125,8 +101,6 @@ th .mdl-icon-toggle
     background: #FFF176
     margin-bottom: 8px
     
-
-
 #done 
   .moderation-card.mdl-card 
     width: 100%
@@ -138,34 +112,27 @@ th .mdl-icon-toggle
 .moderation-card > .mdl-card__actions 
   border-color: rgba(255, 255, 255, 0.2)
 
-
 .moderation-card > .mdl-card__title 
   display: block
 
-
 .moderation-card > .mdl-card__title > h4 
   margin-top: 0
-
 
 .moderation-card > .mdl-card__actions 
   display: flex
   box-sizing: border-box
   align-items: center
 
-
 .mdl-card__actions.mdl-card--border 
   border-top: 1px solid rgba(0, 0, 0, .2)
 
-
 .moderation-card > .mdl-card__actions > .material-icons 
   padding-right: 10px
-
 
 .moderation-card > .mdl-card__title,
 .moderation-card > .mdl-card__actions,
 .moderation-card > .mdl-card__actions > .mdl-button 
   color: rgba(0, 0, 0, .87)
-
 
 .mod-card-name 
   font-size: 1.6rem
@@ -173,26 +140,17 @@ th .mdl-icon-toggle
 mod-card-author 
   font-size: 1.3rem
 
-
-
 /*THIS CURSOR MAKE ITEMS APPEAR GRABBABLE*/
 
 .grabbable 
   cursor: move
   /* fallback if grab cursor is unsupported */
   cursor: grab
-  cursor: -moz-grab
-  cursor: -webkit-grab
-
-
 
 /* (Optional) Apply a "closed-hand" cursor during drag operation. */
 
 .grabbable:active 
   cursor: grabbing
-  cursor: -moz-grabbing
-  cursor: -webkit-grabbing
-
 
 table#messages-table 
   width: 100%
@@ -210,8 +168,6 @@ table#messages-table
   justify-content: space-between
   /*align-content: flex-end*/
 
-
-
 /* ====== New user dialogue ====== */
 
 .mdl-dialog 
@@ -219,47 +175,33 @@ table#messages-table
   box-shadow: 0 9px 46px 8px rgba(0, 0, 0, 0.14), 0 11px 15px -7px rgba(0, 0, 0, 0.12), 0 24px 38px 3px rgba(0, 0, 0, 0.2)
   width: 80%
 
-
 .mdl-dialog__title 
   padding: 24px 24px 0
   margin: 0
   font-size: 2.5rem
 
-
 .mdl-dialog__actions 
   padding: 8px 8px 8px 24px
-  display: -webkit-flex
-  display: -ms-flexbox
   display: flex
-  -webkit-flex-direction: row-reverse
-  -ms-flex-direction: row-reverse
   flex-direction: row-reverse
-  -webkit-flex-wrap: wrap
-  -ms-flex-wrap: wrap
   flex-wrap: wrap
 
 .mdl-dialog__actions > * 
   margin-right: 8px
   height: 36px
 
-
 .mdl-dialog__actions > *:first-child 
   margin-right: 0
-
 
 .mdl-dialog__actions--full-width 
   padding: 0 0 8px 0
 
-
 .mdl-dialog__actions--full-width > * 
   height: 48px
-  -webkit-flex: 0 0 100%
-  -ms-flex: 0 0 100%
   flex: 0 0 100%
   padding-right: 16px
   margin-right: 0
   text-align: right
-
 
 .mdl-dialog__content 
   padding: 20px 24px 24px 24px
@@ -270,30 +212,34 @@ table#messages-table
 .userphoto 
   display: flex
 
-
 .send-email-checkbox 
   margin-top: 16px
 
-
-
 /*FRONT PAGE*/
+
+.front-screen
+  height: 96vh
 
 #sell-button 
   color: white
-
 
 #signin-button 
   color: white
   // background: rgba(244, 67, 54, .74)
 
-
 #cart-button 
   color: white
-  // background: blue
   .mdl-badge,
   .mdl-badge--overlap 
     z-index: 2000
     
+.wrapper
+  min-height: 100%
+  display: flex
+  flex-direction: column
+  
+.wrapper2
+  flex: 1
 
 header#mini-header.mdl-layout__header.mdl-layout__header--transparent.mdl-layout__header--waterfall
   background: rgba(0, 0, 0, .80)
@@ -302,10 +248,8 @@ header#mini-header.mdl-layout__header.mdl-layout__header--transparent.mdl-layout
   padding-right: 0
   background: rgba(0, 0, 0, .50)
 
-
 .demo-layout-transparent 
-  // background: rgba(0, 0, 0, .41)
-
+  background: rgba(250, 250, 250, 1)
 
 .demo-layout-transparent .mdl-layout__header,
 .demo-layout-transparent .mdl-layout__drawer-button 
@@ -315,11 +259,9 @@ header#mini-header.mdl-layout__header.mdl-layout__header--transparent.mdl-layout
   background: rgba(0, 0, 0, 0)
   transition: .3s
 
-
 .is-casting-shadow.is-compact 
   background: rgba(0, 0, 0, .7)
   display: flex
-
 
 video#video.fullscreen 
   position: fixed
@@ -332,20 +274,17 @@ video#video.fullscreen
   z-index: -100
   transform: translate(-50%, -50%)
 
-
 /*END OF FRONT PAGE*/
 
 .title-container 
   width: 100vw
   text-shadow: 1px 1px 2px rgba(0, 0, 0, .43)
 
-
 .often-searches-container 
   padding-left: 0
   color: white
   width: 100vw
   margin-bottom: 23vw
-
 
 #often-searches-title 
   font-size: 24px
@@ -380,20 +319,15 @@ video#video.fullscreen
   text-align: center
   line-height: 3rem
 
-
 @media only screen and (max-width: 1024px) 
   .bigtitle 
     font-size: 60px
     
-
-
 @media only screen and (max-width: 768px) 
   .bigtitle 
     font-size: 50px
     line-height: 3rem
     
-
-
 @media only screen and (max-width: 425px) 
   .bigtitle 
     font-size: 40px
@@ -401,38 +335,21 @@ video#video.fullscreen
 
 /*SEARCH BAR*/
 
-
-/* TODO: Hover and Focus state.
- *       Fix position of mobile search button.
- */
-
 .mdh-expandable-search 
   margin: 0 50px
   align-items: center
   justify-content: center
 
-
 .mdh-expandable-search form 
   max-width: 600px
-
 
 .mdh-expandable-search,
 .mdh-expandable-search form,
 .mdh-expandable-search input 
-  /* Cross browser flex-grow */
-  -webkit-box-flex: 1
-  -webkit-flex-grow: 1
-  -ms-flex-positive: 1
   flex-grow: 1
-
 
 .mdh-expandable-search,
 .mdh-expandable-search form 
-  /* Cross browser inline-flex */
-  display: -webkit-inline-box
-  display: -webkit-inline-flex
-  display: -moz-inline-box
-  display: -ms-inline-flexbox
   display: inline-flex
 
 /* Position search icon */
@@ -442,7 +359,6 @@ video#video.fullscreen
   right: -40px
   margin-left: -24px
   /* Remove the blank space left behind by the icon being relatively positioned */
-
 
 .mdh-expandable-search input 
   outline: none
@@ -455,14 +371,10 @@ video#video.fullscreen
   line-height: 40px
   /* TODO: This was recommended for cross browser compatability of input height, check if its actually needed in modern browsers */
   border-radius: 5px 5px 5px 5px
-  -moz-border-radius: 5px 5px 5px 5px
-  -webkit-border-radius: 5px 5px 5px 5px
-
 
 .mdh-expandable-search input::-webkit-input-placeholder 
   /* WebKit browsers */
   color: rgba(0, 0, 0, .87)
-
 
 .mdh-expandable-search input:-moz-placeholder 
   /* Mozilla Firefox 4 to 18 */
@@ -476,12 +388,9 @@ video#video.fullscreen
   opacity: 1
   /* Firefox gives the placeholder a reduced opacity so we have to increase it */
 
-
 .mdh-expandable-search input:-ms-input-placeholder 
   /* Internet Explorer 10+ */
   color: rgba(0, 0, 0, .87)
-
-
 
 /* Bug fix: https://github.com/google/material-design-lite/issues/1078
  * To much padding on the left of header when the menu button is hidden */
@@ -490,15 +399,11 @@ video#video.fullscreen
   .mdl-layout__header-row 
     /*padding: 0 40px 0 40px*/
     
-
-
-
 /* Bug fix for badges being in the wrong location */
 
 .mdl-badge[data-badge]:after 
   right: -7px
   top: -8px
-
 
 .searchbar 
   /*padding-top: 40vh*/
@@ -536,7 +441,6 @@ video#video.fullscreen
       img 
         width: 100%
       
-    
     .cart-item-info 
       .cart-item-name 
         width: 100%
@@ -548,14 +452,12 @@ video#video.fullscreen
         .cart-item-price 
           font-size: 1.4rem
           line-height: 2.5rem
-      
-    
+       
     .cart-item-controls 
       display: flex
       justify-content: flex-end
 
 .container 
-  // margin-top: 42vh
   background: rgba(255, 255, 250, 1)
 
 .video-card 
@@ -666,17 +568,31 @@ video#video.fullscreen
   span
     margin: 0 8px 
 
-
-
-      
 p#about 
   font-size: 12px
 
+// Single video page ============================================
 
+// Left section with Author's infi/bio
 
-// Single video page
+#follow-btn, #hire-btn
 
+.author-box
+  background: #fff
+  border-radius 4px
+  box-shadow: 0 0 15px rgba(0,0,0,.04)
+
+.author-box-title
+  margin: 0 16px -16px
+  color: $color-text-additional
+.author-box-avatar
+  margin-bottom: 0
+.bio
+  padding-bottom: 16px
+
+// Video section with video details
 .video-watch-box
+  background: #fff
   box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.2)
   border-radius: 4px
   video
@@ -696,8 +612,31 @@ p#about
     z-index: 1000
     top: 110px
     left: 35%
-#formats
+
+
+
+
+// Section with buying details
 .buying-details
+  background: #fff
+  border-radius 4px
+  box-shadow: 0 0 15px rgba(0,0,0,.04)
   display: flex
   flex-wrap: wrap
   flex-direction: column
+
+#formats, #video-price
+  color: $color-text-regular
+  display: inherit
+  margin: 8px 0
+  span
+    display: inline-flex
+    align-items: center
+    margin-left: 8px
+#add-to-cart-btn
+  margin-top: 16px
+
+
+footer 
+  z-index: 1
+

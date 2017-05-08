@@ -34,10 +34,6 @@ th .mdl-icon-toggle {
       -ms-flex-pack: end;
           justify-content: flex-end; }
 
-.overview-card.mdl-card {
-  /*width: 100%*/
-  /*height: 365px*/ }
-
 .overview-card > .mdl-card__title {
   color: #fff;
     color-background: url("") bottom right 15% no-repeat #1976D2; }
@@ -164,13 +160,13 @@ mod-card-author {
 .grabbable {
   cursor: move;
   /* fallback if grab cursor is unsupported */
-  cursor: grab;
-  cursor: -webkit-grab; }
+  cursor: -webkit-grab;
+  cursor: grab; }
 
 /* (Optional) Apply a "closed-hand" cursor during drag operation. */
 .grabbable:active {
-  cursor: grabbing;
-  cursor: -webkit-grabbing; }
+  cursor: -webkit-grabbing;
+  cursor: grabbing; }
 
 table#messages-table {
   width: 100%; }
@@ -206,18 +202,18 @@ table#messages-table {
 
 .mdl-dialog__actions {
   padding: 8px 8px 8px 24px;
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: -webkit-box;
   display: flex;
-  -webkit-flex-direction: row-reverse;
-  -ms-flex-direction: row-reverse;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
+  -webkit-flex-direction: row-reverse;
+      -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
   -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
 
 .mdl-dialog__actions > * {
   margin-right: 8px;
@@ -231,9 +227,9 @@ table#messages-table {
 
 .mdl-dialog__actions--full-width > * {
   height: 48px;
-  -webkit-flex: 0 0 100%;
-  -ms-flex: 0 0 100%;
   -webkit-box-flex: 0;
+  -webkit-flex: 0 0 100%;
+      -ms-flex: 0 0 100%;
           flex: 0 0 100%;
   padding-right: 16px;
   margin-right: 0;
@@ -254,6 +250,9 @@ table#messages-table {
   margin-top: 16px; }
 
 /*FRONT PAGE*/
+.front-screen {
+  height: 96vh; }
+
 #sell-button {
   color: white; }
 
@@ -266,12 +265,33 @@ table#messages-table {
   #cart-button .mdl-badge--overlap {
     z-index: 2000; }
 
+.wrapper {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.wrapper2 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1; }
+
 header#mini-header.mdl-layout__header.mdl-layout__header--transparent.mdl-layout__header--waterfall {
   background: rgba(0, 0, 0, 0.8); }
 
 .demo-layout-waterfall .mdl-layout__header-row .mdl-navigation__link:last-of-type {
   padding-right: 0;
   background: rgba(0, 0, 0, 0.5); }
+
+.demo-layout-transparent {
+  background: #fafafa; }
 
 .demo-layout-transparent .mdl-layout__header,
 .demo-layout-transparent .mdl-layout__drawer-button {
@@ -363,9 +383,6 @@ video#video.fullscreen {
     line-height: 3rem; } }
 
 /*SEARCH BAR*/
-/* TODO: Hover and Focus state.
- *       Fix position of mobile search button.
- */
 .mdh-expandable-search {
   margin: 0 50px;
   -webkit-box-align: center;
@@ -383,15 +400,13 @@ video#video.fullscreen {
 .mdh-expandable-search,
 .mdh-expandable-search form,
 .mdh-expandable-search input {
-  /* Cross browser flex-grow */
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1; }
+      -ms-flex-positive: 1;
+          flex-grow: 1; }
 
 .mdh-expandable-search,
 .mdh-expandable-search form {
-  /* Cross browser inline-flex */
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -414,9 +429,7 @@ video#video.fullscreen {
   height: 40px;
   line-height: 40px;
   /* TODO: This was recommended for cross browser compatability of input height, check if its actually needed in modern browsers */
-  border-radius: 5px 5px 5px 5px;
-  -moz-border-radius: 5px 5px 5px 5px;
-  -webkit-border-radius: 5px 5px 5px 5px; }
+  border-radius: 5px 5px 5px 5px; }
 
 .mdh-expandable-search input::-webkit-input-placeholder {
   /* WebKit browsers */
@@ -641,7 +654,23 @@ video#video.fullscreen {
 p#about {
   font-size: 12px; }
 
+.author-box {
+  background: #fff;
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.04);
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.04); }
+
+.author-box-title {
+  margin: 0 16px -16px;
+  color: rgba(0, 0, 0, 0.54); }
+
+.author-box-avatar {
+  margin-bottom: 0; }
+
+.bio {
+  padding-bottom: 16px; }
+
 .video-watch-box {
+  background: #fff;
   -webkit-box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.2);
           box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.2);
   border-radius: 4px; }
@@ -664,6 +693,9 @@ p#about {
     left: 35%; }
 
 .buying-details {
+  background: #fff;
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.04);
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.04);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -676,3 +708,24 @@ p#about {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column; }
+
+#formats, #video-price {
+  color: rgba(0, 0, 0, 0.87);
+  display: inherit;
+  margin: 8px 0; }
+  #formats span, #video-price span {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: 8px; }
+
+#add-to-cart-btn {
+  margin-top: 16px; }
+
+footer {
+  z-index: 1; }

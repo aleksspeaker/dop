@@ -33,36 +33,38 @@
       <nav class="mdl-navigation"><a class="mdl-navigation__link" href="">Latest footage</a><a class="mdl-navigation__link" href="">Categories</a></nav>
     </div>
     <main class="mdl-layout__content" id="main">
-      <div class="mdl-grid">
-        <!-- Left section with Author's infi/bio-->
-        <div class="mdl-cell mdl-cell--3-col mdl-grid">
-          <div class="mdl-cell mdl-cell--12-col">
-            <div>Author</div>
-            <ul class="mdl-list">
-              <li class="mdl-list__item mdl-list__item--two-line"><span class="mdl-list__item-primary-content"><img class="mdl-list__item-avatar" src="images/photo.jpg"><span>Faik Geci</span><a href=""><span class="mdl-list__item-sub-title">62 Videos</span></a></span></li>
-            </ul>
-            <button class="mdl-button mdl-js-button mdl-button--colored mdl-button--raised mdl-js-ripple-effect">Follow</button>
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Hire Aleksander</button>
-            <div class="bio"></div>Faik Geci, Dutch cinematographer. Passionate about good cinema.
-          </div>
-        </div>
-        <!-- Video section with video details-->
-        <div class="video-watch-box mdl-cell mdl-cell--6-col">
-          <div class="small-title mdl-cell mdl-cell--12-col">Lviv arial footage</div>
-          <div class="watermark"><img src="./images/dopcine_logo_white.svg" width="200px"></div>
-          <video src="videos/lviv.mp4" controls></video>
-          <div id="vid-info">
-            <div id="categories">
-              <p>Categories:<a href=""> Streets </a><a href=""> Birds </a><a href=""> City </a><a href=""> Arial </a></p>
+      <div class="wrapper">
+        <div class="wrapper2 mdl-grid">
+          <!-- Left section with Author's infi/bio-->
+          <div class="author-box mdl-cell mdl-cell--3-col mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col">
+              <div class="author-box-title">Author</div>
+              <div class="author-box-avatar mdl-list">
+                <div class="mdl-list__item mdl-list__item--two-line"><span class="mdl-list__item-primary-content"><img class="mdl-list__item-avatar" src="images/photo.jpg"><span>Faik Geci</span><a href=""><span class="mdl-list__item-sub-title">62 Videos</span></a></span></div>
+              </div>
+              <div class="bio">Faik Geci, Dutch cinematographer. Passionate about good cinema.</div>
+              <button class="mdl-button mdl-js-button mdl-button--colored mdl-button--raised mdl-js-ripple-effect" id="follow-btn">Follow</button>
+              <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="hire-btn">Hire Faik</button>
             </div>
-            <div id="description">Description: Gorgeous airal views of Lviv. Historical part of the city. Drone footage.</div>
           </div>
-        </div>
-        <!-- Section with buying details-->
-        <div class="buying-details mdl-cell mdl-cell--3-col mdl-grid">
-          <p>Available formats: 4k, FullHD</p>
-          <p>Price: 100 EUR</p>
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Add to cart</button>
+          <!-- Video section with video details-->
+          <div class="video-watch-box mdl-cell mdl-cell--6-col">
+            <div class="small-title mdl-cell mdl-cell--12-col">Lviv arial footage</div>
+            <div class="watermark"><img src="./images/dopcine_logo_white.svg" width="200px"></div>
+            <video src="videos/lviv.mp4" controls></video>
+            <div id="vid-info">
+              <div id="categories">
+                <p>Categories:<a href=""> Streets </a><a href=""> Birds </a><a href=""> City </a><a href=""> Arial </a></p>
+              </div>
+              <div id="description">Description: Gorgeous airal views of Lviv. Historical part of the city. Drone footage.</div>
+            </div>
+          </div>
+          <!-- Section with buying details-->
+          <div class="buying-details mdl-cell mdl-cell--3-col mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col" id="formats"><i class="material-icons">movie</i><span>Available formats: 4k, FullHD</span></div>
+            <div class="mdl-cell mdl-cell--12-col" id="video-price"><i class="material-icons">shop</i><span>Price: 100 EUR</span></div>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="add-to-cart-btn">Add to cart</button>
+          </div>
         </div>
       </div>
       <!-- SHOPPING CART-->
