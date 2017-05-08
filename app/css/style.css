@@ -460,6 +460,13 @@ video#video.fullscreen {
   text-align: center;
   line-height: 5rem; }
 
+.small-title {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.87);
+  text-align: center;
+  line-height: 3rem; }
+
 .cart {
   max-width: 600px; }
   .cart .total-price {
@@ -634,15 +641,19 @@ video#video.fullscreen {
 p#about {
   font-size: 12px; }
 
-.video-watch-box video {
-  -webkit-box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.1);
-          box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  width: 100%;
-  margin-bottom: 16px; }
+.video-watch-box {
+  -webkit-box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 4px; }
+  .video-watch-box video {
+    width: 100%;
+    margin-bottom: 16px; }
 
 .width100 {
   width: 100%; }
+
+#vid-info {
+  padding: 16px; }
 
 .watermark {
   position: relative; }
