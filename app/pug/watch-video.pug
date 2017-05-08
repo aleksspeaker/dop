@@ -44,3 +44,54 @@ block main
           i.material-icons shop
           span Price: 100 EUR
         button#add-to-cart-btn.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent Add to cart
+
+      // CATEGORY SECTION
+      .medium-title.mdl-cell.mdl-cell--12-col Other #{name}'s videos
+      .cat-controls.mdl-cell.mdl-cell--12-col
+        .btns
+          button#btn1.mdl-button.mdl-js-button.mdl-button--icon
+            i.material-icons sort
+          .mdl-tooltip.mdl-tooltip--top(data-mdl-for='btn1') Sort categories
+
+          button#btn2.mdl-button.mdl-js-button.mdl-button--icon
+            i.material-icons list
+          .mdl-tooltip.mdl-tooltip--top(data-mdl-for='btn2') List view
+
+          form(action='#')
+            #search.mdl-textfield.mdl-js-textfield.mdl-textfield--expandable
+              label.mdl-button.mdl-js-button.mdl-button--icon(for='search-input')
+                i.material-icons search
+              .mdl-textfield__expandable-holder
+                input#search-input.mdl-textfield__input(type='text', size='40')
+                label.mdl-textfield__label(for='sample-expandable') Expandable Input
+            .mdl-tooltip.mdl-tooltip--top(data-mdl-for='search') Search in category #{catname}
+        .mdl-layout-spacer
+        span 9999 videos
+        hr
+      +video('plant', 130)
+      +video('river', 119)
+      +video('plant', 86)
+      +video('river', 10)
+      +video('plant', 130)
+      +video('river', 119)
+      +video('plant', 86)
+      +video('river', 10)
+      
+      .more-box.mdl-cell.mdl-cell--12-col
+        button#more-btn.mdl-button.mdl-button--raised.mdl-js-button.mdl-button--icon
+          i.material-icons expand_more
+        .mdl-tooltip.mdl-tooltip--top.mdl-tooltip--large(data-mdl-for='more-btn') Show more
+
+
+      // END OF CATEGORY SECTION
+mixin video (filename, price)
+  .mdl-cell.mdl-cell--3-col.mdl-cell--4-col-tablet.mdl-cell--12-col-phone
+        .video-card.mdl-card.mdl-shadow--8dp
+          .mdl-card__media
+            video(preload="none" poster="./images/" + filename + ".png")
+              source(src="./videos/" + filename + ".mp4")
+          .mdl-card__actions.mdl-card--border
+            span.price #{price} EUR
+            .mdl-layout-spacer
+            button.mdl-button.mdl-js-button.mdl-button--icon
+              i.material-icons add_shopping_cart
