@@ -11,14 +11,11 @@ body
   /* for horizontal scrollbars */
 
 ::-webkit-scrollbar-track 
-  background: rgba(255, 255, 255, 0.1)
+  background: rgba(0, 0, 0, 0.1)
 
 ::-webkit-scrollbar-thumb 
-  background: rgba(255, 255, 255, 0.5)
+  background: rgba(0, 0, 0, 0.5)
   border-radius: 4px
-
-.testing 
-  width: percentage(5/7)
 
 th .mdl-icon-toggle 
   height: 29px
@@ -232,17 +229,40 @@ table#messages-table
   .mdl-badge,
   .mdl-badge--overlap 
     z-index: 2000
-    
+
 .wrapper
-  min-height: 100%
   display: flex
+  min-height: 78vh
   flex-direction: column
-  
+
 .wrapper2
+  align-items: flex-start
   flex: 1
+
+#backshape
+  position: fixed
+  top: -30%
+  left: -30%
+  background: linear-gradient(23deg, #FCE4EC, #B3E5FC)
+  display: block
+  float: left
+  margin: 50px auto 200px
+  width: 150%
+  height: 70vh
+  padding: 0 5%
+  transform: skew(10deg,-10deg)
+  z-index: -1
+  border-radius: 50%
+
+
+
+footer 
+  z-index: 1
+  // flex: none
 
 header#mini-header.mdl-layout__header.mdl-layout__header--transparent.mdl-layout__header--waterfall
   background: rgba(0, 0, 0, .80)
+  display: flex
 
 .demo-layout-waterfall .mdl-layout__header-row .mdl-navigation__link:last-of-type 
   padding-right: 0
@@ -459,6 +479,7 @@ video#video.fullscreen
 
 .container 
   background: rgba(255, 255, 250, 1)
+  display: flex
 
 .video-card 
   .mdl-card__actions 
@@ -579,7 +600,7 @@ p#about
 
 .author-box
   background: #fff
-  border-radius 4px
+  border-radius: 4px
   box-shadow: 0 0 15px rgba(0,0,0,.04)
 
 .author-box-title
@@ -593,14 +614,11 @@ p#about
 // Video section with video details
 .video-watch-box
   background: #fff
-  box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.2)
+  box-shadow: 2px 2px 32px rgba(0, 0, 0, 0.2)
   border-radius: 4px
   video
-    // box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.1)
-    // border-radius: 4px
     width: 100%
     margin-bottom: 16px
-  // display: flex
 .width100
   width: 100%
 #vid-info
@@ -614,21 +632,21 @@ p#about
     left: 35%
 
 
-
-
 // Section with buying details
 .buying-details
+  padding: 16px
   background: #fff
-  border-radius 4px
+  border-radius: 4px
   box-shadow: 0 0 15px rgba(0,0,0,.04)
   display: flex
   flex-wrap: wrap
   flex-direction: column
 
 #formats, #video-price
+  i
+    color: $color-text-additional
   color: $color-text-regular
   display: inherit
-  margin: 8px 0
   span
     display: inline-flex
     align-items: center
@@ -637,6 +655,5 @@ p#about
   margin-top: 16px
 
 
-footer 
-  z-index: 1
+
 
