@@ -34,7 +34,7 @@ block main
     +video('river', 119)
     +video('plant', 86)
     +video('street' ,92)
-    +video('lviv', 17)
+    +video('lviv', 17, 'watch-video.html')
     .mdl-layout-spacer
     hr
     // END OF LATEST UPDATES SECTION
@@ -94,12 +94,13 @@ block main
   // Script that works with all videos
   script(src='js/video.js')
 
-mixin video (filename, price)
+mixin video (filename, price, href)
   .mdl-cell.mdl-cell--4-col.mdl-cell--6-col-tablet.mdl-cell--12-col-phone
         .video-card.mdl-card.mdl-shadow--8dp
-          .mdl-card__media
-            video(preload="none" poster="./images/" + filename + ".png")
-              source(src="./videos/" + filename + ".mp4")
+          a(href=href)
+            .mdl-card__media
+              video(preload="none" poster="./images/" + filename + ".png")
+                source(src="./videos/" + filename + ".mp4")
           .mdl-card__actions.mdl-card--border
             span.price #{price} EUR
             .mdl-layout-spacer
