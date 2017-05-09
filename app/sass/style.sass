@@ -5,13 +5,13 @@ body
   font-family: 'Roboto', sans-serif
 
 ::-webkit-scrollbar 
-  width: 8px
+  width: 6px
   /* for vertical scrollbars */
-  height: 8px
+  height: 6px
   /* for horizontal scrollbars */
 
 ::-webkit-scrollbar-track 
-  background: rgba(0, 0, 0, 0.1)
+  // background: rgba(0, 0, 0, 0.1)
 
 ::-webkit-scrollbar-thumb 
   background: rgba(0, 0, 0, 0.5)
@@ -240,19 +240,18 @@ table#messages-table
   flex: 1
 
 #backshape
-  position: fixed
-  top: -30%
-  left: -30%
-  background: linear-gradient(23deg, #FCE4EC, #B3E5FC)
-  display: block
-  float: left
-  margin: 50px auto 200px
+  position: absolute
+  top: -90%
+  left: -40%
+  min-width: 100%
+  min-height: 100%
   width: 150%
-  height: 70vh
-  padding: 0 5%
+  height: 150%
+  transform: translate(-50%, -50%)
   transform: skew(10deg,-10deg)
-  z-index: -1
+  // z-index: -100
   border-radius: 50%
+  background: linear-gradient(23deg, #d6adff, #78ecff)
 
 
 
@@ -261,7 +260,10 @@ footer
   // flex: none
 
 header#mini-header.mdl-layout__header.mdl-layout__header--transparent.mdl-layout__header--waterfall
-  background: rgba(255, 255, 255, .80)
+  background: rgba(0, 0, 0, .80)
+  display: flex
+#mini-header.is-casting-shadow.is-compact 
+  background: rgba(0, 0, 0, .9)
   display: flex
 
 .demo-layout-waterfall .mdl-layout__header-row .mdl-navigation__link:last-of-type 
@@ -280,8 +282,12 @@ header#mini-header.mdl-layout__header.mdl-layout__header--transparent.mdl-layout
   transition: .3s
 
 .is-casting-shadow.is-compact 
-  background: rgba(0, 0, 0, .7)
+  background: rgba(0, 0, 0, .9)
   display: flex
+
+
+#mini-layout
+  color: black
 
 video#video.fullscreen 
   position: fixed
@@ -599,6 +605,7 @@ p#about
 #follow-btn, #hire-btn
 
 .author-box
+  z-index: 1
   background: #fff
   border-radius: 4px
   box-shadow: 0 0 15px rgba(0,0,0,.04)
@@ -613,6 +620,7 @@ p#about
 
 // Video section with video details
 .video-watch-box
+  z-index: 1
   background: #fff
   box-shadow: 2px 2px 32px rgba(0, 0, 0, 0.2)
   border-radius: 4px
@@ -623,11 +631,12 @@ p#about
   width: 100%
 #vid-info
   padding: 16px
+  z-index: 1
 .watermark
   position: relative
   img
     position: absolute
-    z-index: 1000
+    z-index: 0
     top: 110px
     left: 35%
 
@@ -641,8 +650,9 @@ p#about
   display: flex
   flex-wrap: wrap
   flex-direction: column
-
+  z-index: 1
 #formats, #video-price
+
   i
     color: $color-text-additional
   color: $color-text-regular
