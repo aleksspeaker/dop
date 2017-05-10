@@ -33,10 +33,10 @@
     </div>
     <main class="mdl-layout__content" id="main">
       <div id="backshape"></div>
-      <div class="wrapper mdl-grid">
+      <div class="mdl-grid">
         <div class="medium-title mdl-cell mdl-cell--12-col">Upload your video</div>
         <!-- Left section with Author's infi/bio-->
-        <div class="upload-card mdl-card mdl-cell mdl-cell--12-col-phone mdl-cell--3-col mdl-shadow--2dp">
+        <div class="upload-card mdl-card mdl-cell mdl-cell--12-col-phone mdl-cell--3-col mdl-shadow--4dp">
           <div class="mdl-cell mdl-cell--12-col">
             <div class="video-holder mdl-card__media"><i class="placeholder-icon material-icons">local_movies</i></div>
             <div class="mdl-card__actions">
@@ -44,7 +44,7 @@
             </div>
           </div>
         </div>
-        <div class="vid-info-card mdl-card mdl-cell mdl-cell--12-col-phone mdl-cell--3-col mdl-shadow--2dp">
+        <div class="vid-info-card mdl-card mdl-cell mdl-cell--12-col-phone mdl-cell--3-col mdl-shadow--4dp">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input class="mdl-textfield__input" id="video-name" type="text">
             <label class="mdl-textfield__label" for="video-name">Add video title</label>
@@ -62,14 +62,14 @@
               </ul>
             </div>
             <button class="mdl-button mdl-js-button mdl-button--icon" id="add-category-btn"><i class="material-icons">add_circle_outline</i></button>
-            <div class="mdl-tooltip" data-mdl-for="add-category-btn">Add another category</div>
+            <div class="mdl-tooltip" data-mdl-for="add-category-btn">Add another category%)</div>
           </div>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <textarea class="mdl-textfield__input" id="video-description" type="text" rows="3"></textarea>
             <label class="mdl-textfield__label" for="video-description">Add description</label>
           </div>
         </div>
-        <div class="vid-info-card mdl-card mdl-cell mdl-cell--12-col-phone mdl-cell--3-col mdl-shadow--2dp">
+        <div class="vid-info-card mdl-card mdl-cell mdl-cell--12-col-phone mdl-cell--12-col mdl-shadow--4dp">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input class="mdl-textfield__input" id="video-price" type="text" size="100" pattern="-?[0-9]*(.[0-9]+)?">
             <label class="mdl-textfield__label" for="video-price">Price</label><span class="mdl-textfield__error">Price should be a number!</span>
@@ -82,6 +82,8 @@
             <input class="mdl-textfield__input" id="video-name" type="text">
             <label class="mdl-textfield__label" for="video-name">Content owner</label>
           </div>
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent">Publish</button>
+          <button class="mdl-button mdl-button--primary">Save</button>
         </div>
       </div>
       <!-- SHOPPING CART-->
