@@ -6,7 +6,7 @@ block main
   .mdl-grid
     .medium-title.mdl-cell.mdl-cell--12-col Upload your video
     // Left section with Author's infi/bio
-    .upload-card.mdl-card.mdl-cell.mdl-cell--12-col-phone.mdl-cell--3-col.mdl-shadow--4dp
+    .upload-card.mdl-card.mdl-cell.mdl-cell--12-col-phone.mdl-cell--3-col.mdl-shadow--8dp
       .mdl-cell.mdl-cell--12-col
         .video-holder.mdl-card__media
           i.placeholder-icon.material-icons local_movies
@@ -15,7 +15,7 @@ block main
             i.material-icons file_upload
             | &nbsp Upload footage
     
-    .vid-info-card.mdl-card.mdl-cell.mdl-cell--12-col-phone.mdl-cell--3-col.mdl-shadow--4dp
+    .vid-info-card.mdl-card.mdl-cell.mdl-cell--12-col-phone.mdl-cell--3-col.mdl-shadow--8dp
       .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
         input#video-name.mdl-textfield__input(type="text")
         label.mdl-textfield__label(for="video-name") Add video title
@@ -33,7 +33,7 @@ block main
             li.mdl-menu__item(data-val='RU') Cities
         button#add-category-btn.mdl-button.mdl-js-button.mdl-button--icon
           i.material-icons add_circle_outline
-        .mdl-tooltip(data-mdl-for="add-category-btn") Add another category%)
+        .mdl-tooltip(data-mdl-for="add-category-btn") Add another category
 
 
 
@@ -41,7 +41,7 @@ block main
         textarea#video-description.mdl-textfield__input(type='text', rows='3')
         label.mdl-textfield__label(for='video-description') Add description
 
-    .vid-info-card.mdl-card.mdl-cell.mdl-cell--12-col-phone.mdl-cell--12-col.mdl-shadow--4dp
+    .vid-info-card.mdl-card.mdl-cell.mdl-cell--12-col-phone.mdl-cell--12-col.mdl-shadow--8dp
       .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
         input#video-price.mdl-textfield__input(type="text" size="100" pattern="-?[0-9]*(\.[0-9]+)?")
         label.mdl-textfield__label(for="video-price") Price
@@ -52,5 +52,5 @@ block main
       .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
         input#video-name.mdl-textfield__input(type="text")
         label.mdl-textfield__label(for="video-name") Content owner
-      button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--accent Publish
-      button.mdl-button.mdl-button--primary Save
+      button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--accent.mdl-button--raised Publish
+      button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--primary.mdl-button--raised Save

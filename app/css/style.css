@@ -803,12 +803,13 @@ p#about {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #eee;
+  background: #333;
   height: 203px; }
 
 .placeholder-icon {
   color: #ddd;
-  font-size: 6rem; }
+  font-size: 6rem;
+  text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5); }
 
 .vid-info-card {
   padding: 16px;
