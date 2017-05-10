@@ -32,15 +32,15 @@
 
 // Makes video pused by scrolling down
 
-    // var main = document.getElementById('main');
-    // main.onscroll = function pauseOnScroll(){
-    //   var myvid = document.getElementById('video');
-    //   if (main.scrollTop > 150) {
-    //       myvid.pause()
-    //       console.log('pause')
-    //   }
-    //   else {
-    //       myvid.play()
-    //       console.log('play')
-    //   }
-    // };
+    var main = document.getElementById('main');
+    main.onscroll = function pauseOnScroll(){
+      var myvid = document.getElementById('video');
+      if (main.scrollTop > 150) {
+          myvid.pause()
+          console.log('pause')
+      }
+      else {
+          myvid.play()
+          console.log('play')
+      }
+    };

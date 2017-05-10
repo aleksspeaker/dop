@@ -295,9 +295,10 @@ table#messages-table {
   -webkit-transform: skew(10deg, -10deg);
       -ms-transform: skew(10deg, -10deg);
           transform: skew(10deg, -10deg);
+  z-index: -100;
   border-radius: 50%;
-  background: -webkit-linear-gradient(67deg, #d6adff, #78ecff);
-  background: linear-gradient(23deg, #d6adff, #78ecff); }
+  background: -webkit-linear-gradient(67deg, #e3eaff, #bcf4ff);
+  background: linear-gradient(23deg, #e3eaff, #bcf4ff); }
 
 footer {
   z-index: 1; }
@@ -782,3 +783,52 @@ p#about {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center; }
+
+.upload-card {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.video-holder {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #eee;
+  height: 132px; }
+
+.placeholder-icon {
+  color: #ddd;
+  font-size: 6rem; }
+
+.vid-info-card {
+  padding: 16px;
+  overflow: visible; }
+
+.category-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+#add-category-btn {
+  margin-left: 8px;
+  color: rgba(0, 0, 0, 0.54); }

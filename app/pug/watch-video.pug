@@ -7,6 +7,7 @@ block main
   #backshape
   .wrapper
     .wrapper2.mdl-grid
+
       // Left section with Author's infi/bio
       .author-box.mdl-cell.mdl-cell--3-col.mdl-grid
         .mdl-cell.mdl-cell--12-col
@@ -48,7 +49,7 @@ block main
         button#add-to-cart-btn.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent Add to cart
 
       // CATEGORY SECTION
-      .medium-title.mdl-cell.mdl-cell--12-col Other #{firstName}'s videos
+      .medium-title.mdl-cell.mdl-cell--12-col Upload your video
       .cat-controls.mdl-cell.mdl-cell--12-col
         .btns
           button#btn1.mdl-button.mdl-js-button.mdl-button--icon
@@ -60,7 +61,7 @@ block main
           .mdl-tooltip.mdl-tooltip--top(data-mdl-for='btn2') List view
 
           form(action='#')
-            #search.mdl-textfield.mdl-js-textfield.mdl-textfield--expandable
+            #search.mdl-textfield.mdl-js-textfield.mdl-textfield--expandable()
               label.mdl-button.mdl-js-button.mdl-button--icon(for='search-input')
                 i.material-icons search
               .mdl-textfield__expandable-holder
