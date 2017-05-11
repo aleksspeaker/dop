@@ -675,18 +675,29 @@ p#about
 // Upload screen =================================================================
 
 
-.card-cont
+.vid-upl-container
+  width: 100%
   background: rgba(255,255,255,.8)
 .upload-card
   display: flex
   align-items: flex-start
+
+
 .video-holder
+  border-radius: 4px
   display: flex
+  flex-direction: column
   justify-content: center
   align-items: center
   background: #333
   width: 100%
   height: 203px
+
+.video-details-container
+  padding: 16px
+  // display: flex
+  // direction: column
+
 .placeholder-icon
   color: #ddd
   font-size: 6rem
@@ -703,17 +714,25 @@ p#about
 #add-category-btn
   margin-left: 8px
   color: rgba(0,0,0,.54)
+
+#video-keywords
+  display: flex
+  width: 100%;
+
+#video-description
+  display: flex
+  width: 100%;
+
 #video-btn-box
   display: flex
   flex-direction: row
-  justify-content: space-between
-
+  button
+    margin-right: 16px
 #price-currency-box
   display: flex
   flex-direction: row
-  justify-content: space-between
 #price-box
   padding-right: 16px
-  width: 50%
+  width: 50px
 #currency-box
-  width: 50%
+  width: 60px

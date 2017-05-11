@@ -784,7 +784,8 @@ p#about {
       -ms-flex-pack: center;
           justify-content: center; }
 
-.card-cont {
+.vid-upl-container {
+  width: 100%;
   background: rgba(255, 255, 255, 0.8); }
 
 .upload-card {
@@ -798,10 +799,16 @@ p#about {
           align-items: flex-start; }
 
 .video-holder {
+  border-radius: 4px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
@@ -813,6 +820,9 @@ p#about {
   background: #333;
   width: 100%;
   height: 203px; }
+
+.video-details-container {
+  padding: 16px; }
 
 .placeholder-icon {
   color: #ddd;
@@ -833,6 +843,20 @@ p#about {
   margin-left: 8px;
   color: rgba(0, 0, 0, 0.54); }
 
+#video-keywords {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%; }
+
+#video-description {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%; }
+
 #video-btn-box {
   display: -webkit-box;
   display: -webkit-flex;
@@ -842,11 +866,9 @@ p#about {
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
+          flex-direction: row; }
+  #video-btn-box button {
+    margin-right: 16px; }
 
 #price-currency-box {
   display: -webkit-box;
@@ -857,15 +879,11 @@ p#about {
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
+          flex-direction: row; }
 
 #price-box {
   padding-right: 16px;
-  width: 50%; }
+  width: 50px; }
 
 #currency-box {
-  width: 50%; }
+  width: 60px; }

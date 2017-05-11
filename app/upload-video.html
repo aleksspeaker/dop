@@ -36,90 +36,96 @@
       <div class="mdl-grid">
         <div class="medium-title mdl-cell mdl-cell--12-col">Upload your video</div>
         <!-- Left section with Author's infi/bio-->
-        <div class="card-cont mdl-cell mdl-cell--12-col"> 
-          <div class="video-holder mdl-card__media"><i class="placeholder-icon material-icons">local_movies</i></div>
-          <div class="mdl-card__actions">
-            <button class="mdl-button mdl-button--colored"><i class="material-icons">file_upload</i>&nbsp Upload footage</button>
+        <div class="vid-upl-container">
+          <!-- Upload video-->
+          <div class="video-holder"><i class="placeholder-icon material-icons">local_movies</i>
+            <button class="mdl-button mdl-button--colored mdl-button--raised mdl-js-button mdl-js-ripple-effect" id="vid-upload-btn"><i class="material-icons">file_upload</i>&nbsp Upload footage</button>
           </div>
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" id="video-name" type="text">
-            <label class="mdl-textfield__label" for="video-name">Add video title</label>
-          </div>
-          <!-- Select with arrow-->
-          <div class="category-box">
-            <div id="cat1">
-              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
-                <input class="mdl-textfield__input" id="video-category1" type="text" readonly="" tabindex="-1" size="100">
-                <label for="video-category1"><i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i></label>
-                <label class="mdl-textfield__label" for="video-category1">Category 1</label>
-                <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu" for="video-category1">
-                  <li class="mdl-menu__item" data-val="DE">Space</li>
-                  <li class="mdl-menu__item" data-val="BY">Nature</li>
-                  <li class="mdl-menu__item" data-val="RU">Entertainment</li>
-                </ul>
+          <!-- End of Upload video-->
+          <div class="video-details mdl-grid">
+            <!-- Title-->
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" id="video-name" type="text">
+              <label class="mdl-textfield__label" for="video-name">Add video title</label>
+            </div>
+            <!-- End of Title-->
+            <!-- Categories-->
+            <div class="category-box">
+              <div id="cat1">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
+                  <input class="mdl-textfield__input" id="video-category1" type="text" readonly="" tabindex="-1" size="100">
+                  <label for="video-category1"><i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i></label>
+                  <label class="mdl-textfield__label" for="video-category1">Category 1</label>
+                  <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu" for="video-category1">
+                    <li class="mdl-menu__item" data-val="DE">Space</li>
+                    <li class="mdl-menu__item" data-val="BY">Nature</li>
+                    <li class="mdl-menu__item" data-val="RU">Entertainment</li>
+                  </ul>
+                </div>
+              </div>
+              <div id="cat2">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
+                  <input class="mdl-textfield__input" id="video-category2" type="text" readonly="" tabindex="-1" size="100">
+                  <label for="video-category2"><i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i></label>
+                  <label class="mdl-textfield__label" for="video-category2">Category 2</label>
+                  <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu" for="video-category2">
+                    <li class="mdl-menu__item" data-val="DE">Space</li>
+                    <li class="mdl-menu__item" data-val="BY">Nature</li>
+                    <li class="mdl-menu__item" data-val="RU">Cities</li>
+                  </ul>
+                </div>
+                <button class="mdl-button mdl-js-button mdl-button--icon" id="add-category-btn" onclick="addCategory()"><i class="material-icons">add_circle_outline</i></button>
+                <div class="mdl-tooltip" data-mdl-for="add-category-btn">Add another category</div>
               </div>
             </div>
-            <div id="cat2">
-              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
-                <input class="mdl-textfield__input" id="video-category2" type="text" readonly="" tabindex="-1" size="100">
-                <label for="video-category2"><i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i></label>
-                <label class="mdl-textfield__label" for="video-category2">Category 2</label>
-                <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu" for="video-category2">
-                  <li class="mdl-menu__item" data-val="DE">Space</li>
-                  <li class="mdl-menu__item" data-val="BY">Nature</li>
-                  <li class="mdl-menu__item" data-val="RU">Cities</li>
-                </ul>
+            <!-- End of Categories    -->
+            <!-- Price-->
+            <div id="price-currency-box">
+              <div id="price-box">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" id="video-price" type="text" size="100" pattern="-?[0-9]*(.[0-9]+)?">
+                  <label class="mdl-textfield__label" for="video-price">Price</label><span class="mdl-textfield__error">Price should be a number!</span>
+                </div>
               </div>
-              <button class="mdl-button mdl-js-button mdl-button--icon" id="add-category-btn" onclick="addCategory()"><i class="material-icons">add_circle_outline</i></button>
-              <div class="mdl-tooltip" data-mdl-for="add-category-btn">Add another category</div>
-            </div>
-          </div>
-          <!-- Price-->
-          <div id="price-currency-box">
-            <div id="price-box">
-              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" id="video-price" type="text" size="100" pattern="-?[0-9]*(.[0-9]+)?">
-                <label class="mdl-textfield__label" for="video-price">Price</label><span class="mdl-textfield__error">Price should be a number!</span>
-              </div>
-            </div>
-            <div id="currency-box">
-              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
-                <input class="mdl-textfield__input" id="currency" type="text" readonly="" tabindex="-1" size="100">
-                <label for="currency"><i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i></label>
-                <label class="mdl-textfield__label" for="currency">Currency</label>
-                <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu" for="currency">
-                  <li class="mdl-menu__item" data-val="DE">EUR</li>
-                  <li class="mdl-menu__item" data-val="BY">USD</li>
-                  <li class="mdl-menu__item" data-val="RU">JPY</li>
-                </ul>
+              <div id="currency-box">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
+                  <input class="mdl-textfield__input" id="currency" type="text" value="EUR" readonly="" tabindex="-1" size="100">
+                  <label for="currency"><i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i></label>
+                  <label class="mdl-textfield__label" for="currency">Currency</label>
+                  <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu" for="currency">
+                    <li class="mdl-menu__item" data-val="DE">EUR</li>
+                    <li class="mdl-menu__item" data-val="BY">USD</li>
+                    <li class="mdl-menu__item" data-val="RU">JPY</li>
+                  </ul>
+                </div>
               </div>
             </div>
+            <!-- End of Price    -->
+            <!-- Description-->
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="video-description">
+              <textarea class="mdl-textfield__input" id="video-description" type="text" rows="3"></textarea>
+              <label class="mdl-textfield__label" for="video-description">Add description</label>
+            </div>
+            <!-- End of Description-->
+            <!-- Keywords-->
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="video-keywords">
+              <input class="mdl-textfield__input" id="video-keywords" type="text">
+              <label class="mdl-textfield__label" for="#video-keywords">Keywords (comma separated)</label>
+            </div>
+            <!-- End of Keywords-->
+            <!-- Content owner-->
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" id="video-name" type="text">
+              <label class="mdl-textfield__label" for="video-name">Content owner</label>
+            </div>
+            <!-- End of Content owner-->
+            <!-- Buttons-->
+            <div id="video-btn-box">
+              <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised">Save</button>
+              <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent mdl-button--raised">Publish</button>
+            </div>
+            <!-- End of Buttons-->
           </div>
-          <!-- End of Price    -->
-          <!-- Description-->
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <textarea class="mdl-textfield__input" id="video-description" type="text" rows="3"></textarea>
-            <label class="mdl-textfield__label" for="video-description">Add description</label>
-          </div>
-          <!-- End of Description-->
-          <!-- Keywords-->
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" id="video-keywords" type="text">
-            <label class="mdl-textfield__label" for="#video-keywords">Keywords</label>
-          </div>
-          <!-- End of Keywords-->
-          <!-- Content owner-->
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" id="video-name" type="text">
-            <label class="mdl-textfield__label" for="video-name">Content owner</label>
-          </div>
-          <!-- End of Content owner-->
-          <!-- Buttons-->
-          <div id="video-btn-box">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised">Save</button>
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent mdl-button--raised">Publish</button>
-          </div>
-          <!-- End of Buttons-->
         </div>
       </div>
       <!-- SHOPPING CART-->
