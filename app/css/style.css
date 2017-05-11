@@ -784,11 +784,18 @@ p#about {
       -ms-flex-pack: center;
           justify-content: center; }
 
+.card-cont {
+  background: rgba(255, 255, 255, 0.8); }
+
 .upload-card {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
 
 .video-holder {
   display: -webkit-box;
@@ -804,6 +811,7 @@ p#about {
       -ms-flex-align: center;
           align-items: center;
   background: #333;
+  width: 100%;
   height: 203px; }
 
 .placeholder-icon {
@@ -819,17 +827,45 @@ p#about {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
+  display: flex; }
+
+#add-category-btn {
+  margin-left: 8px;
+  color: rgba(0, 0, 0, 0.54); }
+
+#video-btn-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center; }
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
 
-#add-category-btn {
-  margin-left: 8px;
-  color: rgba(0, 0, 0, 0.54); }
+#price-currency-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+#price-box {
+  padding-right: 16px;
+  width: 50%; }
+
+#currency-box {
+  width: 50%; }
