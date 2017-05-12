@@ -837,11 +837,31 @@ p#about {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin-right: 8px;
+  width: 100%; }
+
+.cat#cat2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 272px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.category-box > div {
+  padding-right: 8px;
+  width: 240px; }
 
 #add-category-btn {
-  margin-left: 8px;
-  color: rgba(0, 0, 0, 0.54); }
+  color: rgba(0, 0, 0, 0.54);
+  margin: 0 -8px 0 8px; }
 
 #video-keywords {
   display: -webkit-box;
@@ -858,6 +878,7 @@ p#about {
   width: 100%; }
 
 #video-btn-box {
+  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -866,9 +887,16 @@ p#about {
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
-          flex-direction: row; }
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
   #video-btn-box button {
     margin-right: 16px; }
+
+.upl-another-box {
+  width: 100%;
+  margin-bottom: 16px; }
 
 #price-currency-box {
   display: -webkit-box;
@@ -887,3 +915,12 @@ p#about {
 
 #currency-box {
   width: 60px; }
+
+dialog::-webkit-backdrop {
+  background-color: rgba(0, 0, 0, 0.5); }
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5); }
+
+dialog + .backdrop {
+  background-color: rgba(0, 0, 0, 0.5); }

@@ -1,3 +1,6 @@
+
+
+// Drag and drop moderation cards
 function allowDrop(ev) {
     ev.preventDefault();
 }

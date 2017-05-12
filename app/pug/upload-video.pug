@@ -24,7 +24,7 @@ block main
           
           // Categories
           .category-box
-            #cat1
+            #cat1.cat
               .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.getmdl-select.getmdl-select__fix-height
                 input#video-category1.mdl-textfield__input(type='text', readonly='', tabindex='-1' size="100")
                 label(for='video-category1')
@@ -34,7 +34,7 @@ block main
                   li.mdl-menu__item(data-val='DE') Space
                   li.mdl-menu__item(data-val='BY') Nature
                   li.mdl-menu__item(data-val='RU') Entertainment
-            #cat2
+            #cat2.cat
               .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.getmdl-select.getmdl-select__fix-height
                 input#video-category2.mdl-textfield__input(type='text', readonly='', tabindex='-1' size="100")
                 label(for='video-category2')
@@ -44,7 +44,7 @@ block main
                   li.mdl-menu__item(data-val='DE') Space
                   li.mdl-menu__item(data-val='BY') Nature
                   li.mdl-menu__item(data-val='RU') Cities
-              button#add-category-btn.mdl-button.mdl-js-button.mdl-button--icon(onclick='addCategory()')
+              button#add-category-btn.mdl-button.mdl-js-button.mdl-button--icon
                 i.material-icons add_circle_outline
               .mdl-tooltip(data-mdl-for="add-category-btn") Add another category
           // End of Categories    
@@ -88,7 +88,12 @@ block main
           
           // Buttons
           #video-btn-box
-            button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--primary.mdl-button--raised Save
+            .upl-another-box
+              label.mdl-switch.mdl-js-switch.mdl-js-ripple-effect(for='upl-another')
+                input#upl-another.mdl-switch__input(type='checkbox')
+                span.mdl-switch__label(style="color: rgba(0,0,0,.54)") Upload another one
+            div           
+              button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--primary.mdl-button--raised Save
 
-            button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--accent.mdl-button--raised Publish
+              button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--accent.mdl-button--raised Publish
           // End of Buttons
