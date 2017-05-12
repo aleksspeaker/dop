@@ -53,24 +53,12 @@
             <!-- End of Title-->
             <!-- Categories-->
             <div class="category-box">
-              <div class="cat" id="cat1">
+              <div class="cat">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
-                  <input class="mdl-textfield__input" id="video-category1" type="text" readonly="" tabindex="-1" size="100">
-                  <label for="video-category1"><i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i></label>
-                  <label class="mdl-textfield__label" for="video-category1">Category 1</label>
-                  <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu" for="video-category1">
-                    <li class="mdl-menu__item" data-val="DE">Space</li>
-                    <li class="mdl-menu__item" data-val="BY">Nature</li>
-                    <li class="mdl-menu__item" data-val="RU">Entertainment</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="cat" id="cat2">
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
-                  <input class="mdl-textfield__input" id="video-category2" type="text" readonly="" tabindex="-1" size="100">
-                  <label for="video-category2"><i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i></label>
-                  <label class="mdl-textfield__label" for="video-category2">Category 2</label>
-                  <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu" for="video-category2">
+                  <input class="mdl-textfield__input" id="video-category" type="text" readonly="" tabindex="-1" size="100">
+                  <label for="video-category"><i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i></label>
+                  <label class="mdl-textfield__label" for="video-category">Category 2</label>
+                  <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu" for="video-category">
                     <li class="mdl-menu__item" data-val="DE">Space</li>
                     <li class="mdl-menu__item" data-val="BY">Nature</li>
                     <li class="mdl-menu__item" data-val="RU">Cities</li>
@@ -104,15 +92,19 @@
             </div>
             <!-- End of Price    -->
             <!-- Description-->
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="video-description">
-              <textarea class="mdl-textfield__input" id="video-description" type="text" rows="3"></textarea>
-              <label class="mdl-textfield__label" for="video-description">Add description</label>
+            <div id="video-description">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <textarea class="mdl-textfield__input" id="video-description" type="text" rows="3"></textarea>
+                <label class="mdl-textfield__label" for="video-description">Add description</label>
+              </div>
             </div>
             <!-- End of Description-->
             <!-- Keywords-->
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="video-keywords">
-              <input class="mdl-textfield__input" id="video-keywords" type="text">
-              <label class="mdl-textfield__label" for="#video-keywords">Keywords (comma separated)</label>
+            <div id="video-keywords">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" id="video-keywords" type="text">
+                <label class="mdl-textfield__label" for="#video-keywords">Keywords (comma separated)</label>
+              </div>
             </div>
             <!-- End of Keywords-->
             <!-- Content owner-->
