@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./js/getmdl-select.min.js"></script>
+    <script src="./js/dialog-polyfill.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="css/dialog-polyfill.css">
+    <link rel="stylesheet" type="text/css" href="css/getmdl-select.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+</html>
+<body>
+  <!-- Uses a transparent header that draws on top of the layout's background-->
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+    <header class="mdl-layout__header" id="uploader-header">
+      <div class="mdl-layout__header-row">
+        <!-- Title--><a href="frontpage.html"><img class="mdl-layout-title mdl-layout--large-screen-only" src="./images/dopcine_logo_black.svg" width="100px"></a>
+        <!-- Add spacer, to align navigation to the right-->
+        <div class="mdl-layout-spacer"></div>
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="sell-button" onclick="location.href='upload-video.html'"><i class="material-icons">file_upload</i><span class="mdl-layout--large-screen-only">Sell footage</span></button>
+        <div class="mdl-badge mdl-badge--overlap" data-badge="6">
+          <label class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="show-dialog"><i class="material-icons">notifications</i></label>
+        </div>
+        <label class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="show-dialog"><i class="material-icons">account_circle</i></label>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer"><span class="mdl-layout-title">Menu</span>
+      <nav class="mdl-navigation"><a class="mdl-navigation__link" href="uploader-dash.html">Dashboard</a><a class="mdl-navigation__link" href="uploader-uploads.html">Uploads</a><a class="mdl-navigation__link" href="">Profile</a><a class="mdl-navigation__link" href="frontpage.html">Go to dopcine.com</a></nav>
+    </div>
+    <main class="mdl-layout__content" id="main">
+      <div class="mdl-grid width100">
+        <div class="medium-title mdl-cell mdl-cell--12-col">Uploads</div>
+        <div class="upl-card-container mdl-cell--12-col mdl-grid">
+          <div class="small-title mdl-cell mdl-cell--12-col">Published</div>
+          <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--12-col-phone">
+            <div class="uploader-video-card mdl-card mdl-shadow--8dp"><a>
+                <div class="mdl-card__media">
+                  <video preload="none" poster="./images/plant.png">
+                    <source src="./videos/plant.mp4"/>
+                  </video>
+                </div></a>
+              <div class="mdl-card__actions mdl-card--border"><span class="price">130 EUR</span>
+                <div class="mdl-layout-spacer"></div>
+                <button class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">edit</i></button>
+              </div>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--12-col-phone">
+            <div class="uploader-video-card mdl-card mdl-shadow--8dp"><a>
+                <div class="mdl-card__media">
+                  <video preload="none" poster="./images/street.png">
+                    <source src="./videos/street.mp4"/>
+                  </video>
+                </div></a>
+              <div class="mdl-card__actions mdl-card--border"><span class="price">210 EUR</span>
+                <div class="mdl-layout-spacer"></div>
+                <button class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">edit</i></button>
+              </div>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--12-col-phone">
+            <div class="uploader-video-card mdl-card mdl-shadow--8dp"><a>
+                <div class="mdl-card__media">
+                  <video preload="none" poster="./images/river.png">
+                    <source src="./videos/river.mp4"/>
+                  </video>
+                </div></a>
+              <div class="mdl-card__actions mdl-card--border"><span class="price">119 EUR</span>
+                <div class="mdl-layout-spacer"></div>
+                <button class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">edit</i></button>
+              </div>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--12-col-phone">
+            <div class="uploader-video-card mdl-card mdl-shadow--8dp"><a>
+                <div class="mdl-card__media">
+                  <video preload="none" poster="./images/plant.png">
+                    <source src="./videos/plant.mp4"/>
+                  </video>
+                </div></a>
+              <div class="mdl-card__actions mdl-card--border"><span class="price">86 EUR</span>
+                <div class="mdl-layout-spacer"></div>
+                <button class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">edit</i></button>
+              </div>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--12-col-phone">
+            <div class="uploader-video-card mdl-card mdl-shadow--8dp"><a>
+                <div class="mdl-card__media">
+                  <video preload="none" poster="./images/street.png">
+                    <source src="./videos/street.mp4"/>
+                  </video>
+                </div></a>
+              <div class="mdl-card__actions mdl-card--border"><span class="price">92 EUR</span>
+                <div class="mdl-layout-spacer"></div>
+                <button class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">edit</i></button>
+              </div>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--12-col-phone">
+            <div class="uploader-video-card mdl-card mdl-shadow--8dp"><a>
+                <div class="mdl-card__media">
+                  <video preload="none" poster="./images/lviv.png">
+                    <source src="./videos/lviv.mp4"/>
+                  </video>
+                </div></a>
+              <div class="mdl-card__actions mdl-card--border"><span class="price">17 EUR</span>
+                <div class="mdl-layout-spacer"></div>
+                <button class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">edit</i></button>
+              </div>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--12-col-phone">
+            <div class="uploader-video-card mdl-card mdl-shadow--8dp"><a>
+                <div class="mdl-card__media">
+                  <video preload="none" poster="./images/plant.png">
+                    <source src="./videos/plant.mp4"/>
+                  </video>
+                </div></a>
+              <div class="mdl-card__actions mdl-card--border"><span class="price">130 EUR</span>
+                <div class="mdl-layout-spacer"></div>
+                <button class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">edit</i></button>
+              </div>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--12-col-phone">
+            <div class="uploader-video-card mdl-card mdl-shadow--8dp"><a>
+                <div class="mdl-card__media">
+                  <video preload="none" poster="./images/street.png">
+                    <source src="./videos/street.mp4"/>
+                  </video>
+                </div></a>
+              <div class="mdl-card__actions mdl-card--border"><span class="price">210 EUR</span>
+                <div class="mdl-layout-spacer"></div>
+                <button class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">edit</i></button>
+              </div>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--12-col-phone">
+            <div class="uploader-video-card mdl-card mdl-shadow--8dp"><a>
+                <div class="mdl-card__media">
+                  <video preload="none" poster="./images/river.png">
+                    <source src="./videos/river.mp4"/>
+                  </video>
+                </div></a>
+              <div class="mdl-card__actions mdl-card--border"><span class="price">119 EUR</span>
+                <div class="mdl-layout-spacer"></div>
+                <button class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">edit</i></button>
+              </div>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--12-col-phone">
+            <div class="uploader-video-card mdl-card mdl-shadow--8dp"><a>
+                <div class="mdl-card__media">
+                  <video preload="none" poster="./images/plant.png">
+                    <source src="./videos/plant.mp4"/>
+                  </video>
+                </div></a>
+              <div class="mdl-card__actions mdl-card--border"><span class="price">86 EUR</span>
+                <div class="mdl-layout-spacer"></div>
+                <button class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">edit</i></button>
+              </div>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--12-col-phone">
+            <div class="uploader-video-card mdl-card mdl-shadow--8dp"><a>
+                <div class="mdl-card__media">
+                  <video preload="none" poster="./images/street.png">
+                    <source src="./videos/street.mp4"/>
+                  </video>
+                </div></a>
+              <div class="mdl-card__actions mdl-card--border"><span class="price">92 EUR</span>
+                <div class="mdl-layout-spacer"></div>
+                <button class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">edit</i></button>
+              </div>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--12-col-phone">
+            <div class="uploader-video-card mdl-card mdl-shadow--8dp"><a>
+                <div class="mdl-card__media">
+                  <video preload="none" poster="./images/lviv.png">
+                    <source src="./videos/lviv.mp4"/>
+                  </video>
+                </div></a>
+              <div class="mdl-card__actions mdl-card--border"><span class="price">17 EUR</span>
+                <div class="mdl-layout-spacer"></div>
+                <button class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">edit</i></button>
+              </div>
+            </div>
+          </div>
+          <div class="mdl-layout-spacer"></div>
+          <hr>
+        </div>
+        <div class="upl-card-container mdl-cell--12-col mdl-grid">
+          <div class="small-title mdl-cell mdl-cell--12-col">Unpublished</div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>

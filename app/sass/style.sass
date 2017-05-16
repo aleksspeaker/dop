@@ -865,6 +865,44 @@ dialog + .backdrop /* polyfill */
     i
       color: green
 
+.uploader-video-card 
+  .mdl-card__actions 
+    a 
+      color: white
+    background: rgba(0,0,0,.7)
+    color: white
+    position: absolute
+    bottom: 0
+    display: flex
+    box-sizing:border-box
+    align-items: center
+    opacity: 0.3
+    transition: .1s
+    padding-left: 16px
+    padding-right: 16px
+    justify-content: flex-end
+  
+  min-height: 0px
+  width: 100%
+  transition: .1s
+  .mdl-card__media 
+    background: grey
+    video 
+      width: 100%
+
+.uploader-video-card:hover 
+  cursor: pointer
+  box-shadow: 0px 0px 30px black
+  z-index: 20
+  .mdl-card__actions 
+    opacity: 1
+    transform: translate(-50% -50%)
+  
+  .mdl-card__actions > .material-icons 
+    padding-right: 10px
+
+
+
 //======================================
 // 
 //======================================

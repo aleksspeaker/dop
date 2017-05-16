@@ -1,0 +1,38 @@
+extends templates/upload-layout
+block header
+  include templates/uploader-header
+block main
+  .mdl-grid.width100
+    .medium-title.mdl-cell.mdl-cell--12-col Uploads
+    .upl-card-container.mdl-cell--12-col.mdl-grid
+      .small-title.mdl-cell.mdl-cell--12-col Published
+      +video('plant', 130)
+      +video('street', 210)
+      +video('river', 119)
+      +video('plant', 86)
+      +video('street' ,92)
+      +video('lviv', 17)
+      +video('plant', 130)
+      +video('street', 210)
+      +video('river', 119)
+      +video('plant', 86)
+      +video('street' ,92)
+      +video('lviv', 17)
+      .mdl-layout-spacer
+      hr
+    .upl-card-container.mdl-cell--12-col.mdl-grid
+      .small-title.mdl-cell.mdl-cell--12-col Unpublished
+              
+
+mixin video (filename, price, href)
+  .mdl-cell.mdl-cell--3-col.mdl-cell--4-col-tablet.mdl-cell--12-col-phone
+        .uploader-video-card.mdl-card.mdl-shadow--8dp
+          a(href=href)
+            .mdl-card__media
+              video(preload="none" poster="./images/" + filename + ".png")
+                source(src="./videos/" + filename + ".mp4")
+          .mdl-card__actions.mdl-card--border
+            span.price #{price} EUR
+            .mdl-layout-spacer
+            button.mdl-button.mdl-js-button.mdl-button--icon
+              i.material-icons edit
