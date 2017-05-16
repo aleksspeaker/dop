@@ -24,10 +24,10 @@
         <!-- Add spacer, to align navigation to the right-->
         <div class="mdl-layout-spacer"></div>
         <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="sell-button" onclick="location.href='upload-video.html'"><i class="material-icons">file_upload</i><span class="mdl-layout--large-screen-only">Sell footage</span></button>
-        <label class="mdl-button mdl-js-button mdl-js-ripple-effect" id="signin-button">sign in</label>
-        <div class="mdl-badge mdl-badge--overlap" data-badge="3">
-          <label class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="show-dialog"><i class="material-icons">shopping_cart</i></label>
+        <div class="mdl-badge mdl-badge--overlap" data-badge="6">
+          <label class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="show-dialog"><i class="material-icons">notifications</i></label>
         </div>
+        <label class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="show-dialog"><i class="material-icons">account_circle</i></label>
       </div>
     </header>
     <div class="mdl-layout__drawer" style="background: transparent;"><span class="mdl-layout-title">Menu</span>
@@ -129,70 +129,6 @@
           </div>
         </div>
       </div>
-      <!-- SHOPPING CART-->
-      <dialog class="mdl-dialog cart">
-        <div class="mdl-dialog__title">Shopping cart</div>
-        <div class="mdl-dialog__content mdl-grid">
-          <div class="mdl-cell mdl-cell--12-col">Recently added items
-            <hr>
-                  <div class="cart-item mdl-grid mdl-cell mdl-cell--12-col">
-                    <div class="cart-item-thumb mdl-cell mdl-cell--3-col"><img src="./images/plant.png"></div>
-                    <div class="cart-item-info mdl-cell mdl-cell--6-col"> 
-                      <div class="cart-item-name">Watering beautiful flowers</div>
-                      <div class="cart-item-price">234 EUR</div>
-                    </div>
-                    <div class="cart-item-controls mdl-cell mdl-cell--3-col">
-                      <button class="mdl-button mdl-js-button mdl-button--icon" id="rem_btn1"><i class="material-icons">delete</i></button>
-                      <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="rem_btn1">Remove item</div>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="cart-item mdl-grid mdl-cell mdl-cell--12-col">
-                    <div class="cart-item-thumb mdl-cell mdl-cell--3-col"><img src="./images/street.png"></div>
-                    <div class="cart-item-info mdl-cell mdl-cell--6-col"> 
-                      <div class="cart-item-name">Street traffic</div>
-                      <div class="cart-item-price">335 EUR</div>
-                    </div>
-                    <div class="cart-item-controls mdl-cell mdl-cell--3-col">
-                      <button class="mdl-button mdl-js-button mdl-button--icon" id="rem_btn1"><i class="material-icons">delete</i></button>
-                      <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="rem_btn1">Remove item</div>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="cart-item mdl-grid mdl-cell mdl-cell--12-col">
-                    <div class="cart-item-thumb mdl-cell mdl-cell--3-col"><img src="./images/river.png"></div>
-                    <div class="cart-item-info mdl-cell mdl-cell--6-col"> 
-                      <div class="cart-item-name">Sunset at the river speedup</div>
-                      <div class="cart-item-price">378 EUR</div>
-                    </div>
-                    <div class="cart-item-controls mdl-cell mdl-cell--3-col">
-                      <button class="mdl-button mdl-js-button mdl-button--icon" id="rem_btn2"><i class="material-icons">delete</i></button>
-                      <div class="mdl-tooltip mdl-tooltip--top" data-mdl-for="rem_btn2">Remove item</div>
-                    </div>
-                  </div>
-                  <hr>
-            <div class="total-price mdl-cell mdl-cell--12-col">Total price: 947 EUR</div>
-          </div>
-        </div>
-        <div class="mdl-dialog__actions">
-          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored" type="button">checkout</button>
-          <button class="mdl-button close" type="button">continue shopping</button>
-        </div>
-      </dialog>
-      <script>
-        var dialog = document.querySelector('dialog');
-        var showDialogButton = document.querySelector('#show-dialog');
-        if (! dialog.showModal) {
-        dialogPolyfill.registerDialog(dialog);
-        }
-        showDialogButton.addEventListener('click', function() {
-        dialog.showModal();
-        });
-        dialog.querySelector('.close').addEventListener('click', function() {
-        dialog.close();
-        });
-      </script>
-      <!-- END OF SHOPPING CART-->
       <script src="js/video.js"></script>
       <footer class="mdl-mini-footer">
         <div class="mdl-mini-footer__left-section">

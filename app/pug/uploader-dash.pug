@@ -1,0 +1,29 @@
+extends templates/upload-layout
+block header
+  include templates/uploader-header
+block main
+  .mdl-grid.width100
+    .medium-title.mdl-cell.mdl-cell--12-col Dashboard
+    .upl-card-container.mdl-cell--12-col.mdl-grid
+      +infocard('storageCard', 'Used space', 'storage', '99/100 GB', 'warning', 'Get more space')
+      +infocard('gameCard', 'Money earned', 'monetization_on', '326 EUR', 'lightbulb_outline', 'Recommendation')
+      +infocard('pizzaCard', 'Video views', 'remove_red_eye', 'Total: 560', 'search', 'Add keywords')
+      +infocard('loveCard', 'New followers', 'people', '180', 'lightbulb_outline', 'Recommendation')
+      +infocard('gameCard', 'Total videos', 'video_library', '14', 'show_chart', 'Most popular: Winter in Alps')
+
+
+
+mixin navs (name)
+  a(href="#").flex-sm-fill.text-sm-center.nav-link #{name}
+
+mixin infocard (id, title, cardIcon, data, hintIcon, cardHint)
+  .mdl-cell.mdl-cell--12-col-phone.mdl-cell--4-col-tablet.mdl-cell--3-col
+    .upl-dash-card.mdl-card(id=id)
+      .card-title #{title}
+      .card-icon
+        i.material-icons #{cardIcon}
+      .card-data #{data}
+      hr
+      .card-hint 
+        i.material-icons #{hintIcon}
+        a(href="#") #{cardHint}

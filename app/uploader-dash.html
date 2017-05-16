@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./js/getmdl-select.min.js"></script>
+    <script src="./js/dialog-polyfill.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="css/dialog-polyfill.css">
+    <link rel="stylesheet" type="text/css" href="css/getmdl-select.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+</html>
+<body>
+  <!-- Uses a transparent header that draws on top of the layout's background-->
+  <div class="demo-layout-transparent mdl-layout mdl-js-layout">
+    <!-- Uses a transparent header that draws on top of the layout's background-->
+    <header class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--waterfall" id="mini-header">
+      <div class="mdl-layout__header-row">
+        <!-- Title--><a href="frontpage.html"><img class="mdl-layout-title mdl-layout--large-screen-only" src="./images/dopcine_logo_white.svg" width="100px"></a>
+        <!-- Add spacer, to align navigation to the right-->
+        <div class="mdl-layout-spacer"></div>
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="sell-button" onclick="location.href='upload-video.html'"><i class="material-icons">file_upload</i><span class="mdl-layout--large-screen-only">Sell footage</span></button>
+        <div class="mdl-badge mdl-badge--overlap" data-badge="6">
+          <label class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="show-dialog"><i class="material-icons">notifications</i></label>
+        </div>
+        <label class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="show-dialog"><i class="material-icons">account_circle</i></label>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer" style="background: transparent;"><span class="mdl-layout-title">Menu</span>
+      <nav class="mdl-navigation"><a class="mdl-navigation__link" href="">Latest footage</a><a class="mdl-navigation__link" href="">Categories</a></nav>
+    </div>
+    <main class="mdl-layout__content" id="main">
+      <div class="mdl-grid width100">
+        <div class="medium-title mdl-cell mdl-cell--12-col">Dashboard</div>
+        <div class="upl-card-container mdl-cell--12-col mdl-grid">
+          <div class="mdl-cell mdl-cell--12-col-phone mdl-cell--4-col-tablet mdl-cell--3-col">
+            <div class="upl-dash-card mdl-card" id="storageCard">
+              <div class="card-title">Used space</div>
+              <div class="card-icon"><i class="material-icons">storage</i></div>
+              <div class="card-data">99/100 GB</div>
+              <hr/>
+              <div class="card-hint"> <i class="material-icons">warning</i><a href="#">Get more space</a></div>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--12-col-phone mdl-cell--4-col-tablet mdl-cell--3-col">
+            <div class="upl-dash-card mdl-card" id="gameCard">
+              <div class="card-title">Money earned</div>
+              <div class="card-icon"><i class="material-icons">monetization_on</i></div>
+              <div class="card-data">326 EUR</div>
+              <hr/>
+              <div class="card-hint"> <i class="material-icons">lightbulb_outline</i><a href="#">Recommendation</a></div>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--12-col-phone mdl-cell--4-col-tablet mdl-cell--3-col">
+            <div class="upl-dash-card mdl-card" id="pizzaCard">
+              <div class="card-title">Video views</div>
+              <div class="card-icon"><i class="material-icons">remove_red_eye</i></div>
+              <div class="card-data">Total: 560</div>
+              <hr/>
+              <div class="card-hint"> <i class="material-icons">search</i><a href="#">Add keywords</a></div>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--12-col-phone mdl-cell--4-col-tablet mdl-cell--3-col">
+            <div class="upl-dash-card mdl-card" id="loveCard">
+              <div class="card-title">New followers</div>
+              <div class="card-icon"><i class="material-icons">people</i></div>
+              <div class="card-data">180</div>
+              <hr/>
+              <div class="card-hint"> <i class="material-icons">lightbulb_outline</i><a href="#">Recommendation</a></div>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--12-col-phone mdl-cell--4-col-tablet mdl-cell--3-col">
+            <div class="upl-dash-card mdl-card" id="gameCard">
+              <div class="card-title">Total videos</div>
+              <div class="card-icon"><i class="material-icons">video_library</i></div>
+              <div class="card-data">14</div>
+              <hr/>
+              <div class="card-hint"> <i class="material-icons">show_chart</i><a href="#">Most popular: Winter in Alps</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="js/video.js"></script>
+      <footer class="mdl-mini-footer">
+        <div class="mdl-mini-footer__left-section">
+          <div class="mdl-logo">Title</div>
+          <ul class="mdl-mini-footer__link-list">
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Privacy & Terms</a></li>
+          </ul>
+          <p id="about"></p>Dopcine is a global royalty free video stock platfrom that is focused on delivering high quality footage to the customers.<br>We love to talk about our passion and we are excited to see where our passion and innovation touches you, Only the best is good enough.
+        </div>
+      </footer>
+    </main>
+  </div>
+</body>
