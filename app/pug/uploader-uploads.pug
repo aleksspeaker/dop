@@ -27,7 +27,7 @@ block main
 mixin video (filename, price, href)
   .mdl-cell.mdl-cell--3-col.mdl-cell--4-col-tablet.mdl-cell--12-col-phone
         .uploader-video-card.mdl-card.mdl-shadow--8dp
-          a(href=href)
+          a(href="uploader-edit-video.html")
             .mdl-card__media
               video(preload="none" poster="./images/" + filename + ".png")
                 source(src="./videos/" + filename + ".mp4")

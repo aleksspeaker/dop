@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./js/getmdl-select.min.js"></script>
+    <script src="./js/dialog-polyfill.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="css/dialog-polyfill.css">
+    <link rel="stylesheet" type="text/css" href="css/getmdl-select.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+</html>
+<body>
+  <!-- Uses a transparent header that draws on top of the layout's background-->
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+    <header class="mdl-layout__header" id="uploader-header">
+      <div class="mdl-layout__header-row">
+        <!-- Title--><a href="frontpage.html"><img class="mdl-layout-title mdl-layout--large-screen-only" src="./images/dopcine_logo_black.svg" width="100px"></a>
+        <!-- Add spacer, to align navigation to the right-->
+        <div class="mdl-layout-spacer"></div>
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="sell-button" onclick="location.href='upload-video.html'"><i class="material-icons">file_upload</i><span class="mdl-layout--large-screen-only">Sell footage</span></button>
+        <div class="mdl-badge mdl-badge--overlap" data-badge="6">
+          <label class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="show-dialog"><i class="material-icons">notifications</i></label>
+        </div>
+        <label class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="show-dialog"><i class="material-icons">account_circle</i></label>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer"><span class="mdl-layout-title">Menu</span>
+      <nav class="mdl-navigation"><a class="mdl-navigation__link" href="uploader-dash.html">Dashboard</a><a class="mdl-navigation__link" href="uploader-uploads.html">Uploads</a><a class="mdl-navigation__link" href="">Profile</a><a class="mdl-navigation__link" href="frontpage.html">Go to dopcine.com</a></nav>
+    </div>
+    <main class="mdl-layout__content" id="main">
+      <div class="mdl-grid">
+        <div class="medium-title mdl-cell mdl-cell--12-col">Edit item</div>
+        <!-- Left section with Author's infi/bio-->
+        <div class="vid-edit-container">
+          <div class="video-holder mdl-grid">
+            <video class="mdl-cell mdl-cell--12-col-phone mdl-cell--6-col-tablet mdl-cell--6-col" src="videos/lviv.mp4" controls>
+              <button class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect" id="vid-upload-btn"><i class="material-icons">file_upload</i>&nbsp Upload footage</button>
+            </video>
+          </div>
+          <div class="video-details mdl-grid">
+            <!-- Title-->
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" id="video-name" type="text" value="Arial footage of Lviv">
+              <label class="mdl-textfield__label" for="video-name">Add video title</label>
+            </div>
+            <!-- End of Title-->
+            <!-- Categories-->
+            <div class="category-box">
+              <div class="cat">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
+                  <input class="mdl-textfield__input" id="video-category" type="text" readonly="" tabindex="-1" size="100" value="Space">
+                  <label for="video-category"><i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i></label>
+                  <label class="mdl-textfield__label" for="video-category">Category</label>
+                  <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu" for="video-category">
+                    <li class="mdl-menu__item" data-val="DE">Space</li>
+                    <li class="mdl-menu__item" data-val="BY">Nature</li>
+                    <li class="mdl-menu__item" data-val="RU">Cities</li>
+                  </ul>
+                </div>
+                <button class="mdl-button mdl-js-button mdl-button--icon" id="add-category-btn"><i class="material-icons">add_circle_outline</i></button>
+                <div class="mdl-tooltip" data-mdl-for="add-category-btn">Add another category</div>
+              </div>
+            </div>
+            <!-- End of Categories    -->
+            <!-- Price-->
+            <div id="price-currency-box">
+              <div id="price-box">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" id="video-price" type="text" size="100" pattern="-?[0-9]*(.[0-9]+)?" value="125">
+                  <label class="mdl-textfield__label" for="video-price">Price</label><span class="mdl-textfield__error">Price should be a number!</span>
+                </div>
+              </div>
+              <div id="currency-box">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
+                  <input class="mdl-textfield__input" id="currency" type="text" value="EUR" readonly="" tabindex="-1" size="100">
+                  <label for="currency"><i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i></label>
+                  <label class="mdl-textfield__label" for="currency">Currency</label>
+                  <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu" for="currency">
+                    <li class="mdl-menu__item" data-val="DE">EUR</li>
+                    <li class="mdl-menu__item" data-val="BY">USD</li>
+                    <li class="mdl-menu__item" data-val="RU">JPY</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- End of Price    -->
+            <!-- Description-->
+            <div id="video-description">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <textarea class="mdl-textfield__input" id="video-description" type="text" rows="3">Gorgeous airal views of Lviv. Historical part of the city. Drone footage.</textarea>
+                <label class="mdl-textfield__label" for="video-description">Add description</label>
+              </div>
+            </div>
+            <!-- End of Description-->
+            <!-- Keywords-->
+            <div id="video-keywords">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" id="video-keywords" type="text" value="drone, arial, lviv, historical">
+                <label class="mdl-textfield__label" for="#video-keywords">Keywords (comma separated)</label>
+              </div>
+            </div>
+            <!-- End of Keywords-->
+            <!-- Content owner-->
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" id="video-name" type="text" value="Faik Geci">
+              <label class="mdl-textfield__label" for="video-name">Content owner</label>
+            </div>
+            <!-- End of Content owner-->
+            <!-- Buttons-->
+            <div id="video-btn-box">
+              <div>          
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised">Save changes</button>
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent mdl-button--raised">Unpublish</button>
+              </div>
+            </div>
+            <!-- End of Buttons-->
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
