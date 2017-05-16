@@ -2,7 +2,6 @@ extends templates/upload-layout
 block header
   include templates/uploader-header
 block main
-  #backshape
   .mdl-grid
     .medium-title.mdl-cell.mdl-cell--12-col Upload your video
     // Left section with Author's infi/bio
@@ -10,7 +9,7 @@ block main
         // Upload video
         .video-holder
           i.placeholder-icon.material-icons local_movies
-          button#vid-upload-btn.mdl-button.mdl-button--colored.mdl-button--raised.mdl-js-button.mdl-js-ripple-effect
+          button#vid-upload-btn.mdl-button.mdl-button--raised.mdl-js-button.mdl-js-ripple-effect
             i.material-icons file_upload
             | &nbsp Upload footage
         // End of Upload video

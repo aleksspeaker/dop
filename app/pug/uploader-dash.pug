@@ -5,13 +5,21 @@ block main
   .mdl-grid.width100
     .medium-title.mdl-cell.mdl-cell--12-col Dashboard
     .upl-card-container.mdl-cell--12-col.mdl-grid
+      .small-title.mdl-cell.mdl-cell--12-col Success metrics
       +infocard('storageCard', 'Used space', 'storage', '99/100 GB', 'warning', 'Get more space')
       +infocard('gameCard', 'Money earned', 'monetization_on', '326 EUR', 'lightbulb_outline', 'Recommendation')
       +infocard('pizzaCard', 'Video views', 'remove_red_eye', 'Total: 560', 'search', 'Add keywords')
       +infocard('loveCard', 'New followers', 'people', '180', 'lightbulb_outline', 'Recommendation')
       +infocard('gameCard', 'Total videos', 'video_library', '14', 'show_chart', 'Most popular: Winter in Alps')
-
-
+    .upl-card-container.mdl-cell--12-col.mdl-grid
+      .small-title.mdl-cell.mdl-cell--12-col Recent activities
+      .mdl-cell.mdl-cell--12-col 15/05/2017 15:53: Purchase: "Winter in Alps" 
+      .mdl-cell.mdl-cell--12-col 14/05/2017 15:43: Uploaded video "Stockholm streets"
+      .mdl-cell.mdl-cell--12-col 13/05/2017 05:55: Published video "Winter in Alps"
+      .mdl-cell.mdl-cell--12-col 12/05/2017 15:53: Uploaded video "Formula1 Grand Prix"
+      .mdl-cell.mdl-cell--12-col 11/05/2017 07:12: Uploaded video "Green screen iPad"
+      .mdl-cell.mdl-cell--12-col 10/05/2017 12:33: Uploaded video "Winter in Alps"
+      
 
 mixin navs (name)
   a(href="#").flex-sm-fill.text-sm-center.nav-link #{name}

@@ -598,7 +598,9 @@ video#video.fullscreen
 p#about 
   font-size: 12px
 
-// Single video page ============================================
+//======================================
+// Single Video Page
+//======================================
 
 // Left section with Author's infi/bio
 
@@ -672,8 +674,9 @@ p#about
 
 
 
-// Upload screen =================================================================
-
+//======================================
+// Upload Video Page
+//======================================
 
 .vid-upl-container
   width: 100%
@@ -692,7 +695,9 @@ p#about
   background: #333
   width: 100%
   height: 203px
-
+#vid-upload-btn
+  background: white
+  color: black
 .video-details-container
   padding: 16px
   // display: flex
@@ -761,7 +766,7 @@ p#about
   width: 60px
 
 
-// Dialog polyfill fix for older browser ===========================
+// Dialog polyfill fix for older browser 
 
 dialog::backdrop /* native */
   background-color: rgba(0,0,0,.5)
@@ -778,10 +783,16 @@ dialog + .backdrop /* polyfill */
 // Uploader Dahsboard
 //======================================
 
+#uploader-header
+  background: white
+  *
+    color: $color-text-regular
 .upl-card-container
   // justify-content: space-around
   // height: 70vh
+  background: #fafafa
 .upl-dash-card
+  background: #fff
   width: calc(100% - 16px)
   min-height: 0
   margin: 16px 0 16px 0
@@ -801,10 +812,12 @@ dialog + .backdrop /* polyfill */
     font-size: 1.5rem
     font-weight: 300
   hr
-    width: 90%
+    width: 100%
   .card-hint
     display: flex
     padding: 0 0 16px 16px
+    a
+      color: $color-text-additional
     i
       font-size: 1.3rem
       color: red
@@ -853,5 +866,5 @@ dialog + .backdrop /* polyfill */
       color: green
 
 //======================================
-// End of Uploader Dahsboard
+// 
 //======================================

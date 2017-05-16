@@ -1,9 +1,8 @@
-// Uses a transparent header that draws on top of the layout's background
-header#mini-header.mdl-layout__header.mdl-layout__header--transparent.mdl-layout__header--waterfall
+header#uploader-header.mdl-layout__header
   .mdl-layout__header-row
     // Title
     a(href="frontpage.html")
-      img.mdl-layout-title.mdl-layout--large-screen-only(src="./images/dopcine_logo_white.svg" width="100px")
+      img.mdl-layout-title.mdl-layout--large-screen-only(src="./images/dopcine_logo_black.svg" width="100px")
     // Add spacer, to align navigation to the right
     .mdl-layout-spacer
     button#sell-button.mdl-button.mdl-js-button.mdl-js-ripple-effect(onclick = "location.href='upload-video.html'")
@@ -14,18 +13,10 @@ header#mini-header.mdl-layout__header.mdl-layout__header--transparent.mdl-layout
         i.material-icons notifications
     label#show-dialog.mdl-button.mdl-js-button.mdl-button--icon.mdl-js-ripple-effect
       i.material-icons account_circle
-  //-   // Navigation
-  //- .mdl-layout__header-row
-  //-   .mdl-layout-spacer
-  //-   nav.mdl-navigation
-  //-     a.mdl-navigation__link(href='') Latest footage
-  //-     a.mdl-navigation__link(href='') Categories
-  //-     //- a.mdl-navigation__link(href='') Link
-  //-     //- a.mdl-navigation__link(href='') Link
-.mdl-layout__drawer(style="background: transparent")
+.mdl-layout__drawer
   span.mdl-layout-title Menu
   nav.mdl-navigation
-    a.mdl-navigation__link(href='') Latest footage
-    a.mdl-navigation__link(href='') Categories
-    //- a.mdl-navigation__link(href='') Link
-    //- a.mdl-navigation__link(href='') Link
+    a.mdl-navigation__link(href='uploader-dash.html') Dashboard
+    a.mdl-navigation__link(href='') Uploads
+    a.mdl-navigation__link(href='') Profile
+    a.mdl-navigation__link(href='frontpage.html') Go to dopcine.com

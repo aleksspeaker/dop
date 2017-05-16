@@ -16,11 +16,10 @@
 </html>
 <body>
   <!-- Uses a transparent header that draws on top of the layout's background-->
-  <div class="demo-layout-transparent mdl-layout mdl-js-layout">
-    <!-- Uses a transparent header that draws on top of the layout's background-->
-    <header class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--waterfall" id="mini-header">
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+    <header class="mdl-layout__header" id="uploader-header">
       <div class="mdl-layout__header-row">
-        <!-- Title--><a href="frontpage.html"><img class="mdl-layout-title mdl-layout--large-screen-only" src="./images/dopcine_logo_white.svg" width="100px"></a>
+        <!-- Title--><a href="frontpage.html"><img class="mdl-layout-title mdl-layout--large-screen-only" src="./images/dopcine_logo_black.svg" width="100px"></a>
         <!-- Add spacer, to align navigation to the right-->
         <div class="mdl-layout-spacer"></div>
         <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="sell-button" onclick="location.href='upload-video.html'"><i class="material-icons">file_upload</i><span class="mdl-layout--large-screen-only">Sell footage</span></button>
@@ -30,18 +29,17 @@
         <label class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="show-dialog"><i class="material-icons">account_circle</i></label>
       </div>
     </header>
-    <div class="mdl-layout__drawer" style="background: transparent;"><span class="mdl-layout-title">Menu</span>
-      <nav class="mdl-navigation"><a class="mdl-navigation__link" href="">Latest footage</a><a class="mdl-navigation__link" href="">Categories</a></nav>
+    <div class="mdl-layout__drawer"><span class="mdl-layout-title">Menu</span>
+      <nav class="mdl-navigation"><a class="mdl-navigation__link" href="uploader-dash.html">Dashboard</a><a class="mdl-navigation__link" href="">Uploads</a><a class="mdl-navigation__link" href="">Profile</a><a class="mdl-navigation__link" href="frontpage.html">Go to dopcine.com</a></nav>
     </div>
     <main class="mdl-layout__content" id="main">
-      <div id="backshape"></div>
       <div class="mdl-grid">
         <div class="medium-title mdl-cell mdl-cell--12-col">Upload your video</div>
         <!-- Left section with Author's infi/bio-->
         <div class="vid-upl-container">
           <!-- Upload video-->
           <div class="video-holder"><i class="placeholder-icon material-icons">local_movies</i>
-            <button class="mdl-button mdl-button--colored mdl-button--raised mdl-js-button mdl-js-ripple-effect" id="vid-upload-btn"><i class="material-icons">file_upload</i>&nbsp Upload footage</button>
+            <button class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect" id="vid-upload-btn"><i class="material-icons">file_upload</i>&nbsp Upload footage</button>
           </div>
           <!-- End of Upload video-->
           <div class="video-details mdl-grid">
@@ -130,16 +128,6 @@
         </div>
       </div>
       <script src="js/video.js"></script>
-      <footer class="mdl-mini-footer">
-        <div class="mdl-mini-footer__left-section">
-          <div class="mdl-logo">Title</div>
-          <ul class="mdl-mini-footer__link-list">
-            <li><a href="#">Help</a></li>
-            <li><a href="#">Privacy & Terms</a></li>
-          </ul>
-          <p id="about"></p>Dopcine is a global royalty free video stock platfrom that is focused on delivering high quality footage to the customers.<br>We love to talk about our passion and we are excited to see where our passion and innovation touches you, Only the best is good enough.
-        </div>
-      </footer>
     </main>
   </div>
 </body>
