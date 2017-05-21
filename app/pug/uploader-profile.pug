@@ -1,0 +1,47 @@
+extends templates/uploader-layout
+block header
+  - var pageTitle = 'Profile'
+  include templates/uploader-header
+block main
+  .mdl-grid.width100
+    .upl-card-container.mdl-cell--12-col.mdl-grid
+      #prof-card-container.mdl-cell.mdl-cell--12-col-phone.mdl-cell--12-col-tablet.mdl-cell--4-col
+        #profileCard.mdl-card
+          .card-photo
+          .card-title Cinematographer
+          .card-name Faic Geci
+          .card-about-me Lorem Ipsum Generator. Generate lorem ipsum in paragraphs, words or sentences. Optional html markup - paragraph, italic and bold tags.
+      #prof-inp-container.mdl-cell.mdl-cell--12-col-phone.mdl-cell--8-col-tablet.mdl-cell--8-col
+        #profInputs.mdl-card
+          .card-name-holder
+            .prof-card-title Edit profile
+            .prof-card-subtitle Complete your profile
+          +inputText('uploderFirstName', 'First name')
+          +inputText('uploderSecondName', 'Second name')
+          +inputText('uploderEmail', 'Email address')
+          +inputNumber('uploderPhone', 'Phone number')
+          +inputText('uploderCompany', 'Company')
+          +inputText('uploderCity', 'City')
+          +inputText('uploderCountry', 'Country')
+          +inputNumber('uploderPostalCode', 'PostalCode')
+          +inputText('uploderAddress', 'Address', 'mdl-cell--12-col')
+          +inputTextArea('uploderAbout', 'About me')
+          .prof-controls.mdl-cell--12-col
+            button.mdl-button.mdl-button--raised.mdl-button--accent.mdl-js-button.mdl-js-ripple-effect update profile
+
+
+
+mixin inputText(id, label, className)
+  .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label(class=className)
+    input.mdl-textfield__input(type="text" id=id)
+    label.mdl-textfield__label(for=id) #{label}
+mixin inputNumber(id, label)
+  .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+    input.mdl-textfield__input(type="text" pattern="-?[0-9]*(\.[0-9]+)?" id=id)
+    label.mdl-textfield__label(for=id) #{label}
+    span.mdl-textfield__error Input is not a number!
+mixin inputTextArea(id, label)  
+  .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.mdl-cell--12-col
+    textarea.mdl-textfield__input(type="text" rows="5" id=id)
+    label.mdl-textfield__label(for=id) #{label}
+

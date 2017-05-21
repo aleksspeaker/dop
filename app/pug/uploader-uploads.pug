@@ -1,9 +1,9 @@
-extends templates/upload-layout
+extends templates/uploader-layout
 block header
+  - var pageTitle = 'Uploads'
   include templates/uploader-header
 block main
   .mdl-grid.width100
-    .medium-title.mdl-cell.mdl-cell--12-col Uploads
     .upl-card-container.mdl-cell--12-col.mdl-grid
       .small-title.mdl-cell.mdl-cell--12-col Published
       +video('plant', 130)
@@ -18,10 +18,10 @@ block main
       +video('plant', 86)
       +video('street' ,92)
       +video('lviv', 17)
-      .mdl-layout-spacer
-      hr
     .upl-card-container.mdl-cell--12-col.mdl-grid
-      .small-title.mdl-cell.mdl-cell--12-col Unpublished
+      #unpublished-title.small-title.mdl-cell.mdl-cell--12-col Unpublished
+      #emptyUnpublushed
+        div You don't have unpublished videos
               
 
 mixin video (filename, price, href)

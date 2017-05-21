@@ -1,7 +1,8 @@
-extends templates/upload-layout
+extends templates/uploader-layout
 block header
   include templates/uploader-header
 block main
+  - var pageTitle = 'Upload Video'
   .mdl-grid
     .medium-title.mdl-cell.mdl-cell--12-col Upload your video
     // Left section with Author's infi/bio

@@ -787,10 +787,28 @@ dialog + .backdrop /* polyfill */
   background: white
   *
     color: $color-text-regular
+#uploader-drawer
+  background: url('../images/background_camera.jpg') center
+  background-size: cover
+
+#unpublished-title
+  margin: 32px 0 0 0
+
+#emptyUnpublushed
+  width: 100%
+  display: flex
+  justify-content: center
+  align-content: center
+  align-items: center
+  color: rgba(0,0,0,.54)
+  padding: 16px
+  font-size: 1.2rem
+
 .upl-card-container
   // justify-content: space-around
   // height: 70vh
-  background: #fafafa
+  // background: #fafafa
+  margin: -16px -16px -16px -16px
 .upl-dash-card
   background: #fff
   width: calc(100% - 16px)
@@ -836,31 +854,42 @@ dialog + .backdrop /* polyfill */
     box-shadow: 2px 2px 16px rgba(0,0,0,.15)
     align-items: center
     justify-content: center
-    border-radius: 8px
+    border-radius: 4px
     z-index: 1
     i
-      font-size: 4rem
+      font-size: 3rem
 #storageCard
   .card-icon
-    background: linear-gradient(60deg, #5E35B1, #039BE5)
+    background: linear-gradient(60deg, #ffa726, #fb8c00);
+    box-shadow: 0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2);
   .card-hint
     i
       color: red
 #loveCard
   .card-icon
-    background: linear-gradient(60deg, #F50057, #FF8A80)
+    background: linear-gradient(60deg, #66bb6a, #43a047);
+    box-shadow: 0 12px 20px -10px rgba(76, 175, 80, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(76, 175, 80, 0.2);
   .card-hint
     i
       color: blue
 #pizzaCard
   .card-icon
-    background: linear-gradient(60deg, #fb8c00, #FFCA29)
+    background: linear-gradient(60deg, #26c6da, #00acc1);
+    box-shadow: 0 12px 20px -10px rgba(0, 188, 212, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(0, 188, 212, 0.2);
   .card-hint
     i
       color: red
 #gameCard
   .card-icon
-    background: linear-gradient(60deg, #43A047, #FFEB3B) 
+    background: linear-gradient(60deg, #ab47bc, #8e24aa);
+    box-shadow: 0 12px 20px -10px rgba(156, 39, 176, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2);
+  .card-hint
+    i
+      color: green
+#vidsCard
+  .card-icon
+    background: linear-gradient(60deg, #ef5350, #e53935)
+    box-shadow: 0 12px 20px -10px rgba(244, 67, 54, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(244, 67, 54, 0.2)
   .card-hint
     i
       color: green
@@ -922,3 +951,107 @@ dialog + .backdrop /* polyfill */
     align-content: center
     video
       max-width: 100%
+
+//======================================
+// Uploader Profile
+//======================================
+
+#uploader-header
+  background: #eee
+  *
+    color: $color-text-regular
+.upl-card-container
+  display: flex
+  flex-direction: row
+  // justify-content: space-around
+  // height: 70vh
+  background: #eee
+#prof-inp-container
+  order: 1
+#prof-card-container
+  order: 2
+
+@media only screen and (max-width: 1024px)
+  #prof-inp-container
+    order: 2
+  #prof-card-container
+    order: 1
+
+#profileCard
+  margin: 48px 0 0 0
+  background: #fff
+  width: 100%
+  color: rgba(0,0,0,.87)
+  box-shadow: 2px 2px 8px rgba(0,0,0,.05)
+  overflow: visible
+  .card-about-me
+    display: flex
+    justify-content: center
+    text-align: center
+    padding: 16px
+    font-weight: 400
+    color: rgba(0,0,0,.54)
+  .card-title
+    display: flex
+    justify-content: center
+    padding: 16px 0 0 0
+    font-weight: 300
+    color: rgba(0,0,0,.54)
+  .card-name
+    display: flex
+    justify-content: center
+    padding: 16px 0 16px 0
+    font-size: 1.5rem
+    font-weight: 300
+  hr
+    width: 100%
+  .card-photo
+    display: flex
+    margin: -48px auto 0
+    background: url('../images/photo.jpg') top no-repeat 
+    background-size: 120%
+    color: white
+    width: 120px
+    height: 120px
+    box-shadow: 0 12px 20px -10px rgba(0, 0, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(0, 0, 0, 0.2)
+    border-radius: 50%
+    z-index: 1
+#profInputs
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  margin: 48px 0 0 0
+  overflow: visible
+  background: #fff
+  width: 100%
+  padding: 16px
+  label
+    // color: rgba(0,0,0,.24)
+  .mdl-textfield
+    padding-right: 32px
+  .prof-controls
+    display: flex
+    justify-content: flex-end
+    button
+      background: linear-gradient(60deg, #ef5350, #e53935)
+      box-shadow: 0 12px 20px -10px rgba(244, 67, 54, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(244, 67, 54, 0.2)
+
+.card-name-holder
+  display: flex
+  flex-direction: column
+  margin: -32px auto 16px
+  background: linear-gradient(60deg, #ef5350, #e53935)
+  padding: 16px 32px
+  background-size: 120%
+  color: rgba(255,255,255,.87)
+  width: 80%
+  box-shadow: 0 12px 20px -10px rgba(244, 67, 54, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(244, 67, 54, 0.2)
+  border-radius: 4px
+  z-index: 1
+.prof-card-title
+  font-size: 1.3rem
+  line-height: 1.8rem
+  color: rgba(255,255,255,1)
+.prof-card-subtitle
+  font-size: 1rem
+  color: rgba(255,255,255,.87)

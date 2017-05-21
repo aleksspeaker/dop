@@ -1,16 +1,17 @@
-extends templates/upload-layout
+extends templates/uploader-layout
 block header
+  - var pageTitle = 'Dashboard'
   include templates/uploader-header
 block main
+
   .mdl-grid.width100
-    .medium-title.mdl-cell.mdl-cell--12-col Dashboard
     .upl-card-container.mdl-cell--12-col.mdl-grid
       .small-title.mdl-cell.mdl-cell--12-col Success metrics
-      +infocard('storageCard', 'Used space', 'storage', '99/100 GB', 'warning', 'Get more space')
-      +infocard('gameCard', 'Money earned', 'monetization_on', '326 EUR', 'lightbulb_outline', 'Recommendation')
+      +infocard('storageCard', 'Used space', 'storage', '99/100 GB', 'warning', 'Recommendation')
+      +infocard('gameCard', 'Money earned', 'monetization_on', '326 EUR', 'attach_money', 'Withdraw')
       +infocard('pizzaCard', 'Video views', 'remove_red_eye', 'Total: 560', 'search', 'Add keywords')
       +infocard('loveCard', 'New followers', 'people', '180', 'lightbulb_outline', 'Recommendation')
-      +infocard('gameCard', 'Total videos', 'video_library', '14', 'show_chart', 'Most popular: Winter in Alps')
+      +infocard('vidsCard', 'Total videos', 'video_library', '14', 'show_chart', 'Most popular: Winter in Alps')
     .upl-card-container.mdl-cell--12-col.mdl-grid
       .small-title.mdl-cell.mdl-cell--12-col Recent activities
       .mdl-cell.mdl-cell--12-col 15/05/2017 15:53: Purchase: "Winter in Alps" 
