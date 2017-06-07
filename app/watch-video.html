@@ -264,6 +264,65 @@
         });
       </script>
       <!-- END OF SHOPPING CART-->
+      <!-- SHOPPING CART-->
+      <dialog class="mdl-dialog cart" id="login">
+        <div class="mdl-dialog__title">Sign in</div>
+        <div class="mdl-dialog__content mdl-grid">
+          <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+            <div class="mdl-tabs__tab-bar"><a class="mdl-tabs__tab is-active" href="#login-tab">Login</a><a class="mdl-tabs__tab" href="#register-tab">Register</a></div>
+            <div class="mdl-tabs__panel is-active" id="login-tab">
+              <form class="signup-form" action="#">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" id="log-email-inp" type="text">
+                  <label class="mdl-textfield__label" for="log-email-inp">Email</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" id="log-passw-inp" type="text">
+                  <label class="mdl-textfield__label" for="log-passw-inp">Password</label>
+                </div>
+              </form>
+            </div>
+            <div class="mdl-tabs__panel" id="register-tab">
+              <form class="signup-form" action="#">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" id="reg-fname-inp" type="text">
+                  <label class="mdl-textfield__label" for="reg-fname-inp">First name</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" id="reg-lname-inp" type="text">
+                  <label class="mdl-textfield__label" for="reg-lname-inp">Last name</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" id="reg-email-inp" type="text">
+                  <label class="mdl-textfield__label" for="reg-email-inp">Email</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" id="reg-passw-inp" type="text">
+                  <label class="mdl-textfield__label" for="reg-passw-inp">Password</label>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="mdl-dialog__actions">
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored" type="button">Login</button>
+          <button class="mdl-button close" type="button">Cancel</button>
+        </div>
+      </dialog>
+      <script>
+        var login = document.querySelector('#login');
+        var showDialogButton = document.querySelector('#signin-button');
+        if (! login.showModal) {
+        dialogPolyfill.registerDialog(login);
+        }
+        showDialogButton.addEventListener('click', function() {
+        login.showModal();
+        });
+        login.querySelector('.close').addEventListener('click', function() {
+        login.close();
+        });
+      </script>
+      <!-- END OF SHOPPING CART-->
       <script src="js/video.js"></script>
       <footer class="mdl-mini-footer">
         <div class="mdl-mini-footer__left-section">
