@@ -1,7 +1,7 @@
-// SHOPPING CART
+// Login/Sign up form
 
 
-dialog#login.mdl-dialog.cart
+dialog#login.mdl-dialog
   .mdl-dialog__title Sign in
   .mdl-dialog__content.mdl-grid
     .mdl-tabs.mdl-js-tabs.mdl-js-ripple-effect
@@ -10,18 +10,22 @@ dialog#login.mdl-dialog.cart
         a.mdl-tabs__tab(href="#register-tab") Register
       #login-tab.mdl-tabs__panel.is-active
         form.signup-form(action='#')
-          .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
-            input#log-email-inp.mdl-textfield__input(type='text')
-            label.mdl-textfield__label(for='log-email-inp') Email
-          .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
-            input#log-passw-inp.mdl-textfield__input(type='text')
-            label.mdl-textfield__label(for='log-passw-inp') Password
-        .mdl-dialog__actions
-          button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--raised.mdl-button--colored(type='button') Login
-          button.mdl-button.close(type='button') Cancel
+          .inputs-container
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input#log-email-inp.mdl-textfield__input(type='text')
+              label.mdl-textfield__label(for='log-email-inp') Email
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input#log-passw-inp.mdl-textfield__input(type='text')
+              label.mdl-textfield__label(for='log-passw-inp') Password
+            a(href='#') Forgot password?
+            .mdl-dialog__actions
+              button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--raised.mdl-button--colored(type='button') Login
+              button.mdl-button.close(type='button') Cancel
+
 
       #register-tab.mdl-tabs__panel
         form.signup-form(action='#')
+          .inputs-container
           .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
             input#reg-fname-inp.mdl-textfield__input(type='text')
             label.mdl-textfield__label(for='reg-fname-inp') First name
@@ -37,8 +41,6 @@ dialog#login.mdl-dialog.cart
         .mdl-dialog__actions
           button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--raised.mdl-button--colored(type='button') Register
           button.mdl-button.close(type='button') Cancel
-  
-
   
 
 script.

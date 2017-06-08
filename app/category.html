@@ -334,30 +334,33 @@
         });
       </script>
       <!-- END OF SHOPPING CART-->
-      <!-- SHOPPING CART-->
-      <dialog class="mdl-dialog cart" id="login">
+      <!-- Login/Sign up form-->
+      <dialog class="mdl-dialog" id="login">
         <div class="mdl-dialog__title">Sign in</div>
         <div class="mdl-dialog__content mdl-grid">
           <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
             <div class="mdl-tabs__tab-bar"><a class="mdl-tabs__tab is-active" href="#login-tab">Login</a><a class="mdl-tabs__tab" href="#register-tab">Register</a></div>
             <div class="mdl-tabs__panel is-active" id="login-tab">
               <form class="signup-form" action="#">
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <input class="mdl-textfield__input" id="log-email-inp" type="text">
-                  <label class="mdl-textfield__label" for="log-email-inp">Email</label>
-                </div>
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <input class="mdl-textfield__input" id="log-passw-inp" type="text">
-                  <label class="mdl-textfield__label" for="log-passw-inp">Password</label>
+                <div class="inputs-container">
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" id="log-email-inp" type="text">
+                    <label class="mdl-textfield__label" for="log-email-inp">Email</label>
+                  </div>
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" id="log-passw-inp" type="text">
+                    <label class="mdl-textfield__label" for="log-passw-inp">Password</label>
+                  </div><a href="#">Forgot password?</a>
+                  <div class="mdl-dialog__actions">
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored" type="button">Login</button>
+                    <button class="mdl-button close" type="button">Cancel</button>
+                  </div>
                 </div>
               </form>
-              <div class="mdl-dialog__actions">
-                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored" type="button">Login</button>
-                <button class="mdl-button close" type="button">Cancel</button>
-              </div>
             </div>
             <div class="mdl-tabs__panel" id="register-tab">
               <form class="signup-form" action="#">
+                <div class="inputs-container"></div>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <input class="mdl-textfield__input" id="reg-fname-inp" type="text">
                   <label class="mdl-textfield__label" for="reg-fname-inp">First name</label>
