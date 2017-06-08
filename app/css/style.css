@@ -1364,6 +1364,9 @@ dialog + .backdrop {
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.87); }
 
+dialog#login {
+  max-width: 600px; }
+
 .signup-form {
   width: 100%;
   display: -webkit-box;
